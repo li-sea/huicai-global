@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <!-- This site is hosted on Netlify. Anyone can build and deploy a site
@@ -40,8 +40,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1
 .nav-links a:hover{opacity:1;color:var(--accent)}
 .nav-links a:hover::after{transform:scaleX(1)}
 .nav-right{display:flex;align-items:center;gap:14px}
-.nav-lang{display:flex;align-items:center;gap:1px}
-.nav-lang button{background:none;border:none;font-size:12px;color:var(--ink-3);cursor:pointer;padding:3px 7px;border-radius:6px;font-family:var(--font);transition:all .2s}
+.nav-lang{display:flex;align-items:center;gap:2px}
+.nav-lang button{background:none;border:none;font-size:12px;color:var(--ink-3);cursor:pointer;padding:3px 6px;border-radius:6px;font-family:var(--font);transition:all .2s;white-space:nowrap}
 .nav-lang button.active{color:var(--ink);font-weight:600}
 .nav-lang button:hover{background:var(--bg-soft)}
 .nav-cta{padding:9px 20px;border-radius:980px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;text-decoration:none;white-space:nowrap;transition:all .3s var(--ease)}
@@ -270,6 +270,12 @@ body.pv-lock{overflow:hidden}
 .wechat-qr{background:#fff;border-radius:16px;padding:12px;display:inline-block;margin:6px 0 2px;line-height:0;box-shadow:var(--shadow)}
 .wechat-qr img{width:134px;height:134px;display:block;border-radius:6px}
 .wechat-qr-tip{font-size:12px;color:var(--ink-on-dark-2);margin-top:8px}
+.qr-pair{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0 4px}
+.qr-card{background:#fff;border-radius:16px;padding:12px 12px 10px;text-align:center;box-shadow:var(--shadow);line-height:0;flex:0 0 auto}
+.qr-card img{width:118px;height:118px;display:block;border-radius:6px}
+.qr-card .qr-name{font-size:12.5px;font-weight:600;color:var(--ink);line-height:1.35;margin-top:8px}
+.qr-card .qr-role{font-size:10.5px;color:var(--ink-3);line-height:1.35;margin-top:2px}
+.qr-hint{font-size:12px;color:var(--ink-on-dark-2);margin-top:10px}
 .social-links{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
 .social-links a{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);color:var(--ink-on-dark-2);transition:all .3s var(--ease);text-decoration:none}
 .social-links a:hover{transform:translateY(-4px);background:rgba(255,255,255,.18);color:#fff}
@@ -316,7 +322,8 @@ body.pv-lock{overflow:hidden}
   .pick-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .chip-group.ladder .chip{min-width:0;flex:1 1 46%}
-  .nav-lang button{font-size:10.5px;padding:2px 4px}
+  .nav-lang{gap:0}
+  .nav-lang button{font-size:9.5px;padding:2px 3px;letter-spacing:-.01em}
   .nav-cta{padding:7px 12px;font-size:12px}
   .module-photo{margin:-30px -24px 18px;height:150px}
   .photo-band img{height:210px}
@@ -344,12 +351,12 @@ body.pv-lock{overflow:hidden}
     </ul>
     <div class="nav-right">
       <div class="nav-lang">
-        <button class="active" data-lang-btn="zh">中</button>
-        <button data-lang-btn="en">EN</button>
-        <button data-lang-btn="fr">FR</button>
-        <button data-lang-btn="pt">PT</button>
-        <button data-lang-btn="ru">RU</button>
-        <button data-lang-btn="sw">SW</button>
+        <button class="active" data-lang-btn="en">English</button>
+        <button data-lang-btn="fr">Français</button>
+        <button data-lang-btn="pt">Português</button>
+        <button data-lang-btn="ru">Русский</button>
+        <button data-lang-btn="sw">Kiswahili</button>
+        <button data-lang-btn="zh">中文</button>
       </div>
       <a href="#contact" class="nav-cta" data-i18n="navCta">免费询价</a>
       <button class="nav-mobile-toggle" id="navToggle" aria-label="menu">☰</button>
@@ -791,6 +798,25 @@ body.pv-lock{overflow:hidden}
             <div class="label">WeChat / 微信</div>
             <div class="wechat-qr"><a href="images/wechat-qr.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/wechat-qr.png" alt="微信二维码 WeChat QR code"></a></div>
             <div class="wechat-qr-tip">扫码添加微信，或点二维码放大 / Scan to add us on WeChat</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon" style="background:rgba(255,255,255,.1)">💬</div>
+          <div>
+            <div class="label" data-i18n="waQrLabel">WhatsApp 扫码加好友</div>
+            <div class="qr-pair">
+              <div class="qr-card">
+                <a href="images/whatsapp-qr-sea.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/whatsapp-qr-sea.png" alt="WhatsApp QR code — sea"></a>
+                <div class="qr-name">sea</div>
+                <div class="qr-role" data-i18n="waQrRole1">业务咨询</div>
+              </div>
+              <div class="qr-card">
+                <a href="images/whatsapp-qr-vayn.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/whatsapp-qr-vayn.png" alt="WhatsApp QR code — Vayn Group"></a>
+                <div class="qr-name">Vayn Group</div>
+                <div class="qr-role" data-i18n="waQrRole2">公司业务账号</div>
+              </div>
+            </div>
+            <div class="qr-hint" data-i18n="waQrTip">用手机 WhatsApp 扫码添加；也可点二维码放大 / Scan with WhatsApp, or click to enlarge</div>
           </div>
         </div>
         <div class="contact-item" style="border-bottom:none">
@@ -1378,7 +1404,7 @@ const i18n = {
     formTimeline:"期望交货时间 / Timeline",tl1:"30 天内",tl2:"1–3 个月",tl3:"3–6 个月",tl4:"尚未确定",
     formChannel:"常用通讯工具 / Preferred Messenger",ch5:"电话",ch6:"仅用邮箱",
     formChannelId:"通讯账号 / ID",formChannelIdPh:"请填写你的账号 / 号码",
-    contactInfoTitle:"联系方式",contactAddr:"办公地址",contactAddrVal:"深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431（前海合作区）",
+    contactInfoTitle:"联系方式",waQrLabel:"WhatsApp 扫码加好友",waQrRole1:"业务咨询",waQrRole2:"公司业务账号",waQrTip:"用手机 WhatsApp 扫码添加；也可点二维码放大 / Scan with WhatsApp, or click to enlarge",contactAddr:"办公地址",contactAddrVal:"深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431（前海合作区）",
     footerDesc:"以国际贸易服务咨询为中心、以中国商品代买为重点的跨境采购服务平台。不囤货、不垫资、不代收货款，只做采购代理与贸易咨询。",
     footerService:"业务模块",footerS1:"中国商品代买",footerS2:"国际贸易咨询",footerS3:"验厂验货",footerS4:"物流与单证",
     footerCompany:"公司",footerC1:"关于我们",footerC2:"服务流程",footerC3:"成交案例",footerC4:"联系方式",footerPrivacy:"隐私政策",footerSocial:"社交媒体",
@@ -1435,7 +1461,7 @@ const i18n = {
     formTimeline:"Timeline",tl1:"Within 30 days",tl2:"1–3 months",tl3:"3–6 months",tl4:"Not decided yet",
     formChannel:"Preferred Messenger",ch5:"Phone call",ch6:"Email only",
     formChannelId:"Messenger ID",formChannelIdPh:"Your account or number",
-    contactInfoTitle:"Get in Touch",contactAddr:"Office",contactAddrVal:"Room B431, Huada Industrial Building, Yanshan Community, Zhaoshang Street, Nanshan District, Shenzhen, China (Qianhai)",
+    contactInfoTitle:"Get in Touch",waQrLabel:"Scan to add us on WhatsApp",waQrRole1:"Business enquiries",waQrRole2:"Company account",waQrTip:"Scan with the WhatsApp app on your phone, or click to enlarge",contactAddr:"Office",contactAddrVal:"Room B431, Huada Industrial Building, Yanshan Community, Zhaoshang Street, Nanshan District, Shenzhen, China (Qianhai)",
     footerDesc:"A cross-border sourcing platform centred on international trade consulting and focused on China sourcing. No inventory, no advance payment, no fund handling.",
     footerService:"Services",footerS1:"China Sourcing",footerS2:"Trade Consulting",footerS3:"Factory Audit",footerS4:"Logistics & Docs",
     footerCompany:"Company",footerC1:"About Us",footerC2:"Process",footerC3:"Cases",footerC4:"Contact",footerPrivacy:"Privacy Policy",footerSocial:"Social Media",
@@ -1492,7 +1518,7 @@ const i18n = {
     formTimeline:"Délai souhaité",tl1:"Sous 30 jours",tl2:"1–3 mois",tl3:"3–6 mois",tl4:"Pas encore décidé",
     formChannel:"Messagerie préférée",ch5:"Appel téléphonique",ch6:"E-mail uniquement",
     formChannelId:"Identifiant",formChannelIdPh:"Votre identifiant ou numéro",
-    contactInfoTitle:"Nous Contacter",contactAddr:"Bureau",contactAddrVal:"Bureau B431, Immeuble Huada, Zhaoshang, Nanshan, Shenzhen, Chine (Qianhai)",
+    contactInfoTitle:"Nous Contacter",waQrLabel:"Scannez pour nous ajouter sur WhatsApp",waQrRole1:"Demandes commerciales",waQrRole2:"Compte de l'entreprise",waQrTip:"Scannez avec l'application WhatsApp de votre téléphone, ou cliquez pour agrandir",contactAddr:"Bureau",contactAddrVal:"Bureau B431, Immeuble Huada, Zhaoshang, Nanshan, Shenzhen, Chine (Qianhai)",
     footerDesc:"Plateforme de sourcing transfrontalier centrée sur le conseil en commerce international et axée sur le sourcing en Chine. Sans stock, sans avance, sans gestion de fonds.",
     footerService:"Services",footerS1:"Sourcing Chine",footerS2:"Conseil",footerS3:"Audit d'Usine",footerS4:"Logistique",
     footerCompany:"Société",footerC1:"À Propos",footerC2:"Processus",footerC3:"Cas",footerC4:"Contact",footerPrivacy:"Confidentialité",footerSocial:"Réseaux Sociaux",
@@ -1549,7 +1575,7 @@ const i18n = {
     formTimeline:"Prazo desejado",tl1:"Em até 30 dias",tl2:"1–3 meses",tl3:"3–6 meses",tl4:"Ainda não definido",
     formChannel:"Mensageiro preferido",ch5:"Ligação telefônica",ch6:"Apenas e-mail",
     formChannelId:"ID de contato",formChannelIdPh:"Seu usuário ou número",
-    contactInfoTitle:"Fale Conosco",contactAddr:"Escritório",contactAddrVal:"Sala B431, Edifício Huada, Zhaoshang, Nanshan, Shenzhen, China (Qianhai)",
+    contactInfoTitle:"Fale Conosco",waQrLabel:"Escaneie para nos adicionar no WhatsApp",waQrRole1:"Consultas comerciais",waQrRole2:"Conta da empresa",waQrTip:"Escaneie com o aplicativo WhatsApp do seu telefone, ou clique para ampliar",contactAddr:"Escritório",contactAddrVal:"Sala B431, Edifício Huada, Zhaoshang, Nanshan, Shenzhen, China (Qianhai)",
     footerDesc:"Plataforma de sourcing transfronteiriço centrada na consultoria de comércio internacional e focada na compra de produtos chineses. Sem estoque, sem adiantamento, sem gestão de fundos.",
     footerService:"Serviços",footerS1:"Compra na China",footerS2:"Consultoria",footerS3:"Auditoria",footerS4:"Logística",
     footerCompany:"Empresa",footerC1:"Sobre",footerC2:"Processo",footerC3:"Casos",footerC4:"Contato",footerPrivacy:"Privacidade",footerSocial:"Redes Sociais",
@@ -1608,7 +1634,7 @@ const i18n = {
     formTimeline:"Желаемый срок",tl1:"в течение 30 дней",tl2:"1–3 месяца",tl3:"3–6 месяцев",tl4:"пока не определён",
     formChannel:"Предпочитаемый мессенджер",ch5:"Телефонный звонок",ch6:"Только e-mail",
     formChannelId:"ID в мессенджере",formChannelIdPh:"Ваш аккаунт или номер",
-    contactInfoTitle:"Связаться с нами",contactAddr:"Офис",contactAddrVal:"Шэньчжэнь, район Наньшань, Чжаошан, Южная Гуандун-роуд 3, здание Huada B431 (Цяньхай)",
+    contactInfoTitle:"Связаться с нами",waQrLabel:"Отсканируйте, чтобы добавить нас в WhatsApp",waQrRole1:"Деловые запросы",waQrRole2:"Аккаунт компании",waQrTip:"Отсканируйте камерой WhatsApp на телефоне или нажмите, чтобы увеличить",contactAddr:"Офис",contactAddrVal:"Шэньчжэнь, район Наньшань, Чжаошан, Южная Гуандун-роуд 3, здание Huada B431 (Цяньхай)",
     footerDesc:"Платформа трансграничных закупок с акцентом на консалтинг по международной торговле и закупки в Китае. Без складских запасов, предоплат и работы с деньгами клиентов.",footerService:"Услуги",footerS1:"Закупки в Китае",footerS2:"Консалтинг",footerS3:"Аудит фабрик",footerS4:"Логистика",footerCompany:"Компания",footerC1:"О нас",footerC2:"Процесс",footerC3:"Кейсы",footerC4:"Контакты",footerPrivacy:"Конфиденциальность",footerSocial:"Соцсети",footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. Все права защищены.",footerNote:"Закупки в Китае · Консалтинг по торговле · Сеть партнёров в разных странах"
   },
   sw: {
@@ -1664,7 +1690,7 @@ const i18n = {
     formTimeline:"Muda unaotaka",tl1:"Ndani ya siku 30",tl2:"Miezi 1–3",tl3:"Miezi 3–6",tl4:"Bado hatujaamua",
     formChannel:"Njia unayopendelea ya mawasiliano",ch5:"Simu",ch6:"Barua pepe pekee",
     formChannelId:"Kitambulisho (ID)",formChannelIdPh:"Akaunti au namba yako",
-    contactInfoTitle:"Wasiliana nasi",contactAddr:"Ofisi",contactAddrVal:"Chumba B431, Jengo la Huada, Zhaoshang, Nanshan, Shenzhen, China (Qianhai)",
+    contactInfoTitle:"Wasiliana nasi",waQrLabel:"Skani ili kutuongeza kwenye WhatsApp",waQrRole1:"Maswali ya biashara",waQrRole2:"Akaunti ya kampuni",waQrTip:"Skani kwa programu ya WhatsApp kwenye simu yako, au bofya ili kukuza",contactAddr:"Ofisi",contactAddrVal:"Chumba B431, Jengo la Huada, Zhaoshang, Nanshan, Shenzhen, China (Qianhai)",
     footerDesc:"Jukwaa la ununuzi wa kimataifa linalotilia mkazo ushauri wa biashara na ununuzi China. Hatuhifadhi bidhaa, hatutoa malipo ya awali na hatushughulikii fedha.",footerService:"Huduma",footerS1:"Ununuzi China",footerS2:"Ushauri",footerS3:"Ukaguzi wa kiwanda",footerS4:"Usafirishaji",footerCompany:"Kampuni",footerC1:"Kuhusu sisi",footerC2:"Mchakato",footerC3:"Mifano",footerC4:"Wasiliana",footerPrivacy:"Sera ya Faragha",footerSocial:"Mitandao ya kijamii",footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. Haki zote zimehifadhiwa.",footerNote:"Ununuzi China · Ushauri wa biashara · Mtandao wa washirika nchi nyingi"
   }
 };
@@ -1698,6 +1724,40 @@ function setLang(lang){
 document.querySelectorAll('[data-lang-btn]').forEach(b => {
   b.addEventListener('click', () => setLang(b.dataset.langBtn));
 });
+
+/* ===== 默认语言：英语为首页语言，中文及小语种自动识别，用户选择优先 =====
+   规则：① 用户手动选过的语言（localStorage）优先
+        ② 否则按浏览器语言：zh* → 中文，其余支持语言 → 对应语言
+        ③ 都不匹配 → 英语（默认首页语言） */
+(function initLang(){
+  const SUPPORTED = ['en','fr','pt','ru','sw','zh'];
+  const STORE_KEY = 'huicai-lang';
+  let lang = null;
+
+  // ① 用户上次手动选择的语言
+  try{ lang = localStorage.getItem(STORE_KEY); }catch(e){}
+  if(lang && SUPPORTED.indexOf(lang) === -1) lang = null;
+
+  // ② 浏览器语言自动识别
+  if(!lang){
+    const nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+    const base = String(nav).toLowerCase().split('-')[0];
+    const MAP = { zh:'zh', cn:'zh', en:'en', fr:'fr', pt:'pt', ru:'ru', sw:'sw' };
+    lang = MAP[base] || 'en';
+  }
+
+  // ③ 兜底：英语
+  if(SUPPORTED.indexOf(lang) === -1) lang = 'en';
+
+  setLang(lang);
+
+  // 记录用户的手动选择（initLang 自身调用 setLang 时不覆盖）
+  document.querySelectorAll('[data-lang-btn]').forEach(b => {
+    b.addEventListener('click', () => {
+      try{ localStorage.setItem(STORE_KEY, b.dataset.langBtn); }catch(e){}
+    });
+  });
+})();
 
 /* ===== 隐私政策弹层 ===== */
 (function(){
