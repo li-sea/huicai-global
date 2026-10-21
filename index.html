@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="zh" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=f8b45dcd-21fc-4842-9bd0-421df0877b20
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汇采国际 HuiCai Global | 中国商品代买 · 国际贸易服务咨询</title>
+<meta name="description" content="汇采国际 — 以国际贸易服务咨询为中心、以中国商品代买为重点。为全球采购商提供供应商筛选、验厂验货、跨境物流与单证咨询，中英法葡俄斯六语服务，无需注册即可在线提交采购需求。">
+<style>
+:root{
+  --bg:#fff; --bg-dark:#1d1d1f; --bg-soft:#f5f5f7; --bg-dark-soft:#2d2d2f;
+  --ink:#1d1d1f; --ink-2:#6e6e73; --ink-3:#86868b; --ink-on-dark:#f5f5f7; --ink-on-dark-2:#a1a1a6;
+  --accent:#0071e3; --accent-hover:#0077ed; --accent-soft:#e8f0fe;
+  --green:#34c759; --orange:#ff9500; --purple:#af52de; --red:#ff3b30;
+  --border:#d2d2d7; --border-dark:#424245;
+  --radius:18px; --radius-lg:28px;
+  --shadow:0 4px 24px rgba(0,0,0,.06); --shadow-lg:0 12px 48px rgba(0,0,0,.08);
+  --max:980px; --max-wide:1200px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans CJK SC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:70px}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:hidden}
+
+/* ===== 顶部公告条（无需注册提示） ===== */
+.topbar{background:var(--bg-dark);color:var(--ink-on-dark-2);text-align:center;font-size:12.5px;padding:9px 16px;letter-spacing:.01em}
+.topbar b{color:#2997ff;font-weight:600}
+
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;left:0;right:0;z-index:1000;height:60px;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);transition:background .3s}
+.nav-inner{max-width:var(--max-wide);margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:100%;gap:20px}
+.nav-logo{font-size:19px;font-weight:600;letter-spacing:-.02em;color:var(--ink);text-decoration:none;display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.nav-logo span{font-size:13px;color:var(--ink-3);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;opacity:.86;transition:opacity .2s,color .2s;position:relative;padding-bottom:4px}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s var(--ease)}
+.nav-links a:hover{opacity:1;color:var(--accent)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-lang{display:flex;align-items:center;gap:1px}
+.nav-lang button{background:none;border:none;font-size:12px;color:var(--ink-3);cursor:pointer;padding:3px 7px;border-radius:6px;font-family:var(--font);transition:all .2s}
+.nav-lang button.active{color:var(--ink);font-weight:600}
+.nav-lang button:hover{background:var(--bg-soft)}
+.nav-cta{padding:9px 20px;border-radius:980px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;text-decoration:none;white-space:nowrap;transition:all .3s var(--ease)}
+.nav-cta:hover{background:var(--accent-hover)}
+.nav-mobile-toggle{display:none;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink);padding:0 4px}
+
+/* ===== Hero（照片背景） ===== */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 22px 96px;overflow:hidden;background:#0b1220}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,14,26,.74) 0%,rgba(8,14,26,.58) 42%,rgba(8,14,26,.88) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1000px;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);color:#fff;font-size:13px;font-weight:500;padding:7px 16px;border-radius:980px;margin-bottom:26px;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero h1{font-size:clamp(34px,6.2vw,72px);font-weight:700;letter-spacing:-.02em;line-height:1.08;max-width:920px;margin:0 auto 20px;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero h1 .gradient{background:linear-gradient(135deg,#6ec3ff 0%,#c9a3ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
+.hero-sub{font-size:clamp(16px,2.2vw,21px);color:rgba(255,255,255,.85);max-width:670px;margin:0 auto 18px;line-height:1.55}
+.hero-note{font-size:13.5px;color:rgba(255,255,255,.68);margin-bottom:38px;display:inline-flex;align-items:center;gap:8px}
+.hero-note .dot{color:#5ce07f}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.hero .btn-outline{color:#fff;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.07)}
+.hero .btn-outline:hover{background:rgba(255,255,255,.18)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:12px 28px;border-radius:980px;font-size:15px;font-weight:500;text-decoration:none;transition:all .3s var(--ease);cursor:pointer;border:none;font-family:var(--font)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);transform:scale(1.03)}
+.btn-outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-outline:hover{background:var(--accent-soft)}
+.btn-ghost{background:rgba(255,255,255,.12);color:var(--ink-on-dark);border:1px solid rgba(255,255,255,.25)}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+
+/* ===== Section 通用 ===== */
+.section{padding:96px 22px}
+.section-dark{background:var(--bg-dark);color:var(--ink-on-dark)}
+.section-soft{background:var(--bg-soft)}
+.section-inner{max-width:var(--max-wide);margin:0 auto}
+.section-label{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.section-dark .section-label{color:#2997ff}
+.section-title{font-size:clamp(30px,4.6vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:18px}
+.section-sub{font-size:clamp(16px,1.9vw,20px);color:var(--ink-2);max-width:700px;margin-bottom:56px;line-height:1.5}
+.section-dark .section-sub{color:var(--ink-on-dark-2)}
+
+/* ===== 业务模块 ===== */
+/* 业务模块：四张卡片（2×2，上一版样式） */
+.module-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.module-card{background:#fff;border-radius:var(--radius-lg);padding:36px 32px;box-shadow:var(--shadow);position:relative;transition:transform .4s var(--ease),box-shadow .4s var(--ease);border:1px solid transparent}
+.module-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.module-card.featured{border-color:var(--accent);background:linear-gradient(180deg,#f7fbff 0%,#fff 60%)}
+.module-tag{position:absolute;top:-11px;left:28px;z-index:2;background:var(--accent);color:#fff;font-size:11.5px;font-weight:600;padding:4px 12px;border-radius:980px;letter-spacing:.04em}
+.module-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:25px;margin-bottom:18px}
+.module-card h3{font-size:21px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+.module-card>p{font-size:14.5px;color:var(--ink-2);line-height:1.55;margin-bottom:16px}
+.module-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.module-card li{font-size:13.5px;color:var(--ink-2);display:flex;gap:9px;align-items:flex-start;line-height:1.45}
+.module-card li::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0}
+.module-foot{margin-top:22px;padding-top:18px;border-top:1px solid var(--bg-soft);font-size:13px;color:var(--ink-3)}
+.module-foot b{color:var(--ink);font-weight:600}
+.module-photo{margin:-36px -32px 22px;height:168px;overflow:hidden;border-radius:var(--radius-lg) var(--radius-lg) 0 0;position:relative;background:var(--bg-soft)}
+.module-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.module-card:hover .module-photo img{transform:scale(1.05)}
+.module-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.24))}
+.photo-band{margin:26px 0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);position:relative;line-height:0}
+.photo-band img{width:100%;height:360px;object-fit:cover;display:block}
+.photo-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:52px 28px 22px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.74));color:#fff;font-size:14px;line-height:1.5;text-align:left}
+.addon-label{font-size:14px;font-weight:600;color:var(--ink-3);margin:44px 0 20px;letter-spacing:.04em}
+.addon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.addon-card{background:#fff;border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);transition:transform .35s var(--ease)}
+.addon-card:hover{transform:translateY(-3px)}
+.addon-card .ico{font-size:20px;margin-bottom:10px}
+.addon-card h4{font-size:15px;font-weight:600;margin-bottom:5px}
+.addon-card p{font-size:12.5px;color:var(--ink-2);line-height:1.45}
+
+/* ===== 流程 ===== */
+.process-flow{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.process-step{flex:1;min-width:190px;max-width:215px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px 18px;text-align:center}
+.process-step .num{font-size:13px;font-weight:600;color:#2997ff;margin-bottom:8px}
+.process-step h4{font-size:15px;font-weight:600;color:var(--ink-on-dark);margin-bottom:6px}
+.process-step p{font-size:12px;color:var(--ink-on-dark-2);line-height:1.4}
+.boundary{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.boundary span{background:rgba(255,59,48,.12);border:1px solid rgba(255,59,48,.35);color:#ff6961;font-size:13px;padding:9px 18px;border-radius:980px}
+
+/* ===== 优势 ===== */
+.adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.adv-card{background:#fff;border-radius:var(--radius-lg);padding:38px 32px;box-shadow:var(--shadow);display:flex;gap:22px;align-items:flex-start;transition:transform .4s var(--ease)}
+.adv-card:hover{transform:scale(1.02)}
+.adv-card .icon{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.adv-card h3{font-size:21px;font-weight:600;margin-bottom:8px}
+.adv-card p{font-size:14.5px;color:var(--ink-2);line-height:1.5}
+
+/* ===== 案例 ===== */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case-card{border-radius:var(--radius-lg);overflow:hidden;background:#fff;box-shadow:var(--shadow);transition:transform .4s var(--ease);border:1px solid var(--bg-soft)}
+.case-card:hover{transform:translateY(-4px)}
+.case-card-img{height:180px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);display:flex;align-items:center;justify-content:center;font-size:38px;overflow:hidden}
+.case-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.case-card:hover .case-card-img img{transform:scale(1.06)}
+.case-card-body{padding:24px}
+.case-card .tag{font-size:12px;color:var(--accent);font-weight:600;margin-bottom:8px}
+.case-card h3{font-size:17.5px;font-weight:600;margin-bottom:8px}
+.case-card p{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.case-card .meta{display:flex;gap:16px;margin-top:16px;font-size:12.5px;color:var(--ink-3)}
+
+/* ===== 行业深度（关于我们） ===== */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+.stat{background:#fff;border-radius:var(--radius);padding:26px 18px;box-shadow:var(--shadow);text-align:center}
+.stat .n{font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;background:linear-gradient(135deg,#0071e3,#af52de);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .l{font-size:12.5px;color:var(--ink-2);margin-top:8px;line-height:1.45}
+.depth-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.depth-card{background:#fff;border-radius:var(--radius-lg);padding:30px 28px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .4s var(--ease)}
+.depth-card:hover{transform:translateY(-4px)}
+.depth-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#0071e3,#af52de)}
+.depth-card h3{font-size:18.5px;font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:9px}
+.depth-card p{font-size:14px;color:var(--ink-2);line-height:1.62}
+.serve-strip{margin-top:20px;background:#fff;border-radius:var(--radius);padding:22px 26px;box-shadow:var(--shadow);display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:14px}
+.serve-strip .k{font-weight:600;color:var(--ink);white-space:nowrap}
+.serve-strip .v{color:var(--ink-2);line-height:1.6}
+
+/* ===== 联系 / 表单 ===== */
+.contact-grid{display:grid;grid-template-columns:1.42fr .58fr;gap:38px;align-items:start}
+.contact-form{background:#fff;border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-lg);color:var(--ink)}
+.contact-form h3{font-size:23px;font-weight:600;margin-bottom:6px}
+.form-hint{font-size:12.5px;color:var(--ink-3);margin-bottom:22px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:13px;font-weight:500;color:var(--ink-2);margin-bottom:6px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:12px;font-size:15px;font-family:var(--font);background:var(--bg-soft);transition:border-color .2s;color:var(--ink)}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent);background:#fff}
+.form-group textarea{resize:vertical;min-height:92px}
+
+/* 图文选择卡（采购需求多选） */
+.pick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.pick{display:flex;align-items:center;gap:11px;text-align:left;padding:13px 14px;border-radius:14px;border:1px solid var(--border);background:var(--bg-soft);cursor:pointer;font-family:var(--font);transition:all .22s var(--ease);position:relative}
+.pick:hover{border-color:var(--accent);background:#f7fbff}
+.pick .ico{font-size:19px;line-height:1;flex-shrink:0}
+.pick .t{font-size:13.5px;font-weight:500;color:var(--ink);line-height:1.3}
+.pick.on{border-color:var(--accent);background:#eef6ff;box-shadow:inset 0 0 0 1px var(--accent)}
+.pick.on::after{content:"✓";position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;font-size:13px}
+
+/* 选项胶囊（单选 / 阶梯预算） */
+.chip-group{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:980px;border:1px solid var(--border);background:var(--bg-soft);font-size:13px;font-family:var(--font);color:var(--ink-2);cursor:pointer;transition:all .22s var(--ease);line-height:1.2}
+.chip:hover{border-color:var(--accent);color:var(--accent);background:#f7fbff}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500}
+.chip-group.ladder .chip{border-radius:12px;min-width:132px;justify-content:center;font-variant-numeric:tabular-nums}
+.chip-group.ladder .chip.on{background:linear-gradient(135deg,#0071e3,#0a84ff)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+/* 电话号码：国旗区号 + 号码 */
+.phone-field{position:relative;display:flex;align-items:stretch}
+.cc-btn{display:inline-flex;align-items:center;gap:7px;padding:12px 14px;border:1px solid var(--border);border-right:none;border-radius:12px 0 0 12px;background:var(--bg-soft);font-family:var(--font);font-size:15px;color:var(--ink);cursor:pointer;white-space:nowrap;transition:border-color .2s,background .2s}
+.cc-btn:hover{border-color:var(--accent);background:#f7fbff}
+.cc-btn .flag{font-size:18px;line-height:1}
+.cc-btn .caret{font-size:10px;color:var(--ink-3)}
+.phone-field input[type="tel"]{flex:1;border-radius:0 12px 12px 0;min-width:0}
+.cc-panel{position:absolute;top:calc(100% + 8px);left:0;z-index:60;width:min(380px,92vw);background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.18);padding:10px;display:none}
+.cc-panel.open{display:block}
+.cc-search{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font);background:var(--bg-soft);margin-bottom:8px}
+.cc-list{max-height:250px;overflow-y:auto}
+.cc-item{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border:none;background:none;border-radius:9px;cursor:pointer;font-family:var(--font);font-size:14px;color:var(--ink);text-align:left}
+.cc-item:hover,.cc-item:focus{background:var(--accent-soft);outline:none}
+.cc-item .flag{font-size:17px;line-height:1}
+.cc-item .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cc-item .code{color:var(--ink-3);font-variant-numeric:tabular-nums}
+.form-group .req{color:var(--red);font-weight:600}
+.form-step{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--accent);margin:26px 0 12px;padding-top:18px;border-top:1px solid var(--bg-soft)}
+.form-step .no{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:11.5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.form-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.form-actions .btn-primary{flex:1;justify-content:center;min-width:180px}
+.form-note{font-size:12px;color:var(--ink-3);margin-top:14px;line-height:1.5}
+
+/* 隐私同意勾选 */
+.consent{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:var(--ink-2);line-height:1.55;margin:4px 0 16px;cursor:pointer}
+.consent input{margin-top:2.5px;width:15px;height:15px;accent-color:var(--accent);flex-shrink:0;cursor:pointer}
+.consent a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+
+/* 采购资料上传 */
+.upload-zone{border:2px dashed var(--border);border-radius:14px;background:var(--bg-soft);padding:20px 16px;text-align:center;transition:all .2s var(--ease);cursor:pointer}
+.upload-zone:hover{border-color:#b9c6d8}
+.upload-zone.over{border-color:var(--accent);background:#f2f8ff}
+.upload-zone .uz-main{font-size:14px;color:var(--ink-2)}
+.upload-zone .uz-main b{color:var(--accent);font-weight:600}
+.upload-zone .uz-note{font-size:12px;color:var(--ink-3);margin-top:7px;line-height:1.55}
+.upload-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.up-item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font-size:13px}
+.up-item .ic{font-size:17px;flex-shrink:0}
+.up-item .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+.up-item .sz{color:var(--ink-3);font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.up-item .bar{height:4px;width:56px;background:var(--bg-soft);border-radius:3px;overflow:hidden;flex-shrink:0}
+.up-item .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+.up-item .rm{border:none;background:none;color:var(--ink-3);cursor:pointer;font-size:15px;line-height:1;padding:2px 4px;font-family:var(--font)}
+.up-item .rm:hover{color:var(--red)}
+.up-item.ok .bar{display:none}
+.up-item.err{border-color:#ffd9d5;background:#fff6f5;color:#a8251c}
+
+/* 隐私政策：点击勾选处链接弹出的层 */
+.pv-overlay{position:fixed;inset:0;z-index:2000;background:rgba(10,14,22,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:26px}
+.pv-overlay.open{display:flex}
+.pv-panel{background:#fff;border-radius:22px;width:min(880px,100%);max-height:88vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.pv-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;border-bottom:1px solid var(--bg-soft);flex-shrink:0}
+.pv-head h2{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.pv-head h2 span{font-size:13px;font-weight:400;color:var(--ink-3);margin-left:8px}
+.pv-close{width:36px;height:36px;border-radius:50%;border:none;background:var(--bg-soft);color:var(--ink-2);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;font-family:var(--font)}
+.pv-close:hover{background:#e6e6eb;color:var(--ink)}
+.pv-scroll{overflow-y:auto;padding:28px 30px 36px;-webkit-overflow-scrolling:touch}
+body.pv-lock{overflow:hidden}
+.privacy-body{max-width:none}
+.privacy-body h3{font-size:16.5px;font-weight:600;margin:26px 0 8px;color:var(--ink)}
+.privacy-body h3:first-of-type{margin-top:0}
+.privacy-body p{font-size:13.5px;color:var(--ink-2);line-height:1.75;margin-bottom:0}
+.privacy-body p.en{color:#7a7a80;font-size:12.5px;line-height:1.7;margin:6px 0 0}
+.privacy-body ul{margin:8px 0 0 18px}
+.privacy-body li{font-size:13.5px;color:var(--ink-2);line-height:1.7;margin-bottom:3px}
+.privacy-meta{font-size:12.5px;color:var(--ink-3);line-height:1.8;margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid var(--bg-soft)}
+@media(max-width:620px){
+  .pv-overlay{padding:0}
+  .pv-panel{width:100%;height:100%;max-height:100vh;border-radius:0}
+  .pv-head{padding:18px}
+  .pv-scroll{padding:20px 18px 44px}
+}
+.form-msg{display:none;margin-top:16px;padding:12px 16px;border-radius:12px;font-size:13.5px;line-height:1.5}
+.form-msg.ok{display:block;background:#e9f9ee;color:#1a7f37}
+.form-msg.warn{display:block;background:#fff6e5;color:#8a5a00}
+.contact-info h3{font-size:23px;font-weight:600;margin-bottom:22px}
+.contact-item{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid var(--border-dark)}
+.contact-item .icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-item .label{font-size:12.5px;color:var(--ink-on-dark-2)}
+.contact-item .value{font-size:15.5px;font-weight:500;color:var(--ink-on-dark)}
+.contact-item .value a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);transition:border-color .2s}
+.contact-item .value a:hover{border-bottom-color:#fff}
+.contact-item .value .sub{font-size:12.5px;color:var(--ink-on-dark-2);font-weight:400;border:none}
+.wechat-qr{background:#fff;border-radius:16px;padding:12px;display:inline-block;margin:6px 0 2px;line-height:0;box-shadow:var(--shadow)}
+.wechat-qr img{width:134px;height:134px;display:block;border-radius:6px}
+.wechat-qr-tip{font-size:12px;color:var(--ink-on-dark-2);margin-top:8px}
+.social-links{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.social-links a{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);color:var(--ink-on-dark-2);transition:all .3s var(--ease);text-decoration:none}
+.social-links a:hover{transform:translateY(-4px);background:rgba(255,255,255,.18);color:#fff}
+
+/* ===== Footer ===== */
+.footer{background:var(--bg-dark);color:var(--ink-on-dark-2);padding:56px 22px 36px;border-top:1px solid var(--border-dark)}
+.footer-inner{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand h4{font-size:16.5px;font-weight:600;color:var(--ink-on-dark);margin-bottom:12px}
+.footer-brand p{font-size:13px;line-height:1.65;max-width:310px}
+.footer-col h5{font-size:13px;font-weight:600;color:var(--ink-on-dark);margin-bottom:12px}
+.footer-col a{display:block;font-size:13px;color:var(--ink-on-dark-2);text-decoration:none;padding:4px 0;transition:color .2s}
+.footer-col a:hover{color:var(--ink-on-dark)}
+.footer-bottom{max-width:var(--max-wide);margin:36px auto 0;padding-top:22px;border-top:1px solid var(--border-dark);display:flex;justify-content:space-between;align-items:center;font-size:12px;gap:12px;flex-wrap:wrap}
+.photo-credits{max-width:var(--max-wide);margin:34px auto 0;font-size:11.5px;color:#77777c;line-height:1.7}
+
+/* ===== 动画 ===== */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ===== 响应式 ===== */
+@media(max-width:980px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:52px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 22px 16px;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+  .nav-links.open li{width:100%}
+  .nav-links.open a{display:block;padding:12px 0;font-size:15px}
+  .nav-mobile-toggle{display:block}
+  .module-grid,.adv-grid,.case-grid,.depth-grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .process-step{min-width:150px}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .section{padding:64px 16px}
+  .hero{padding-top:64px;min-height:auto}
+}
+@media(max-width:620px){
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .process-step{max-width:100%}
+  .nav-logo span{display:none}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .pick-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .chip-group.ladder .chip{min-width:0;flex:1 1 46%}
+  .nav-lang button{font-size:10.5px;padding:2px 4px}
+  .nav-cta{padding:7px 12px;font-size:12px}
+  .module-photo{margin:-30px -24px 18px;height:150px}
+  .photo-band img{height:210px}
+  .photo-band figcaption{padding:34px 18px 16px;font-size:13px}
+}
+@media print{.nav,.topbar,.hero-scroll{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部公告：无需注册 ===== -->
+<div class="topbar"><span data-i18n="topbar">无需注册 &nbsp;·&nbsp; 直接浏览全部内容 &nbsp;·&nbsp; <b>免费</b>提交采购需求</span></div>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">汇采国际 <span data-i18n="navTagline">中国商品代买</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#business" data-i18n="navBusiness">业务模块</a></li>
+      <li><a href="#process" data-i18n="navProcess">服务流程</a></li>
+      <li><a href="#advantages" data-i18n="navAdvantages">核心优势</a></li>
+      <li><a href="#cases" data-i18n="navCases">成交案例</a></li>
+      <li><a href="#about" data-i18n="navAbout">关于我们</a></li>
+      <li><a href="#contact" data-i18n="navContact">联系询价</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <button class="active" data-lang-btn="zh">中</button>
+        <button data-lang-btn="en">EN</button>
+        <button data-lang-btn="fr">FR</button>
+        <button data-lang-btn="pt">PT</button>
+        <button data-lang-btn="ru">RU</button>
+        <button data-lang-btn="sw">SW</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="navCta">免费询价</a>
+      <button class="nav-mobile-toggle" id="navToggle" aria-label="menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="hero">
+  <img class="hero-bg" src="images/hero-port-night.jpg" alt="集装箱码头夜景 — 中国商品出口全球">
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span>●</span> <span data-i18n="heroBadge">中国商品代买 · 国际贸易服务咨询 · 多国合伙人网络</span>
+    </div>
+    <h1 data-i18n="heroTitle">以国际贸易服务咨询为中心，<span class="gradient">代买中国好货</span></h1>
+    <p class="hero-sub" data-i18n="heroSub">为全球采购商提供中国商品代买、供应商筛选与国际贸易咨询服务 — 不囤货、不垫资、不代收货款，只做采购代理与贸易咨询</p>
+    <p class="hero-note"><span class="dot">✓</span> <span data-i18n="heroNote">无需注册 · 直接浏览 · 24 小时内响应</span></p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary" data-i18n="heroCta1">提交采购需求</a>
+      <a href="#business" class="btn btn-outline" data-i18n="heroCta2">查看业务模块 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 业务模块 ===== -->
+<section class="section section-soft" id="business">
+  <div class="section-inner">
+    <div class="section-label reveal" data-i18n="businessLabel">业务模块</div>
+    <h2 class="section-title reveal" data-i18n="businessTitle">四大业务模块</h2>
+    <p class="section-sub reveal" data-i18n="businessSub">以国际贸易服务咨询为中心，以中国商品代买为重点，配套供应商筛选、验厂验货、物流与单证服务，形成完整的采购服务闭环</p>
+
+    <div class="module-grid">
+      <div class="module-card featured reveal">
+        <div class="module-tag" data-i18n="bm1Tag">重点业务</div>
+        <div class="module-photo"><img src="images/factory-line.jpg" alt="中国工厂生产线 — 商品代买与跟单验货"></div>
+        <div class="module-icon" style="background:#e8f0fe">🛒</div>
+        <h3 data-i18n="bm1Title">中国商品代买</h3>
+        <p data-i18n="bm1Desc">你给采购清单，我们替你在中国找货、比价、验厂、跟单，直到货物交付到你手上</p>
+        <ul>
+          <li data-i18n="bm1L1">按清单代找货源：1688 / 义乌 / 广东产业带</li>
+          <li data-i18n="bm1L2">三家比价 + 样品对接 + 价格谈判</li>
+          <li data-i18n="bm1L3">生产跟单、验货、装箱与出货安排</li>
+        </ul>
+        <div class="module-foot" data-i18n="bm1Foot">收费方式：<b>按订单金额 4%–6% 收取代理服务费</b>，不垫资、不代收货款</div>
+      </div>
+
+      <div class="module-card reveal reveal-delay-1">
+        <div class="module-photo"><img src="images/team-meeting.jpg" alt="商务洽谈 — 国际贸易服务咨询"></div>
+        <div class="module-icon" style="background:#e8f6e9">📋</div>
+        <h3 data-i18n="bm2Title">国际贸易服务咨询</h3>
+        <p data-i18n="bm2Desc">从选品到落地的全流程贸易顾问服务，帮你判断这笔生意能不能做、怎么做</p>
+        <ul>
+          <li data-i18n="bm2L1">市场与品类可行性分析、目标价测算</li>
+          <li data-i18n="bm2L2">供应商资质核验、产能与出口经验评估</li>
+          <li data-i18n="bm2L3">合同条款、付款方式与风险提示</li>
+        </ul>
+        <div class="module-foot" data-i18n="bm2Foot">收费方式：<b>按咨询项目/订单收取服务费</b></div>
+      </div>
+
+      <div class="module-card reveal">
+        <div class="module-photo"><img src="images/warehouse-racks.jpg" alt="仓库货架 — 验厂验货与出货检查"></div>
+        <div class="module-icon" style="background:#f3e8fe">🔍</div>
+        <h3 data-i18n="bm3Title">供应商筛选与验厂验货</h3>
+        <p data-i18n="bm3Desc">帮你在众多中国供应商中筛出真正靠谱的 2–3 家，并盯住质量</p>
+        <ul>
+          <li data-i18n="bm3L1">工厂实地走访与营业执照/资质核验</li>
+          <li data-i18n="bm3L2">样品比对、量产一致性检查</li>
+          <li data-i18n="bm3L3">第三方验货机构对接与报告解读</li>
+        </ul>
+        <div class="module-foot" data-i18n="bm3Foot">收费方式：<b>按次/按项目收取验厂验货服务费</b></div>
+      </div>
+
+      <div class="module-card reveal reveal-delay-1">
+        <div class="module-photo"><img src="images/cranes-sunset.jpg" alt="港口集装箱吊机 — 跨境物流与单证"></div>
+        <div class="module-icon" style="background:#fff4e6">🚢</div>
+        <h3 data-i18n="bm4Title">跨境物流与单证</h3>
+        <p data-i18n="bm4Desc">为内陆国与新兴市场买家设计最省钱的运输与清关路径</p>
+        <ul>
+          <li data-i18n="bm4L1">海运 / 空运 / 陆运方案比选与成本测算</li>
+          <li data-i18n="bm4L2">报关、原产地证、清关文件代办</li>
+          <li data-i18n="bm4L3">内陆国转运方案（卢旺达、布隆迪、中亚等）</li>
+        </ul>
+        <div class="module-foot" data-i18n="bm4Foot">收费方式：<b>按票/按柜收取物流与单证服务费</b></div>
+      </div>
+    </div>
+
+    <div class="addon-label reveal" data-i18n="addonLabel">增值配套服务</div>
+    <div class="addon-grid">
+      <div class="addon-card reveal">
+        <div class="ico">🗣</div>
+        <h4 data-i18n="svc1Title">多语种商务翻译</h4>
+        <p data-i18n="svc1Desc">中、英、法、葡、俄、斯瓦希里六语对接，从询价到谈判全程覆盖</p>
+      </div>
+      <div class="addon-card reveal reveal-delay-1">
+        <div class="ico">📄</div>
+        <h4 data-i18n="svc2Title">报关与单证代办</h4>
+        <p data-i18n="svc2Desc">报关资料、原产地证、清关文件一站式办理</p>
+      </div>
+      <div class="addon-card reveal reveal-delay-2">
+        <div class="ico">✅</div>
+        <h4 data-i18n="svc3Title">第三方验货对接</h4>
+        <p data-i18n="svc3Desc">对接 SGS / BV 等机构，出货前质量把关</p>
+      </div>
+      <div class="addon-card reveal">
+        <div class="ico">💳</div>
+        <h4 data-i18n="svc4Title">付款方式咨询</h4>
+        <p data-i18n="svc4Desc">T/T、信用证等结算方式建议（不代收货款）</p>
+      </div>
+      <div class="addon-card reveal reveal-delay-1">
+        <div class="ico">📹</div>
+        <h4 data-i18n="svc5Title">探厂与内容营销</h4>
+        <p data-i18n="svc5Desc">工厂实拍与产品短视频，帮供应商与买家双向获客</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 服务流程 ===== -->
+<section class="section section-dark" id="process">
+  <div class="section-inner">
+    <div class="section-label reveal" data-i18n="processLabel">服务流程</div>
+    <h2 class="section-title reveal" data-i18n="processTitle">十步闭环，双通道获客</h2>
+    <p class="section-sub reveal" data-i18n="processSub">线下合伙人获客与线上平台获客双通道并行，从需求收集到案例沉淀，全流程闭环</p>
+    <div class="process-flow reveal">
+      <div class="process-step"><div class="num">01</div><h4 data-i18n="ps1T">提交需求</h4><p data-i18n="ps1D">官网表单 / 合伙人 / WhatsApp 收集采购清单</p></div>
+      <div class="process-step"><div class="num">02</div><h4 data-i18n="ps2T">需求预审</h4><p data-i18n="ps2D">甄别真假客户，评估付款能力与订单真实性</p></div>
+      <div class="process-step"><div class="num">03</div><h4 data-i18n="ps3T">供应链匹配</h4><p data-i18n="ps3D">筛选 2–3 家适配供应商并比价</p></div>
+      <div class="process-step"><div class="num">04</div><h4 data-i18n="ps4T">方案输出</h4><p data-i18n="ps4D">整理报价、交期与物流方案</p></div>
+      <div class="process-step"><div class="num">05</div><h4 data-i18n="ps5T">商务谈判</h4><p data-i18n="ps5D">多语种翻译支持，协商关键条款</p></div>
+      <div class="process-step"><div class="num">06</div><h4 data-i18n="ps6T">签署协议</h4><p data-i18n="ps6D">代理协议 + 外贸购销合同</p></div>
+      <div class="process-step"><div class="num">07</div><h4 data-i18n="ps7T">履约跟进</h4><p data-i18n="ps7D">跟进生产、样品与验货进度</p></div>
+      <div class="process-step"><div class="num">08</div><h4 data-i18n="ps8T">货款结算</h4><p data-i18n="ps8D">买卖双方直接收付，资金不经过我们</p></div>
+      <div class="process-step"><div class="num">09</div><h4 data-i18n="ps9T">服务费结算</h4><p data-i18n="ps9D">按约定条件收取代理服务费</p></div>
+      <div class="process-step"><div class="num">10</div><h4 data-i18n="ps10T">案例沉淀</h4><p data-i18n="ps10D">成交案例整理上传，持续积累信任</p></div>
+    </div>
+    <div class="boundary reveal">
+      <span data-i18n="bnd1">✕ 不垫资</span>
+      <span data-i18n="bnd2">✕ 不囤货</span>
+      <span data-i18n="bnd3">✕ 不代收货款</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 核心优势 ===== -->
+<section class="section section-soft" id="advantages">
+  <div class="section-inner">
+    <div class="section-label reveal" data-i18n="advLabel">核心优势</div>
+    <h2 class="section-title reveal" data-i18n="advTitle">为什么选择我们</h2>
+    <p class="section-sub reveal" data-i18n="advSub">多国本土合伙人网络 + 国内供应链直连 + 资金完全隔离</p>
+    <div class="adv-grid">
+      <div class="adv-card reveal">
+        <div class="icon" style="background:#e8f0fe">🌍</div>
+        <div><h3 data-i18n="adv1Title">多国本土合伙人网络</h3><p data-i18n="adv1Desc">在多个国家拥有本土合伙人，掌握当地语言、真实需求与客户关系，不做信息盲区</p></div>
+      </div>
+      <div class="adv-card reveal reveal-delay-1">
+        <div class="icon" style="background:#e8f6e9">🏭</div>
+        <div><h3 data-i18n="adv2Title">国内供应链直连</h3><p data-i18n="adv2Desc">熟悉 1688 与产业带，对接有出口经验的供应商，具备验厂与资质核验能力</p></div>
+      </div>
+      <div class="adv-card reveal">
+        <div class="icon" style="background:#fff4e6">🛡</div>
+        <div><h3 data-i18n="adv3Title">轻资产零风险</h3><p data-i18n="adv3Desc">资金完全隔离，不碰货不碰钱，只收代理服务费，经营风险可控在服务范围内</p></div>
+      </div>
+      <div class="adv-card reveal reveal-delay-1">
+        <div class="icon" style="background:#f3e8fe">💬</div>
+        <div><h3 data-i18n="adv4Title">多语种服务</h3><p data-i18n="adv4Desc">中、英、法、葡、俄、斯瓦希里六语商务对接，消除语言障碍，从询价到谈判全程覆盖</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 成交案例 ===== -->
+<section class="section" id="cases">
+  <div class="section-inner">
+    <div class="section-label reveal" data-i18n="casesLabel">成交案例</div>
+    <h2 class="section-title reveal" data-i18n="casesTitle">真实代买，口碑沉淀</h2>
+    <p class="section-sub reveal" data-i18n="casesSub">每一笔成交都沉淀为案例与内容，持续积累信任与询盘</p>
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <div class="case-card-img"><img src="images/yiwu-market.jpg" alt="义乌小商品采购"></div>
+        <div class="case-card-body">
+          <div class="tag" data-i18n="case1Tag">海外买家 · 日用百货</div>
+          <h3 data-i18n="case1Title">义乌日用百货代买</h3>
+          <p data-i18n="case1Desc">为海外买家从义乌代买日用品，三家比价后完成首批订单交付</p>
+          <div class="meta"><span>📦 50+ SKU</span><span>💰 代理费 6%</span></div>
+        </div>
+      </div>
+      <div class="case-card reveal reveal-delay-1">
+        <div class="case-card-img"><img src="images/factory-line.jpg" alt="机械设备采购与生产跟单"></div>
+        <div class="case-card-body">
+          <div class="tag" data-i18n="case2Tag">海外买家 · 机械设备</div>
+          <h3 data-i18n="case2Title">小型机械设备代买</h3>
+          <p data-i18n="case2Desc">为海外买家筛选广东产业带工厂，核验资质并促成采购</p>
+          <div class="meta"><span>🏭 3 家比选</span><span>💰 代理费 4%</span></div>
+        </div>
+      </div>
+      <div class="case-card reveal reveal-delay-2">
+        <div class="case-card-img"><img src="images/cranes-sunset.jpg" alt="建材出口与港口物流"></div>
+        <div class="case-card-body">
+          <div class="tag" data-i18n="case3Tag">海外买家 · 建材与物流</div>
+          <h3 data-i18n="case3Title">建材代买与物流</h3>
+          <p data-i18n="case3Desc">为海外买家代买中国建材，配套清关与内陆转运方案</p>
+          <div class="meta"><span>🚚 物流方案</span><span>💰 代理费 5%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关于我们 ===== -->
+<section class="section section-soft" id="about">
+  <div class="section-inner">
+    <div class="section-label reveal" data-i18n="aboutLabel">关于我们</div>
+    <h2 class="section-title reveal" data-i18n="aboutTitle">深耕中国供应链的行业型团队</h2>
+    <p class="section-sub reveal" data-i18n="aboutSub">不做只传信息的中间人 —— 把产业带、单据、语言和履约这四件事做透，才是我们的行业深度</p>
+
+    <!-- 数据请按真实情况替换（下面是待替换的示例数字） -->
+    <div class="stat-row reveal">
+      <div class="stat"><div class="n" data-i18n="stat1n">12+</div><div class="l" data-i18n="stat1l">年外贸与采购实操经验</div></div>
+      <div class="stat"><div class="n" data-i18n="stat2n">300+</div><div class="l" data-i18n="stat2l">合作工厂与产业带资源</div></div>
+      <div class="stat"><div class="n" data-i18n="stat3n">20+</div><div class="l" data-i18n="stat3l">出口国家与地区</div></div>
+      <div class="stat"><div class="n" data-i18n="stat4n">6</div><div class="l" data-i18n="stat4l">工作语种（中英法葡俄斯）</div></div>
+    </div>
+
+    <figure class="photo-band reveal">
+      <img src="images/yiwu-market.jpg" alt="义乌国际商贸城 — 中国小商品货源腹地">
+      <figcaption data-i18n="photoCap">义乌国际商贸城 —— 我们的货源腹地之一。从这里的档口到你的目的港，全程有人盯。</figcaption>
+    </figure>
+
+    <div class="depth-grid">
+      <div class="depth-card reveal">
+        <h3>🔗 <span data-i18n="dep1T">供应链纵深</span></h3>
+        <p data-i18n="dep1D">从义乌小商品到广东装备制造，覆盖主要产业带，知道哪类订单该找哪条产业带、哪家工厂的优势价在哪里</p>
+      </div>
+      <div class="depth-card reveal reveal-delay-1">
+        <h3>📑 <span data-i18n="dep2T">贸易合规纵深</span></h3>
+        <p data-i18n="dep2D">报关、原产地证、熏蒸、商检、信用证条款 —— 单据链条自己从头走一遍，问题不出在出口环节</p>
+      </div>
+      <div class="depth-card reveal">
+        <h3>🗣 <span data-i18n="dep3T">本地化纵深</span></h3>
+        <p data-i18n="dep3D">中英法葡俄斯六语团队与多国本土合伙人，直接对接终端买家，不靠翻译转一道，需求不走样</p>
+      </div>
+      <div class="depth-card reveal reveal-delay-1">
+        <h3>🎯 <span data-i18n="dep4T">履约控制纵深</span></h3>
+        <p data-i18n="dep4D">打样、量产、验货到装箱出货逐节点盯住，把「货不对板」的风险挡在出货之前，而不是等客户收货才发现</p>
+      </div>
+    </div>
+
+    <div class="serve-strip reveal">
+      <span class="k" data-i18n="serveLabel">服务过的客户类型</span>
+      <span class="v" data-i18n="serveText">企业采购 · 贸易商与进口商 · 政府与公共机构 · NGO 与国际组织 · 个人与小微创业</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系 / 询价表单 ===== -->
+<section class="section section-dark" id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal" data-i18n="contactLabel">联系我们</div>
+    <h2 class="section-title reveal" data-i18n="contactTitle">开始你的采购之旅</h2>
+    <p class="section-sub reveal" data-i18n="contactSub">无需注册，免费提交采购需求，我们将在 24 小时内回复</p>
+    <div class="contact-grid">
+      <form class='contact-form reveal' id='inquiryForm' method='POST' name='inquiry' novalidate>
+        <input type="hidden" name="form-name" value="inquiry">
+        <p hidden aria-hidden="true"><label>请勿填写 Do not fill this field：<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <p hidden aria-hidden="true"><input name="subject" tabindex="-1" value="官网询价 Inquiry from website"></p>
+        <!-- 点选类字段的隐藏声明：Netlify Forms 只会保存这里声明过的字段 -->
+        <input type="hidden" name="clientType">
+        <input type="hidden" name="needs">
+        <input type="hidden" name="budget">
+        <input type="hidden" name="timeline">
+        <input type="hidden" name="channel">
+        <!-- 去重标记：函数直推飞书后，平台回调时会带上它，避免重复推两张卡片 -->
+        <input type="hidden" name="viaFn" value="">
+        <h3 data-i18n="formTitle">提交采购需求</h3>
+        <p class="form-hint" data-i18n="formHint">四步选完，24 小时内给你方案（只有姓名和邮箱是必填）</p>
+
+        <!-- ① 你是谁 + 要买什么 -->
+        <div class="form-step"><span class="no">1</span><span data-i18n="step1">你的身份与采购需求</span></div>
+
+        <div class="form-group">
+          <label data-i18n="formClientType">客户类型 / Your Profile</label>
+          <div class="chip-group" id="clientTypeGroup">
+            <button type="button" class="chip" data-val="企业采购 / Company">🏢 <span data-i18n="ct1">企业采购</span></button>
+            <button type="button" class="chip" data-val="贸易商 / Importer">🔄 <span data-i18n="ct2">贸易商 / 进口商</span></button>
+            <button type="button" class="chip" data-val="政府 / 公共机构">🏛 <span data-i18n="ct3">政府 / 公共机构</span></button>
+            <button type="button" class="chip" data-val="NGO / 国际组织">🤝 <span data-i18n="ct4">NGO / 国际组织</span></button>
+            <button type="button" class="chip" data-val="个人 / 小微创业">👤 <span data-i18n="ct5">个人 / 小微创业</span></button>
+            <button type="button" class="chip" data-val="其他 / Other">✨ <span data-i18n="ct6">其他</span></button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="formNeeds">采购需求（可多选） / What do you need</label>
+          <div class="pick-grid" id="needsGroup" data-multi="1">
+            <button type="button" class="pick" data-val="中国商品代买"><span class="ico">🛒</span><span class="t" data-i18n="nd1">中国商品代买</span></button>
+            <button type="button" class="pick" data-val="机械设备"><span class="ico">⚙️</span><span class="t" data-i18n="nd2">机械设备</span></button>
+            <button type="button" class="pick" data-val="建材与工程材料"><span class="ico">🏗</span><span class="t" data-i18n="nd3">建材与工程材料</span></button>
+            <button type="button" class="pick" data-val="电子电器 / 3C"><span class="ico">📱</span><span class="t" data-i18n="nd4">电子电器 / 3C</span></button>
+            <button type="button" class="pick" data-val="服装鞋帽纺织"><span class="ico">👕</span><span class="t" data-i18n="nd5">服装鞋帽纺织</span></button>
+            <button type="button" class="pick" data-val="日用百货 / 日化"><span class="ico">🧴</span><span class="t" data-i18n="nd6">日用百货 / 日化</span></button>
+            <button type="button" class="pick" data-val="食品与农产品"><span class="ico">🌾</span><span class="t" data-i18n="nd7">食品与农产品</span></button>
+            <button type="button" class="pick" data-val="汽配 / 五金工具"><span class="ico">🔧</span><span class="t" data-i18n="nd8">汽配 / 五金工具</span></button>
+            <button type="button" class="pick" data-val="供应商筛选 / 验厂验货"><span class="ico">🔍</span><span class="t" data-i18n="nd9">供应商筛选 / 验厂验货</span></button>
+            <button type="button" class="pick" data-val="物流与单证"><span class="ico">🚢</span><span class="t" data-i18n="nd10">物流与单证</span></button>
+          </div>
+          <p class="form-hint" style="margin:10px 0 0" data-i18n="formNeedsHint">未列出的品类，请在下方「需求描述」里写清楚</p>
+        </div>
+
+        <!-- ② 预算与时间 -->
+        <div class="form-step"><span class="no">2</span><span data-i18n="step2">预算与时间</span></div>
+
+        <div class="form-group">
+          <label data-i18n="formBudget">采购预算 / Budget (USD)</label>
+          <div class="chip-group ladder" id="budgetGroup">
+            <button type="button" class="chip" data-val="US$5,000 以下" data-i18n="bg1">5,000 以下</button>
+            <button type="button" class="chip" data-val="US$5,000 – 20,000" data-i18n="bg2">5,000 – 2 万</button>
+            <button type="button" class="chip" data-val="US$20,000 – 50,000" data-i18n="bg3">2 万 – 5 万</button>
+            <button type="button" class="chip" data-val="US$50,000 – 100,000" data-i18n="bg4">5 万 – 10 万</button>
+            <button type="button" class="chip" data-val="US$100,000 – 500,000" data-i18n="bg5">10 万 – 50 万</button>
+            <button type="button" class="chip" data-val="US$500,000 以上" data-i18n="bg6">50 万以上</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="formTimeline">期望交货时间 / Timeline</label>
+          <div class="chip-group" id="timelineGroup">
+            <button type="button" class="chip" data-val="30 天内" data-i18n="tl1">30 天内</button>
+            <button type="button" class="chip" data-val="1–3 个月" data-i18n="tl2">1–3 个月</button>
+            <button type="button" class="chip" data-val="3–6 个月" data-i18n="tl3">3–6 个月</button>
+            <button type="button" class="chip" data-val="尚未确定" data-i18n="tl4">尚未确定</button>
+          </div>
+        </div>
+
+        <!-- ③ 联系方式 -->
+        <div class="form-step"><span class="no">3</span><span data-i18n="step3">联系方式</span></div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-i18n="formName">联系人 / Contact Person</span> <span class="req">*</span></label>
+            <input type="text" name="name" data-i18n-ph="formNamePh" placeholder="您的姓名" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="formCompany">公司 / 机构名称 / Company</label>
+            <input type="text" name="company" data-i18n-ph="formCompanyPh" placeholder="选填，便于我们做背景了解">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-i18n="formEmail">邮箱 / Email</span> <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="formCountry">目的国 / Country</label>
+            <input type="text" name="country" data-i18n-ph="formCountryPh" placeholder="如：布隆迪、越南、哈萨克斯坦">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="formPhone">电话号码 / Phone</label>
+          <div class="phone-field" id="phoneField">
+            <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false">
+              <span class="flag" id="ccFlag">🇨🇳</span><span id="ccCode">+86</span><span class="caret">▾</span>
+            </button>
+            <input type="tel" name="phone" id="phone" inputmode="tel" autocomplete="tel" placeholder="138 0000 0000">
+            <div class="cc-panel" id="ccPanel" role="listbox">
+              <input type="text" class="cc-search" id="ccSearch" data-i18n-ph="ccSearchPh" placeholder="搜索国家或区号（如 布隆迪 / +257）">
+              <div class="cc-list" id="ccList"></div>
+            </div>
+          </div>
+          <p class="form-hint" style="margin:8px 0 0" data-i18n="formPhoneHint">带国旗的区号快捷选择，选好后直接填号码，方便我们打电话或加 WhatsApp</p>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="formChannel">常用通讯工具 / Preferred Messenger</label>
+          <div class="chip-group" id="channelGroup">
+            <button type="button" class="chip" data-val="WhatsApp" data-ph="+86 138 0000 0000">💬 WhatsApp</button>
+            <button type="button" class="chip" data-val="WeChat 微信" data-ph="your-wechat-id">📱 WeChat</button>
+            <button type="button" class="chip" data-val="Telegram" data-ph="@username">✈️ Telegram</button>
+            <button type="button" class="chip" data-val="X（推特）" data-ph="@username">🐦 X / Twitter</button>
+            <button type="button" class="chip" data-val="电话" data-ph="+86 138 0000 0000">📞 <span data-i18n="ch5">电话</span></button>
+            <button type="button" class="chip" data-val="仅用邮箱" data-ph="">✉️ <span data-i18n="ch6">仅用邮箱</span></button>
+          </div>
+        </div>
+
+        <div class="form-group" id="channelIdWrap">
+          <label data-i18n="formChannelId">通讯账号 / ID</label>
+          <input type="text" name="channelId" id="channelId" data-i18n-ph="formChannelIdPh" placeholder="请填写你的账号 / 号码">
+        </div>
+
+        <!-- ④ 补充说明 -->
+        <div class="form-step"><span class="no">4</span><span data-i18n="step4">补充说明（选填）</span></div>
+        <div class="form-group">
+          <label data-i18n="formDetail">需求描述 / Details</label>
+          <textarea name="details" data-i18n-ph="formDetailPh" placeholder="数量、规格、目标价、交货港、是否已有供应商等"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="formFiles">上传采购资料（选填）· Attach files</label>
+          <div class="upload-zone" id="uploadZone">
+            <div class="uz-main">📎 <b data-i18n="uzPick">点击选择文件</b> <span data-i18n="uzOr">或把文件拖到这里</span></div>
+            <div class="uz-note" data-i18n="uzNote">支持 Excel / Word / PDF / 图片 / 压缩包 · 单个 ≤ 4MB · 最多 3 个 · 也可直接通过 WhatsApp / 微信发给我们</div>
+          </div>
+          <input type="file" id="fileInput" multiple hidden
+                 accept=".xls,.xlsx,.csv,.doc,.docx,.pdf,.ppt,.pptx,.jpg,.jpeg,.png,.webp,.gif,.zip,.rar,.7z,.txt">
+          <div class="upload-list" id="uploadList"></div>
+          <input type="hidden" name="files" id="filesField">
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" name="consent" id="consentChk">
+          <span><span data-i18n="formAgreePrefix">我已阅读并同意</span> <a href="#privacy" data-i18n="formAgreeLink">《隐私政策》</a></span>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" data-i18n="formSubmit">提交需求</button>
+          <button type="button" class="btn btn-outline" id="copyBtn" data-i18n="formCopy">复制需求文本</button>
+        </div>
+        <div class="form-msg" id="formMsg"></div>
+        <p class="form-note" id="formNote" data-i18n="formNote">我们仅将您提交的信息用于回复本次询价与提供服务，不会用于其他用途。详见《隐私政策》。</p>
+      </form>
+      <div class="contact-info reveal reveal-delay-1">
+        <h3 data-i18n="contactInfoTitle">联系方式</h3>
+        <div class="contact-item">
+          <div class="icon" style="background:rgba(255,255,255,.1)">📧</div>
+          <div><div class="label">Email</div><div class="value"><a href="mailto:lsea9081@gmail.com">lsea9081@gmail.com</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon" style="background:rgba(255,255,255,.1)">💬</div>
+          <div><div class="label">WhatsApp</div><div class="value"><a href="https://wa.me/85253160587" target="_blank" rel="noopener">+852 5316 0587</a> <span class="sub">· @sea8552</span></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon" style="background:rgba(255,255,255,.1)">📞</div>
+          <div><div class="label">电话 / Phone</div><div class="value"><a href="tel:+85253160587">+852 5316 0587</a> <span class="sub">香港 HK</span> · <a href="tel:+8615801265676">+86 158 0126 5676</a> <span class="sub">中国 CN</span></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon" style="background:rgba(255,255,255,.1)">📱</div>
+          <div>
+            <div class="label">WeChat / 微信</div>
+            <div class="wechat-qr"><a href="images/wechat-qr.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/wechat-qr.png" alt="微信二维码 WeChat QR code"></a></div>
+            <div class="wechat-qr-tip">扫码添加微信，或点二维码放大 / Scan to add us on WeChat</div>
+          </div>
+        </div>
+        <div class="contact-item" style="border-bottom:none">
+          <div class="icon" style="background:rgba(255,255,255,.1)">📍</div>
+          <div><div class="label" data-i18n="contactAddr">办公地址</div><div class="value" data-i18n="contactAddrVal">深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431（前海合作区）</div></div>
+        </div>
+        <div class="social-links">
+          <a href="https://x.com/lsea9081" target="_blank" rel="noopener" title="X / Twitter @lsea9081" class="tw"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://wa.me/85253160587" target="_blank" rel="noopener" title="WhatsApp +852 5316 0587"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.484-9.885 9.484m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="images/wechat-qr.png" target="_blank" rel="noopener" title="WeChat 微信扫码"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.201 3.002 5.55a.78.78 0 0 1 .266.855l-.39 1.453c-.039.146-.06.305.05.385.11.08.258.04.368-.04l2.055-1.18a3.8 3.8 0 0 1 1.24-.385.78.78 0 0 1 .27.04 9.1 9.1 0 0 0 2.88.47h.05c3.8 0 6.91-2.94 6.91-6.55s-3.11-6.45-6.91-6.45zm-4.43 7.39a.96.96 0 0 1-.96-.96c0-.53.43-.96.96-.96.53 0 .96.43.96.96 0 .53-.43.96-.96.96zm4.86 0a.96.96 0 0 1-.96-.96c0-.53.43-.96.96-.96.53 0 .96.43.96.96 0 .53-.43.96-.96.96z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61578554842327" target="_blank" rel="noopener" title="Facebook Sea Li"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=471968376&amp;site=qq&amp;menu=yes" target="_blank" rel="noopener" title="QQ 471968376"><span style="font-weight:700;font-size:13px;letter-spacing:-.02em">QQ</span></a>
+          <a href="tel:+8615801265676" title="电话 +86 158 0126 5676"><span style="font-size:17px;line-height:1">📞</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<!-- ===== 隐私政策：点击勾选处链接弹出（不占主页版面） ===== -->
+<div class="pv-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="隐私政策 Privacy Policy">
+  <div class="pv-panel">
+    <div class="pv-head">
+      <h2>隐私政策 <span>Privacy Policy</span></h2>
+      <button type="button" class="pv-close" id="privacyClose" aria-label="关闭 Close">✕</button>
+    </div>
+    <div class="pv-scroll">
+    <div class="privacy-body">
+      <p class="privacy-meta">
+        生效日期 Effective date：2026-10-08　｜　最近更新 Last updated：2026-10-08<br>
+        本政策以中文和英文提供；两种文本如有不一致，以中文文本为准。<br>
+        This policy is provided in Chinese and English; in case of inconsistency, the Chinese version prevails.
+      </p>
+
+      <h3>1. 我们是谁 · Who we are</h3>
+      <p>本网站由深圳市海途文化科技有限公司（业务品牌「汇采国际」）运营，注册地址：深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431（前海合作区）。在本政策中「我们」指该公司。就适用的数据保护法律而言，我们是您个人信息的控制者（controller）。我们力求遵守适用的数据保护法律，包括但不限于欧盟《通用数据保护条例》（GDPR）、英国 GDPR、南非 POPIA、肯尼亚《数据保护法》、尼日利亚《数据保护法》、巴西 LGPD 及中华人民共和国《个人信息保护法》。</p>
+      <p class="en">This website is operated by Shenzhen Haitu Culture Technology Co., Ltd., trading as "HuiCai Global", registered at Room B431, Huada Industrial Building, Yanshan Community, Zhaoshang Street, Nanshan District, Shenzhen, China. "We" means that company. For the purposes of applicable data protection law, we are the controller of your personal data. We aim to comply with applicable data protection laws, including the EU GDPR, UK GDPR, South Africa POPIA, Kenya's Data Protection Act, Nigeria's Data Protection Act, Brazil's LGPD and China's Personal Information Protection Law.</p>
+
+      <h3>2. 我们收集哪些信息 · What we collect</h3>
+      <ul>
+        <li>您主动提供的信息：姓名、公司或机构名称、邮箱、电话号码（含国家区号）、所在国家、常用通讯工具及其账号、客户类型、采购需求（品类、预算区间、期望交期）、需求描述。</li>
+        <li>自动产生的信息：您提交时的界面语言、提交页面的网址、提交时间；以及托管服务商记录的常规访问日志（如 IP 地址、浏览器类型、访问时间）。</li>
+        <li>我们不会收集：身份证件号码、银行账号、密码、健康或生物识别信息等敏感个人信息。本网站不使用广告或第三方追踪 Cookie。</li>
+      </ul>
+      <p class="en">Information you provide voluntarily: name, company or organisation, email, telephone number (with country code), country, preferred messenger and account ID, client type, sourcing requirements (category, budget range, expected delivery time) and your description of the requirement. Information generated automatically: the interface language at submission, the page URL, the time of submission, and standard server logs recorded by our hosting provider (such as IP address, browser type and access time). We do not collect sensitive personal information such as identity document numbers, bank account numbers, passwords, health data or biometric data. This website does not use advertising or third-party tracking cookies.</p>
+
+      <h3>3. 我们如何使用，以及法律依据 · How we use it, and our legal bases</h3>
+      <ul>
+        <li>回复您的询价、提供采购代理与咨询服务 —— 法律依据：为订立或履行合同所必需（GDPR 第 6(1)(b) 条）。</li>
+        <li>改进网站与服务质量、防范欺诈 —— 法律依据：我们的合法利益（GDPR 第 6(1)(f) 条）。</li>
+        <li>履行税务、会计、反洗钱等法律义务 —— 法律依据：履行法律义务（GDPR 第 6(1)(c) 条）。</li>
+        <li>用于上述以外的其他目的时，我们将事先取得您的同意（GDPR 第 6(1)(a) 条）；您可随时撤回同意。</li>
+        <li>我们不对您进行自动化决策或用户画像。</li>
+      </ul>
+      <p class="en">We use your information to respond to your enquiry and to provide sourcing agency and advisory services (legal basis: performance of or steps prior to entering into a contract, GDPR Art. 6(1)(b)); to improve our website and services and to prevent fraud (legal basis: our legitimate interests, GDPR Art. 6(1)(f)); and to comply with tax, accounting and anti-money-laundering obligations (legal basis: legal obligation, GDPR Art. 6(1)(c)). For any other purpose we will ask for your consent first (GDPR Art. 6(1)(a)), which you may withdraw at any time. We do not carry out automated decision-making or profiling.</p>
+
+      <h3>4. 您的信息目前存放在哪里 · Where your information is stored today</h3>
+      <p>本网站的表单在您的浏览器内处理：您提交的内容会保存在您自己浏览器的本地存储（localStorage）中，同时打开您本机的邮件客户端，由您决定是否发送给我们。<strong>在您实际发出邮件或通过 WhatsApp、Telegram、微信等方式联系我们之前，我们不会收到您的信息。</strong>当您将信息发送给我们后，我们会在位于中国的公司邮箱与办公设备上处理这些信息。</p>
+      <p class="en">The enquiry form on this website is processed in your browser: what you submit is stored in your own browser's local storage and your local email client is opened so that you decide whether to send it to us. <strong>We do not receive your information until you actually send it to us by email or contact us via WhatsApp, Telegram or WeChat.</strong> Once you send it to us, we process it in our company mailbox and office devices located in China.</p>
+
+      <h3>5. 跨境传输 · International transfers</h3>
+      <p>我们在中国境内处理您的信息。若您位于欧洲经济区、英国、瑞士或其他对跨境传输有要求的地区，我们仅传输回复您询价所必需的信息，并在适用时采取适当的保障措施（例如采用欧盟标准合同条款或其他合法传输机制）。您继续提交信息，即表示您知悉并同意上述传输。若您不同意，请勿通过本网站提交，改为直接与我们联系。</p>
+      <p class="en">We process your information in China. If you are located in the European Economic Area, the United Kingdom, Switzerland or another jurisdiction with transfer requirements, we transfer only the information necessary to respond to your enquiry and, where applicable, rely on appropriate safeguards such as the EU Standard Contractual Clauses or another lawful transfer mechanism. By submitting your information you acknowledge and agree to such transfer. If you do not agree, please do not submit through this website and contact us directly instead.</p>
+
+      <h3>6. 保存期限 · How long we keep it</h3>
+      <p>未成交的询价记录：自最后一次联系起保存 24 个月；已成交的业务记录、合同与单据：依中国会计与税务法律保存 10 年。保存期限届满后，我们将删除或匿名化处理。</p>
+      <p class="en">Enquiries that do not result in a transaction: 24 months from the last contact. Completed transactions, contracts and documents: 10 years, as required by Chinese accounting and tax law. After these periods we delete or anonymise the data.</p>
+
+      <h3>7. 与谁共享 · Who we share it with</h3>
+      <ul>
+        <li>我们<strong>不会出售或出租</strong>您的个人信息。</li>
+        <li>仅在必要范围内与以下服务商共享：网站托管服务商（Netlify）、电子邮件服务商，以及为交付您所委托的服务所需的供应商、第三方检验机构或物流服务方。</li>
+        <li>在法律规定、司法或行政机关依法要求时，我们会按法定范围提供。</li>
+      </ul>
+      <p class="en">We do <strong>not sell or rent</strong> your personal information. We share it only to the extent necessary with: our website hosting provider (Netlify), our email service provider, and the suppliers, third-party inspection bodies or logistics providers needed to deliver the services you request. We may disclose information where required by law or by a competent judicial or administrative authority, within the scope required.</p>
+
+      <h3>8. Cookie 与浏览器本地存储 · Cookies and local storage</h3>
+      <p>本网站不使用广告或第三方追踪 Cookie。我们使用浏览器本地存储（localStorage）保存您已填写的内容与界面语言偏好，以便您下次访问时不必重复填写；您可以随时在浏览器设置中清除。托管服务商可能记录必要的技术日志（如 IP 地址、访问时间），用于网站安全与故障排查。</p>
+      <p class="en">This website does not use advertising or third-party tracking cookies. We use browser local storage to keep what you have entered and your language preference so that you do not have to re-enter it; you can clear it at any time in your browser settings. Our hosting provider may record technical logs (such as IP address and access time) for security and troubleshooting purposes.</p>
+
+      <h3>9. 您的权利 · Your rights</h3>
+      <p>在适用法律允许的范围内，您有权访问、更正、删除您的个人信息，要求限制或反对我们处理，要求数据可携带，以及随时撤回同意。行使方式：发送邮件至 <a href="mailto:lsea9081@gmail.com" style="color:var(--accent)">lsea9081@gmail.com</a>，我们将在 30 日内答复。您也有权向您所在国家或地区的数据保护监管机构投诉（例如欧盟/英国的监管机构、南非信息监管局、肯尼亚数据保护专员办公室、尼日利亚数据保护委员会等）。本政策不影响您在当地法律下享有的强制性权利。</p>
+      <p class="en">To the extent permitted by applicable law, you have the right to access, correct and delete your personal information, to request restriction of or object to our processing, to data portability, and to withdraw consent at any time. To exercise these rights, email <a href="mailto:lsea9081@gmail.com" style="color:var(--accent)">lsea9081@gmail.com</a> and we will respond within 30 days. You also have the right to lodge a complaint with your local data protection authority (for example in the EU/UK, the South African Information Regulator, the Office of the Data Protection Commissioner in Kenya, or the Nigeria Data Protection Commission). Nothing in this policy limits mandatory rights you have under your local law.</p>
+
+      <h3>10. 未成年人 · Children</h3>
+      <p>本网站面向企业与成年商务人士，不面向未满 16 周岁的儿童。我们不会有意收集儿童的个人信息；如发现误收集，我们会立即删除。</p>
+      <p class="en">This website is intended for businesses and adult professionals and is not directed at children under 16. We do not knowingly collect personal information from children and will delete it promptly if we become aware of it.</p>
+
+      <h3>11. 安全 · Security</h3>
+      <p>我们采取合理的技术与组织措施保护您的信息，包括访问权限控制与 HTTPS 加密传输。但请注意，互联网传输与存储无法保证绝对安全。为避免不必要的风险，请勿在询价表单中提交身份证号、银行账号、密码等敏感信息。</p>
+      <p class="en">We apply reasonable technical and organisational measures to protect your information, including access controls and HTTPS encryption in transit. However, no transmission or storage over the internet can be guaranteed to be completely secure. To avoid unnecessary risk, please do not submit identity document numbers, bank account numbers, passwords or other sensitive information through the enquiry form.</p>
+
+      <h3>12. 政策更新 · Changes to this policy</h3>
+      <p>我们可能不时更新本政策。更新后的版本将在本页面公布，并同步修改「最近更新」日期；涉及重大变更时，我们会以显著方式提示。</p>
+      <p class="en">We may update this policy from time to time. The updated version will be published on this page with a revised "Last updated" date, and we will give prominent notice of any material change.</p>
+
+      <h3>13. 联系我们 · Contact us</h3>
+      <p>邮箱 Email：<a href="mailto:lsea9081@gmail.com" style="color:var(--accent)">lsea9081@gmail.com</a>　微信 WeChat：扫码添加（见页面「联系方式」）<br>
+      WhatsApp：<a href="https://wa.me/85253160587" style="color:var(--accent)">+852 5316 0587</a>　电话 Phone：+852 5316 0587 / +86 158 0126 5676<br>
+      地址 Address：深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431（前海合作区）<br>
+      如对本政策有疑问，或需要行使上述任何权利，请通过以上邮箱与我们联系。</p>
+      <p class="en">Email: <a href="mailto:lsea9081@gmail.com" style="color:var(--accent)">lsea9081@gmail.com</a>. WeChat: scan the QR code in the Contact section. WhatsApp: <a href="https://wa.me/85253160587" style="color:var(--accent)">+852 5316 0587</a>. Phone: +852 5316 0587 / +86 158 0126 5676. Address: Room B431, Huada Industrial Building, Yanshan Community, Zhaoshang Street, Nanshan District, Shenzhen, China (Qianhai). If you have any question about this policy or wish to exercise any of the rights above, please contact us at this email address.</p>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h4>汇采国际 HuiCai Global</h4>
+      <p data-i18n="footerDesc">以国际贸易服务咨询为中心、以中国商品代买为重点的跨境采购服务平台。不囤货、不垫资、不代收货款，只做采购代理与贸易咨询。</p>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footerService">业务模块</h5>
+      <a href="#business" data-i18n="footerS1">中国商品代买</a>
+      <a href="#business" data-i18n="footerS2">国际贸易咨询</a>
+      <a href="#business" data-i18n="footerS3">验厂验货</a>
+      <a href="#business" data-i18n="footerS4">物流与单证</a>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footerCompany">公司</h5>
+      <a href="#about" data-i18n="footerC1">关于我们</a>
+      <a href="#process" data-i18n="footerC2">服务流程</a>
+      <a href="#cases" data-i18n="footerC3">成交案例</a>
+      <a href="#contact" data-i18n="footerC4">联系方式</a>
+      <a href="#privacy" data-i18n="footerPrivacy">隐私政策</a>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footerSocial">社交媒体</h5>
+      <a href="https://x.com/lsea9081" target="_blank" rel="noopener">X (Twitter)</a>
+      <a href="https://wa.me/85253160587" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="images/wechat-qr.png" target="_blank" rel="noopener">WeChat / 微信</a>
+      <a href="https://www.facebook.com/profile.php?id=61578554842327" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=471968376&amp;site=qq&amp;menu=yes" target="_blank" rel="noopener">QQ 471968376</a>
+      <a href="tel:+8615801265676">📞 +86 158 0126 5676</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footerCopy">© 2026 汇采国际贸易服务咨询有限公司. 保留所有权利.</span>
+    <span data-i18n="footerNote">中国商品代买 · 国际贸易服务咨询 · 多国合伙人网络</span>
+  </div>
+  <p class="photo-credits">
+    Photos: Wikimedia Commons &amp; Stocksnap — Martin Damboldt (CC0 1.0, port at night), Trougnouf (CC BY 4.0, Antwerp terminal),
+    Shixart1985 (CC BY 2.0, factory &amp; warehouse), HALUK COMERTEL (CC BY 3.0, Yiwu International Trade City),
+    Startup Stock Photos (CC0 1.0, meeting room). 全部授权明细见 photo-credits.md
+  </p>
+</footer>
+
+<script>
+/* =======================================================================
+   询价表单 —— 后端链路开关
+   endpoint 留空 = 纯前端模式（本地留档 + 打开邮件发送，零成本即可用）
+   endpoint 填值 = 自动切换为 fetch POST 到后端 API（存库 + 邮件通知）
+   例：endpoint: "https://your-app.vercel.app/api/inquiry"
+   ======================================================================= */
+const FORM_CONFIG = {
+  endpoint: "",                                  // ← 接自建后端时只改这一行（如 https://api.xxx.com/inquiry）
+  fn      : "/.netlify/functions/inquiry",       // ← 本站函数：直推飞书，不受平台反垃圾误判影响
+  toEmail : "lsea9081@gmail.com",
+  wechat  : "见页面二维码"
+};
+
+const form   = document.getElementById('inquiryForm');
+const F      = form.elements;          // 注意：用 form.elements 取值，form.name 拿到的是表单自身属性
+const msgEl  = document.getElementById('formMsg');
+const noteEl = document.getElementById('formNote');
+const channelId   = document.getElementById('channelId');
+const channelWrap = document.getElementById('channelIdWrap');
+
+/* ===== 选项状态（图文卡 / 胶囊） ===== */
+const SEL = { clientType:'', needs:[], budget:'', timeline:'', channel:'' };
+
+function bindGroup(id, key, multi){
+  const g = document.getElementById(id);
+  if(!g) return;
+  g.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-val]');
+    if(!btn || !g.contains(btn)) return;
+    if(multi){
+      btn.classList.toggle('on');
+      SEL[key] = Array.from(g.querySelectorAll('.on')).map(b => b.dataset.val);
+    }else{
+      const wasOn = btn.classList.contains('on');
+      g.querySelectorAll('.on').forEach(b => b.classList.remove('on'));
+      if(wasOn){ SEL[key] = ''; }
+      else{ btn.classList.add('on'); SEL[key] = btn.dataset.val; }
+      if(key === 'channel') syncChannel(wasOn ? null : btn);
+    }
+  });
+}
+bindGroup('clientTypeGroup', 'clientType', false);
+bindGroup('needsGroup',      'needs',      true);
+bindGroup('budgetGroup',     'budget',     false);
+bindGroup('timelineGroup',   'timeline',   false);
+bindGroup('channelGroup',    'channel',    false);
+
+function syncChannel(btn){
+  if(!btn || btn.dataset.val === '仅用邮箱'){
+    channelWrap.style.display = btn ? 'none' : '';
+    channelId.value = '';
+    channelId.placeholder = '请填写你的账号 / 号码';
+    return;
+  }
+  channelWrap.style.display = '';
+  channelId.placeholder = btn.dataset.ph || '请填写你的账号 / 号码';
+}
+
+/* ===== 电话区号选择器（国旗由国家代码生成，离线可用） ===== */
+const flagOf = cc => cc.replace(/./g, c => String.fromCodePoint(127397 + c.charCodeAt(0)));
+
+const CC_LIST = [
+  ['CN','+86','中国 China'],['HK','+852','中国香港 Hong Kong'],['TW','+886','中国台湾 Taiwan'],
+  ['BI','+257','布隆迪 Burundi'],['RW','+250','卢旺达 Rwanda'],['CD','+243','刚果金 DR Congo'],
+  ['CG','+242','刚果布 Congo'],['TZ','+255','坦桑尼亚 Tanzania'],['KE','+254','肯尼亚 Kenya'],
+  ['UG','+256','乌干达 Uganda'],['ET','+251','埃塞俄比亚 Ethiopia'],['ZM','+260','赞比亚 Zambia'],
+  ['ZW','+263','津巴布韦 Zimbabwe'],['MW','+265','马拉维 Malawi'],['MZ','+258','莫桑比克 Mozambique'],
+  ['ZA','+27','南非 South Africa'],['NG','+234','尼日利亚 Nigeria'],['GH','+233','加纳 Ghana'],
+  ['SN','+221','塞内加尔 Senegal'],['ML','+223','马里 Mali'],['CI','+225','科特迪瓦 Cote dIvoire'],
+  ['CM','+237','喀麦隆 Cameroon'],['AO','+244','安哥拉 Angola'],['MG','+261','马达加斯加 Madagascar'],
+  ['EG','+20','埃及 Egypt'],['MA','+212','摩洛哥 Morocco'],['DZ','+213','阿尔及利亚 Algeria'],
+  ['TN','+216','突尼斯 Tunisia'],['SD','+249','苏丹 Sudan'],['SO','+252','索马里 Somalia'],
+  ['VN','+84','越南 Vietnam'],['LA','+856','老挝 Laos'],['KH','+855','柬埔寨 Cambodia'],
+  ['TH','+66','泰国 Thailand'],['MM','+95','缅甸 Myanmar'],['ID','+62','印度尼西亚 Indonesia'],
+  ['PH','+63','菲律宾 Philippines'],['MY','+60','马来西亚 Malaysia'],['SG','+65','新加坡 Singapore'],
+  ['IN','+91','印度 India'],['PK','+92','巴基斯坦 Pakistan'],['BD','+880','孟加拉国 Bangladesh'],
+  ['LK','+94','斯里兰卡 Sri Lanka'],['NP','+977','尼泊尔 Nepal'],['KZ','+7','哈萨克斯坦 Kazakhstan'],
+  ['UZ','+998','乌兹别克斯坦 Uzbekistan'],['KG','+996','吉尔吉斯斯坦 Kyrgyzstan'],['TJ','+992','塔吉克斯坦 Tajikistan'],
+  ['TM','+993','土库曼斯坦 Turkmenistan'],['AZ','+994','阿塞拜疆 Azerbaijan'],['MN','+976','蒙古 Mongolia'],
+  ['RU','+7','俄罗斯 Russia'],['AE','+971','阿联酋 UAE'],['SA','+966','沙特 Saudi Arabia'],
+  ['TR','+90','土耳其 Turkey'],['IQ','+964','伊拉克 Iraq'],['IR','+98','伊朗 Iran'],
+  ['BR','+55','巴西 Brazil'],['US','+1','美国 USA'],['GB','+44','英国 UK'],
+  ['FR','+33','法国 France'],['PT','+351','葡萄牙 Portugal'],['ES','+34','西班牙 Spain'],
+  ['DE','+49','德国 Germany'],['NL','+31','荷兰 Netherlands'],['IT','+39','意大利 Italy'],['PL','+48','波兰 Poland']
+];
+
+(function initCountryCode(){
+  const btn = document.getElementById('ccBtn');
+  if(!btn) return;
+  const panel   = document.getElementById('ccPanel');
+  const listEl  = document.getElementById('ccList');
+  const search  = document.getElementById('ccSearch');
+  const flagEl  = document.getElementById('ccFlag');
+  const codeEl  = document.getElementById('ccCode');
+  const phoneEl = document.getElementById('phone');
+
+  function render(q){
+    q = (q || '').trim().toLowerCase();
+    const hit = CC_LIST.filter(c => !q || c[2].toLowerCase().includes(q) || c[1].includes(q) || c[0].toLowerCase() === q);
+    if(!hit.length){ listEl.innerHTML = '<p style="padding:12px;color:#86868b;font-size:13px">没找到，直接填号码即可</p>'; return; }
+    listEl.innerHTML = hit.map(c =>
+      '<button type="button" class="cc-item" data-flag="' + flagOf(c[0]) + '" data-code="' + c[1] + '">' +
+        '<span class="flag">' + flagOf(c[0]) + '</span>' +
+        '<span class="nm">' + c[2] + '</span>' +
+        '<span class="code">' + c[1] + '</span>' +
+      '</button>').join('');
+  }
+  function open(){ panel.classList.add('open'); btn.setAttribute('aria-expanded','true'); search.value = ''; render(''); setTimeout(() => search.focus(), 30); }
+  function close(){ panel.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+
+  btn.addEventListener('click', e => { e.stopPropagation(); panel.classList.contains('open') ? close() : open(); });
+  search.addEventListener('click', e => e.stopPropagation());
+  search.addEventListener('input', () => render(search.value));
+  listEl.addEventListener('click', e => {
+    const it = e.target.closest('.cc-item');
+    if(!it) return;
+    flagEl.textContent = it.dataset.flag;
+    codeEl.textContent = it.dataset.code;
+    close();
+    phoneEl.focus();
+  });
+  document.addEventListener('click', e => { if(!e.target.closest('#phoneField')) close(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
+})();
+
+function collect(){
+  const phoneNum  = (F.phone.value || '').trim();
+  const phoneCode = (document.getElementById('ccCode').textContent || '').trim();
+  return {
+  clientType: SEL.clientType,
+  needs:      SEL.needs.join('、'),
+  budget:     SEL.budget,
+  timeline:   SEL.timeline,
+  name:       (F.name.value || '').trim(),
+  company:    (F.company.value || '').trim(),
+  email:      (F.email.value || '').trim(),
+    country:    (F.country.value || '').trim(),
+    phoneCode:  phoneNum ? phoneCode : '',
+    phone:      phoneNum ? (phoneCode + ' ' + phoneNum) : '',
+    channel:    SEL.channel,
+    channelId:  (channelId.value || '').trim(),
+    details:    (F.details.value || '').trim(),
+    files:      ((document.getElementById('filesField') || {}).value || '').trim(),
+    lang: document.documentElement.lang,
+    page: location.href,
+    time: new Date().toISOString()
+  };
+}
+
+function summary(d){
+  return `【采购需求 / Sourcing Inquiry】
+客户类型 Profile:  ${d.clientType || '-'}
+采购需求 Needs:    ${d.needs || '-'}
+采购预算 Budget:   ${d.budget || '-'}
+期望交货 Timeline: ${d.timeline || '-'}
+联系人 Name:       ${d.name}
+公司 Company:      ${d.company || '-'}
+邮箱 Email:        ${d.email}
+电话 Phone:        ${d.phone || '-'}
+目的国 Country:    ${d.country || '-'}
+通讯工具 Channel:  ${d.channel || '-'}${d.channelId ? '  |  ID: ' + d.channelId : ''}
+需求描述 Details:
+${d.details || '-'}
+---
+提交时间: ${d.time}`;
+}
+
+function show(type, text){
+  msgEl.className = 'form-msg ' + type;
+  msgEl.textContent = text;
+}
+
+// 取当前界面语言的文案（i18n 在后面定义，提交时才调用）
+function t(key){
+  const lang = document.documentElement.lang || 'zh';
+  const dict = (typeof i18n !== 'undefined' && i18n[lang]) ? i18n[lang] : null;
+  return (dict && dict[key]) || (typeof i18n !== 'undefined' && i18n.zh[key]) || key;
+}
+
+/* ===== 采购资料上传（存 Netlify Blobs，飞书通知里给下载链接） ===== */
+const UPLOADED = [];
+(function(){
+  const zone  = document.getElementById('uploadZone');
+  const input = document.getElementById('fileInput');
+  const list  = document.getElementById('uploadList');
+  const field = document.getElementById('filesField');
+  if(!zone || !input || !list) return;
+
+  const MAX = 4 * 1024 * 1024, MAXN = 3;
+  const OK_EXT = ['xls','xlsx','csv','doc','docx','pdf','ppt','pptx','jpg','jpeg','png','webp','gif','zip','rar','7z','txt'];
+  const fmt = b => b < 1024 ? b + ' B' : (b < 1048576 ? Math.round(b/1024) + ' KB' : (b/1048576).toFixed(1) + ' MB');
+  const iconOf = n => {
+    const e = (n.split('.').pop() || '').toLowerCase();
+    if(['jpg','jpeg','png','webp','gif'].includes(e)) return '🖼';
+    if(['zip','rar','7z'].includes(e)) return '🗜';
+    if(e === 'pdf') return '📕';
+    if(['xls','xlsx','csv'].includes(e)) return '📊';
+    if(['doc','docx'].includes(e)) return '📄';
+    return '📎';
+  };
+  const sync = () => { field.value = UPLOADED.map(f => f.name + ' | ' + fmt(f.size) + ' | ' + f.id).join('; '); };
+
+  function makeItem(name, size){
+    const el = document.createElement('div');
+    el.className = 'up-item';
+    el.innerHTML = '<span class="ic"></span><span class="nm"></span><span class="sz"></span>'
+                 + '<span class="bar"><i></i></span><button type="button" class="rm" title="移除">✕</button>';
+    el.querySelector('.ic').textContent = iconOf(name);
+    el.querySelector('.nm').textContent = name;
+    el.querySelector('.sz').textContent = fmt(size);
+    list.appendChild(el);
+    return el;
+  }
+
+  function upload(file, el){
+    const fd = new FormData();
+    fd.append('file', file);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/.netlify/functions/upload');
+    xhr.upload.onprogress = e => {
+      if(e.lengthComputable) el.querySelector('.bar i').style.width = Math.round(e.loaded / e.total * 100) + '%';
+    };
+    xhr.onload = () => {
+      let j = {};
+      try{ j = JSON.parse(xhr.responseText || '{}'); }catch(e){}
+      if(xhr.status === 200 && j.ok){
+        el.classList.add('ok');
+        el.querySelector('.sz').textContent = fmt(j.size);
+        UPLOADED.push({ id: j.id, name: j.name, size: j.size, el: el });
+        sync();
+      }else{
+        el.classList.add('err');
+        el.querySelector('.sz').textContent = j.error === 'too-large' ? '超过 4MB'
+          : j.error === 'type-not-allowed' ? '格式不支持' : '上传失败';
+      }
+    };
+    xhr.onerror = () => { el.classList.add('err'); el.querySelector('.sz').textContent = '上传失败'; };
+    xhr.send(fd);
+  }
+
+  function handle(fileList){
+    Array.from(fileList).forEach(file => {
+      if(UPLOADED.length >= MAXN){ alert('最多上传 3 个文件 / Up to 3 files'); return; }
+      const ext = (file.name.split('.').pop() || '').toLowerCase();
+      const el = makeItem(file.name, file.size);
+      el.querySelector('.rm').addEventListener('click', () => {
+        const i = UPLOADED.findIndex(f => f.el === el);
+        if(i >= 0) UPLOADED.splice(i, 1);
+        el.remove(); sync();
+      });
+      if(!OK_EXT.includes(ext)){ el.classList.add('err'); el.querySelector('.sz').textContent = '格式不支持'; return; }
+      if(file.size > MAX){ el.classList.add('err'); el.querySelector('.sz').textContent = '超过 4MB'; return; }
+      upload(file, el);
+    });
+  }
+
+  zone.addEventListener('click', () => input.click());
+  input.addEventListener('change', () => { handle(input.files); input.value = ''; });
+  ['dragenter','dragover'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.add('over'); }));
+  ['dragleave','drop'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.remove('over'); }));
+  zone.addEventListener('drop', e => { if(e.dataTransfer && e.dataTransfer.files) handle(e.dataTransfer.files); });
+
+  window.__clearUploads = function(){
+    UPLOADED.length = 0; list.innerHTML = ''; sync();
+  };
+})();
+
+async function submitInquiry(d){
+  // ① 本地留档：没有后端也不会丢单
+  try{
+    const list = JSON.parse(localStorage.getItem('inquiries') || '[]');
+    list.push(d);
+    localStorage.setItem('inquiries', JSON.stringify(list));
+  }catch(e){}
+
+  // ② 提交到后端（三级保险，确保通知不丢）
+  //    ① FORM_CONFIG.endpoint 填了地址 → 走自建 API（JSON）
+  //    ② 否则走本站函数 /.netlify/functions/inquiry → 直推飞书（不受平台反垃圾误判影响）
+  //    ③ 函数不可用时退回 Netlify Forms（进后台 + 邮件通知）
+  const postNativeForm = async () => {
+    const body = new URLSearchParams();
+    body.set('form-name', 'inquiry');
+    body.set('subject', `【官网询价】${d.country || '未填目的国'} · ${d.needs || '未选需求'}`);
+    Object.keys(d).forEach(k => body.set(k, d[k] == null ? '' : String(d[k])));
+    const r = await fetch('/', {
+      method : 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body   : body.toString()
+    });
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+  };
+  try{
+    if(FORM_CONFIG.endpoint){
+      const r = await fetch(FORM_CONFIG.endpoint, {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body   : JSON.stringify(d)
+      });
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+    }else{
+      try{
+        const r = await fetch(FORM_CONFIG.fn, {
+          method : 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body   : JSON.stringify(Object.assign({}, d, { viaFn: 1 }))
+        });
+        if(!r.ok) throw new Error('HTTP ' + r.status);
+      }catch(eFn){
+        await postNativeForm();
+      }
+    }
+    return 'api';
+  }catch(err){
+    // ③ 提交失败才回退：复制摘要 + 打开本机邮件客户端
+    const text = summary(d);
+    try{ await navigator.clipboard.writeText(text); }catch(e){}
+    const subject = encodeURIComponent(`采购需求 - ${d.country || '未填'} - ${d.needs || '未选品类'}`);
+    const mailBody = encodeURIComponent(text);
+    window.location.href = `mailto:${FORM_CONFIG.toEmail}?subject=${subject}&body=${mailBody}`;
+    return 'mailto';
+  }
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const consent = document.getElementById('consentChk');
+  if(consent && !consent.checked){
+    show('warn', (typeof t === 'function' ? t('formAgreeRequired') : '请先勾选同意《隐私政策》 / Please accept the Privacy Policy first.'));
+    consent.focus();
+    return;
+  }
+  const d0 = collect();
+  if(!d0.name || !d0.email){
+    show('warn', '请填写联系人姓名与邮箱 / Please fill in contact name and email.');
+    return;
+  }
+  // 邮箱格式校验：避免把电话号码等误填进邮箱栏，导致我们无法回信
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(d0.email).trim())){
+    show('warn', '邮箱格式好像不对，请检查「邮箱 / Email」一栏（例：name@company.com）。/ That email address looks incorrect — please check the Email field.');
+    try{ form.elements.email.focus(); }catch(e){}
+    return;
+  }
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  try{
+    const mode = await submitInquiry(collect());
+    show('ok', mode === 'api'
+      ? '✓ 已提交成功，我们会在 24 小时内联系您！'
+      : '✓ 需求已留档，并已为你打开邮件发送窗口；也可点「复制需求文本」发给我们微信 / WhatsApp。');
+    form.reset();
+    SEL.clientType = SEL.budget = SEL.timeline = SEL.channel = '';
+    SEL.needs = [];
+    document.querySelectorAll('#clientTypeGroup .on,#needsGroup .on,#budgetGroup .on,#timelineGroup .on,#channelGroup .on')
+      .forEach(b => b.classList.remove('on'));
+    syncChannel(null);
+    if(typeof window.__clearUploads === 'function') window.__clearUploads();
+  }catch(err){
+    show('warn', '提交失败：' + err.message + ' — 请直接发邮件至 ' + FORM_CONFIG.toEmail + '，或用 WhatsApp / 微信联系我们（联系方式见本页右侧）');
+  }finally{
+    btn.disabled = false;
+  }
+});
+
+document.getElementById('copyBtn').addEventListener('click', async () => {
+  const d = collect();
+  if(!d.name && !d.needs && !d.details){ show('warn', '请先填写需求内容 / Please fill the form first.'); return; }
+  try{
+    await navigator.clipboard.writeText(summary(d));
+    show('ok', '✓ 已复制，可直接粘贴到微信 / WhatsApp 发送给我们。');
+  }catch(e){
+    show('warn', '复制失败，请手动选中文本复制。');
+  }
+});
+
+/* ===== 移动端导航 ===== */
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('navLinks').classList.remove('open');
+}));
+
+/* ===== 多语言 ===== */
+const i18n = {
+  zh: {
+    topbar:"无需注册 · 直接浏览全部内容 · 免费提交采购需求",
+    navTagline:"中国商品代买",navBusiness:"业务模块",navProcess:"服务流程",navAdvantages:"核心优势",navCases:"成交案例",navAbout:"关于我们",navContact:"联系询价",navCta:"免费询价",
+    heroBadge:"中国商品代买 · 国际贸易服务咨询 · 多国合伙人网络",
+    heroTitle:'以国际贸易服务咨询为中心，<span class="gradient">代买中国好货</span>',
+    heroSub:"为全球采购商提供中国商品代买、供应商筛选与国际贸易咨询服务 — 不囤货、不垫资、不代收货款，只做采购代理与贸易咨询",
+    heroNote:"无需注册 · 直接浏览 · 24 小时内响应",heroCta1:"提交采购需求",heroCta2:"查看业务模块 →",
+    businessLabel:"业务模块",businessTitle:"四大业务模块",
+    businessSub:"以国际贸易服务咨询为中心，以中国商品代买为重点，配套供应商筛选、验厂验货、物流与单证服务，形成完整的采购服务闭环",
+    bm1Tag:"重点业务",bm1Title:"中国商品代买",bm1Desc:"你给采购清单，我们替你在中国找货、比价、验厂、跟单，直到货物交付到你手上",
+    bm1L1:"按清单代找货源：1688 / 义乌 / 广东产业带",bm1L2:"三家比价 + 样品对接 + 价格谈判",bm1L3:"生产跟单、验货、装箱与出货安排",
+    bm1Foot:"收费方式：按订单金额 4%–6% 收取代理服务费，不垫资、不代收货款",
+    bm2Title:"国际贸易服务咨询",bm2Desc:"从选品到落地的全流程贸易顾问服务，帮你判断这笔生意能不能做、怎么做",
+    bm2L1:"市场与品类可行性分析、目标价测算",bm2L2:"供应商资质核验、产能与出口经验评估",bm2L3:"合同条款、付款方式与风险提示",bm2Foot:"收费方式：按咨询项目/订单收取服务费",
+    bm3Title:"供应商筛选与验厂验货",bm3Desc:"帮你在众多中国供应商中筛出真正靠谱的 2–3 家，并盯住质量",
+    bm3L1:"工厂实地走访与营业执照/资质核验",bm3L2:"样品比对、量产一致性检查",bm3L3:"第三方验货机构对接与报告解读",bm3Foot:"收费方式：按次/按项目收取验厂验货服务费",
+    bm4Title:"跨境物流与单证",bm4Desc:"为内陆国与新兴市场买家设计最省钱的运输与清关路径",
+    bm4L1:"海运 / 空运 / 陆运方案比选与成本测算",bm4L2:"报关、原产地证、清关文件代办",bm4L3:"内陆国转运方案（卢旺达、布隆迪、中亚等）",bm4Foot:"收费方式：按票/按柜收取物流与单证服务费",
+    addonLabel:"增值配套服务",svc1Title:"多语种商务翻译",svc1Desc:"中、英、法、葡、俄、斯瓦希里六语对接，从询价到谈判全程覆盖",svc2Title:"报关与单证代办",svc2Desc:"报关资料、原产地证、清关文件一站式办理",svc3Title:"第三方验货对接",svc3Desc:"对接 SGS / BV 等机构，出货前质量把关",svc4Title:"付款方式咨询",svc4Desc:"T/T、信用证等结算方式建议（不代收货款）",svc5Title:"探厂与内容营销",svc5Desc:"工厂实拍与产品短视频，帮供应商与买家双向获客",
+    processLabel:"服务流程",processTitle:"十步闭环，双通道获客",processSub:"线下合伙人获客与线上平台获客双通道并行，从需求收集到案例沉淀，全流程闭环",
+    ps1T:"提交需求",ps1D:"官网表单 / 合伙人 / WhatsApp 收集采购清单",ps2T:"需求预审",ps2D:"甄别真假客户，评估付款能力与订单真实性",ps3T:"供应链匹配",ps3D:"筛选 2–3 家适配供应商并比价",ps4T:"方案输出",ps4D:"整理报价、交期与物流方案",ps5T:"商务谈判",ps5D:"多语种翻译支持，协商关键条款",ps6T:"签署协议",ps6D:"代理协议 + 外贸购销合同",ps7T:"履约跟进",ps7D:"跟进生产、样品与验货进度",ps8T:"货款结算",ps8D:"买卖双方直接收付，资金不经过我们",ps9T:"服务费结算",ps9D:"按约定条件收取代理服务费",ps10T:"案例沉淀",ps10D:"成交案例整理上传，持续积累信任",
+    bnd1:"✕ 不垫资",bnd2:"✕ 不囤货",bnd3:"✕ 不代收货款",
+    advLabel:"核心优势",advTitle:"为什么选择我们",advSub:"多国本土合伙人网络 + 国内供应链直连 + 资金完全隔离",
+    adv1Title:"多国本土合伙人网络",adv1Desc:"在多个国家拥有本土合伙人，掌握当地语言、真实需求与客户关系，不做信息盲区",adv2Title:"国内供应链直连",adv2Desc:"熟悉 1688 与产业带，对接有出口经验的供应商，具备验厂与资质核验能力",adv3Title:"轻资产零风险",adv3Desc:"资金完全隔离，不碰货不碰钱，只收代理服务费，经营风险可控在服务范围内",adv4Title:"多语种服务",adv4Desc:"中、英、法、葡、俄、斯瓦希里六语商务对接，消除语言障碍，从询价到谈判全程覆盖",
+    casesLabel:"成交案例",casesTitle:"真实代买，口碑沉淀",casesSub:"每一笔成交都沉淀为案例与内容，持续积累信任与询盘",
+    case1Tag:"海外买家 · 日用百货",case1Title:"义乌日用百货代买",case1Desc:"为海外买家从义乌代买日用品，三家比价后完成首批订单交付",
+    case2Tag:"海外买家 · 机械设备",case2Title:"小型机械设备代买",case2Desc:"为海外买家筛选广东产业带工厂，核验资质并促成采购",
+    case3Tag:"海外买家 · 建材与物流",case3Title:"建材代买与物流",case3Desc:"为海外买家代买中国建材，配套清关与内陆转运方案",
+    aboutLabel:"关于我们",aboutTitle:"深耕中国供应链的行业型团队",aboutSub:"不做只传信息的中间人 —— 把产业带、单据、语言和履约这四件事做透，才是我们的行业深度",
+    stat1n:"12+",stat1l:"年外贸与采购实操经验",stat2n:"300+",stat2l:"合作工厂与产业带资源",stat3n:"20+",stat3l:"出口国家与地区",stat4n:"6",stat4l:"工作语种（中英法葡俄斯）",
+    serveLabel:"服务过的客户类型",serveText:"企业采购 · 贸易商与进口商 · 政府与公共机构 · NGO 与国际组织 · 个人与小微创业",
+    photoCap:"义乌国际商贸城 —— 我们的货源腹地之一。从这里的档口到你的目的港，全程有人盯。",
+    dep1T:"供应链纵深",dep1D:"从义乌小商品到广东装备制造，覆盖主要产业带，知道哪类订单该找哪条产业带、哪家工厂的优势价在哪里",
+    dep2T:"贸易合规纵深",dep2D:"报关、原产地证、熏蒸、商检、信用证条款 —— 单据链条自己从头走一遍，问题不出在出口环节",
+    dep3T:"本地化纵深",dep3D:"中英法葡俄斯六语团队与多国本土合伙人，直接对接终端买家，不靠翻译转一道，需求不走样",
+    dep4T:"履约控制纵深",dep4D:"打样、量产、验货到装箱出货逐节点盯住，把「货不对板」的风险挡在出货之前，而不是等客户收货才发现",
+    contactLabel:"联系我们",contactTitle:"开始你的采购之旅",contactSub:"无需注册，免费提交采购需求，我们将在 24 小时内回复",
+    formTitle:"提交采购需求",formHint:"四步选完，24 小时内给你方案（只有姓名和邮箱是必填）",
+    formName:"联系人 / Contact Person",formNamePh:"您的姓名",formEmail:"邮箱 / Email",formCountry:"目的国 / Country",formCountryPh:"如：尼日利亚、巴西、哈萨克斯坦、越南",formCompany:"公司 / 机构名称 / Company",formCompanyPh:"选填，便于我们做背景了解",formDetail:"需求描述 / Details",formDetailPh:"数量、规格、目标价、交货港、是否已有供应商等",formSubmit:"提交需求",formCopy:"复制需求文本",
+    formNote:"我们仅将您提交的信息用于回复本次询价与提供服务，不会用于其他用途。详见《隐私政策》。",
+    formAgreePrefix:"我已阅读并同意",formAgreeLink:"《隐私政策》",formAgreeRequired:"请先勾选同意《隐私政策》，我们再处理您的需求。",
+    step1:"你的身份与采购需求",step2:"预算与时间",step3:"联系方式",step4:"补充说明（选填）",
+    formPhone:"电话号码 / Phone",formPhoneHint:"带国旗的区号快捷选择，选好后直接填号码，方便我们打电话或加 WhatsApp",ccSearchPh:"搜索国家或区号（如 布隆迪 / +257）",
+    formFiles:"上传采购资料（选填）",uzPick:"点击选择文件",uzOr:"或把文件拖到这里",uzNote:"支持 Excel / Word / PDF / 图片 / 压缩包 · 单个 ≤ 4MB · 最多 3 个 · 也可直接通过 WhatsApp / 微信发给我们",
+    formClientType:"客户类型 / Your Profile",ct1:"企业采购",ct2:"贸易商 / 进口商",ct3:"政府 / 公共机构",ct4:"NGO / 国际组织",ct5:"个人 / 小微创业",ct6:"其他",
+    formNeeds:"采购需求（可多选） / What do you need",formNeedsHint:"未列出的品类，请在下方「需求描述」里写清楚",
+    nd1:"中国商品代买",nd2:"机械设备",nd3:"建材与工程材料",nd4:"电子电器 / 3C",nd5:"服装鞋帽纺织",nd6:"日用百货 / 日化",nd7:"食品与农产品",nd8:"汽配 / 五金工具",nd9:"供应商筛选 / 验厂验货",nd10:"物流与单证",
+    formBudget:"采购预算 / Budget (USD)",bg1:"5,000 以下",bg2:"5,000 – 2 万",bg3:"2 万 – 5 万",bg4:"5 万 – 10 万",bg5:"10 万 – 50 万",bg6:"50 万以上",
+    formTimeline:"期望交货时间 / Timeline",tl1:"30 天内",tl2:"1–3 个月",tl3:"3–6 个月",tl4:"尚未确定",
+    formChannel:"常用通讯工具 / Preferred Messenger",ch5:"电话",ch6:"仅用邮箱",
+    formChannelId:"通讯账号 / ID",formChannelIdPh:"请填写你的账号 / 号码",
+    contactInfoTitle:"联系方式",contactAddr:"办公地址",contactAddrVal:"深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431（前海合作区）",
+    footerDesc:"以国际贸易服务咨询为中心、以中国商品代买为重点的跨境采购服务平台。不囤货、不垫资、不代收货款，只做采购代理与贸易咨询。",
+    footerService:"业务模块",footerS1:"中国商品代买",footerS2:"国际贸易咨询",footerS3:"验厂验货",footerS4:"物流与单证",
+    footerCompany:"公司",footerC1:"关于我们",footerC2:"服务流程",footerC3:"成交案例",footerC4:"联系方式",footerPrivacy:"隐私政策",footerSocial:"社交媒体",
+    footerCopy:"© 2026 汇采国际贸易服务咨询有限公司. 保留所有权利.",footerNote:"中国商品代买 · 国际贸易服务咨询 · 多国合伙人网络"
+  },
+  en: {
+    topbar:"No registration · Browse freely · Free sourcing inquiry",
+    navTagline:"China Sourcing",navBusiness:"Services",navProcess:"Process",navAdvantages:"Advantages",navCases:"Cases",navAbout:"About",navContact:"Contact",navCta:"Get a Quote",
+    heroBadge:"China Sourcing Agent · Trade Consulting · Multi-Country Network",
+    heroTitle:'Trade consulting at the core, <span class="gradient">sourcing in China</span> as our focus',
+    heroSub:"China sourcing agent and international trade consulting for buyers worldwide — no inventory, no advance payment, no fund handling",
+    heroNote:"No registration · Browse freely · Reply within 24 hours",heroCta1:"Submit Sourcing Request",heroCta2:"View Our Services →",
+    businessLabel:"Business Modules",businessTitle:"Four Core Business Modules",
+    businessSub:"Centered on international trade consulting, focused on China sourcing — supported by supplier screening, factory audit, inspection, logistics and documents",
+    bm1Tag:"Flagship",bm1Title:"China Sourcing Agent",bm1Desc:"Send us your purchase list — we find suppliers, compare prices, verify factories and follow up until goods are delivered to you",
+    bm1L1:"Sourcing per your list: 1688 / Yiwu / Guangdong industrial belts",bm1L2:"Three quotes + samples + price negotiation",bm1L3:"Production follow-up, inspection, packing and shipment",
+    bm1Foot:"FEE: 4%–6% agency service fee of order value. No advance payment, no fund handling.",
+    bm2Title:"International Trade Consulting",bm2Desc:"End-to-end trade advisory — we help you judge whether and how the deal should be done",
+    bm2L1:"Market & category feasibility, target price modelling",bm2L2:"Supplier qualification, capacity and export experience review",bm2L3:"Contract terms, payment methods and risk warnings",bm2Foot:"FEE: service fee per consulting project or order",
+    bm3Title:"Supplier Screening, Factory Audit & Inspection",bm3Desc:"We shortlist the 2–3 suppliers that are genuinely reliable, and we watch quality",
+    bm3L1:"On-site factory visits, licence and qualification checks",bm3L2:"Sample comparison and mass-production consistency checks",bm3L3:"Third-party inspection liaison and report interpretation",bm3Foot:"FEE: per-visit / per-project service fee",
+    bm4Title:"Cross-Border Logistics & Documents",bm4Desc:"Cost-optimised shipping and customs routes for landlocked and emerging markets",
+    bm4L1:"Sea / air / land option comparison and cost modelling",bm4L2:"Customs declaration, certificate of origin, clearance documents",bm4L3:"Landlocked transit solutions (Rwanda, Burundi, Central Asia)",bm4Foot:"FEE: per shipment / per container service fee",
+    addonLabel:"Value-Added Services",svc1Title:"Business Translation",svc1Desc:"Chinese, English, French, Portuguese, Russian and Swahili — inquiry to negotiation",svc2Title:"Customs & Documents",svc2Desc:"One-stop declaration, certificate of origin and clearance paperwork",svc3Title:"Third-Party Inspection",svc3Desc:"SGS / BV liaison, quality control before shipment",svc4Title:"Payment Method Advisory",svc4Desc:"T/T, L/C and settlement advice (we do not handle funds)",svc5Title:"Factory Visits & Content",svc5Desc:"Factory footage and product video for two-way lead generation",
+    processLabel:"Process",processTitle:"10-Step Closed Loop, Dual-Channel",processSub:"Offline partner and online platform acquisition in parallel — from demand collection to case study",
+    ps1T:"Submit Demand",ps1D:"Website form / partners / WhatsApp collect the list",ps2T:"Pre-Screening",ps2D:"Verify buyer identity, payment capacity and order reality",ps3T:"Supply Match",ps3D:"Shortlist 2–3 suppliers and compare prices",ps4T:"Proposal",ps4D:"Quotations, lead time and logistics plan",ps5T:"Negotiation",ps5D:"Multilingual support on key terms",ps6T:"Agreements",ps6D:"Agency agreement + trade contract",ps7T:"Fulfillment",ps7D:"Track production, samples and inspection",ps8T:"Payment",ps8D:"Buyer and seller settle directly — funds never pass through us",ps9T:"Service Fee",ps9D:"Agency fee collected per agreed terms",ps10T:"Case Study",ps10D:"Documented and published, building trust",
+    bnd1:"✕ No advance payment",bnd2:"✕ No inventory",bnd3:"✕ No fund handling",
+    advLabel:"Advantages",advTitle:"Why Choose Us",advSub:"Multi-country partner network + direct supply chain + complete fund isolation",
+    adv1Title:"Multi-Country Partner Network",adv1Desc:"Local partners in multiple countries, with the language skills and client relationships that matter",adv2Title:"Direct Supply Chain",adv2Desc:"Deep knowledge of 1688 and industrial belts, with factory verification capability",adv3Title:"Asset-Light, Zero Risk",adv3Desc:"Complete fund isolation — no goods, no money, only agency service fee",adv4Title:"Multilingual Service",adv4Desc:"Chinese, English, French, Portuguese, Russian and Swahili, from inquiry to negotiation",
+    casesLabel:"Success Cases",casesTitle:"Real Sourcing, Lasting Trust",casesSub:"Every completed deal becomes a documented case",
+    case1Tag:"Overseas buyer · Consumer goods",case1Title:"Yiwu General Merchandise Sourcing",case1Desc:"Sourced general goods from Yiwu for an overseas buyer, delivered after a three-quote comparison",
+    case2Tag:"Overseas buyer · Machinery",case2Title:"Small Machinery Sourcing",case2Desc:"Screened Guangdong industrial-belt factories for an overseas buyer and verified their credentials",
+    case3Tag:"Overseas buyer · Materials & logistics",case3Title:"Building Materials & Logistics",case3Desc:"Sourced Chinese building materials for an overseas buyer, with customs clearance and inland transit",
+    aboutLabel:"About Us",aboutTitle:"An industry-deep team in China's supply chain",aboutSub:"Not a middleman that only passes on information — we go deep on industrial belts, documents, languages and fulfillment. That is our depth.",
+    stat1n:"12+",stat1l:"years of hands-on trade and sourcing",stat2n:"300+",stat2l:"partner factories and industrial-belt resources",stat3n:"20+",stat3l:"export destinations",stat4n:"6",stat4l:"working languages (ZH/EN/FR/PT/RU/SW)",
+    serveLabel:"Client types we serve",serveText:"Corporate buyers · Traders and importers · Government and public bodies · NGOs and international organisations · Individuals and small businesses",
+    photoCap:"Yiwu International Trade City — one of our sourcing bases. From the booth here to your destination port, someone watches every step.",
+    dep1T:"Supply chain depth",dep1D:"From Yiwu consumer goods to Guangdong equipment manufacturing — we know which industrial belt fits which order and where the best price sits",
+    dep2T:"Trade compliance depth",dep2D:"Customs declaration, certificate of origin, fumigation, commodity inspection, L/C terms — we walk the entire document chain ourselves",
+    dep3T:"Localisation depth",dep3D:"A six-language team (ZH/EN/FR/PT/RU/SW) plus local partners in multiple countries, talking to end buyers directly so requirements never get lost in translation",
+    dep4T:"Fulfillment control depth",dep4D:"Sampling, mass production, inspection and container loading — every node watched, so quality problems are stopped before shipment",
+    contactLabel:"Contact",contactTitle:"Start Your Sourcing Journey",contactSub:"No registration — submit your sourcing request free of charge, reply within 24 hours",
+    formTitle:"Submit Your Sourcing Request",formHint:"Four quick steps — we come back with a plan within 24 hours (only name and email are required)",
+    formName:"Contact Person",formNamePh:"Your name",formEmail:"Email",formCountry:"Destination Country",formCountryPh:"e.g. Nigeria, Brazil, Kazakhstan, Vietnam",formCompany:"Company / Organisation",formCompanyPh:"Optional — helps us understand your background",formDetail:"Details",formDetailPh:"Quantity, specs, target price, destination port, existing supplier…",formSubmit:"Submit Request",formCopy:"Copy Request Text",
+    formNote:"We use the information you submit only to respond to this enquiry and to provide our services. See our Privacy Policy.",
+    formAgreePrefix:"I have read and agree to the",formAgreeLink:"Privacy Policy",formAgreeRequired:"Please tick the box to accept the Privacy Policy before we process your request.",
+    step1:"Your profile and needs",step2:"Budget and timeline",step3:"How to reach you",step4:"Anything else (optional)",
+    formPhone:"Phone Number",formPhoneHint:"Pick your country code (with flag), then type the number — easiest for us to call or reach you on WhatsApp",ccSearchPh:"Search country or code (e.g. Burundi / +257)",
+    formFiles:"Attach files (optional)",uzPick:"click to choose files",uzOr:"or drag them here",uzNote:"Excel / Word / PDF / images / archives · up to 4MB each · max 3 files · or send them via WhatsApp / WeChat",
+    formClientType:"Your Profile",ct1:"Corporate buyer",ct2:"Trader / Importer",ct3:"Government / Public",ct4:"NGO / Int'l org",ct5:"Individual / Small business",ct6:"Other",
+    formNeeds:"What do you need (multi-select)",formNeedsHint:"Not on the list? Describe it in the notes below.",
+    nd1:"China sourcing agent",nd2:"Machinery and equipment",nd3:"Building and engineering materials",nd4:"Electronics / 3C",nd5:"Apparel, footwear and textiles",nd6:"Household and personal care",nd7:"Food and agricultural products",nd8:"Auto parts and hardware",nd9:"Supplier screening / audit",nd10:"Logistics and documents",
+    formBudget:"Budget (USD)",bg1:"Under 5,000",bg2:"5,000 – 20,000",bg3:"20,000 – 50,000",bg4:"50,000 – 100,000",bg5:"100,000 – 500,000",bg6:"Over 500,000",
+    formTimeline:"Timeline",tl1:"Within 30 days",tl2:"1–3 months",tl3:"3–6 months",tl4:"Not decided yet",
+    formChannel:"Preferred Messenger",ch5:"Phone call",ch6:"Email only",
+    formChannelId:"Messenger ID",formChannelIdPh:"Your account or number",
+    contactInfoTitle:"Get in Touch",contactAddr:"Office",contactAddrVal:"Room B431, Huada Industrial Building, Yanshan Community, Zhaoshang Street, Nanshan District, Shenzhen, China (Qianhai)",
+    footerDesc:"A cross-border sourcing platform centred on international trade consulting and focused on China sourcing. No inventory, no advance payment, no fund handling.",
+    footerService:"Services",footerS1:"China Sourcing",footerS2:"Trade Consulting",footerS3:"Factory Audit",footerS4:"Logistics & Docs",
+    footerCompany:"Company",footerC1:"About Us",footerC2:"Process",footerC3:"Cases",footerC4:"Contact",footerPrivacy:"Privacy Policy",footerSocial:"Social Media",
+    footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. All rights reserved.",footerNote:"China Sourcing · Trade Consulting · Multi-Country Network"
+  },
+  fr: {
+    topbar:"Sans inscription · Navigation libre · Demande gratuite",
+    navTagline:"Sourcing Chine",navBusiness:"Services",navProcess:"Processus",navAdvantages:"Avantages",navCases:"Cas",navAbout:"À Propos",navContact:"Contact",navCta:"Devis gratuit",
+    heroBadge:"Agent Sourcing Chine · Conseil Commercial · Réseau Multi-Pays",
+    heroTitle:'Le conseil commercial au centre, <span class="gradient">le sourcing en Chine</span> comme priorité',
+    heroSub:"Agent de sourcing en Chine et conseil en commerce international pour des acheteurs du monde entier — sans stock, sans avance, sans gestion de fonds",
+    heroNote:"Sans inscription · Navigation libre · Réponse sous 24 h",heroCta1:"Envoyer une Demande",heroCta2:"Voir nos Services →",
+    businessLabel:"Modules d'Activité",businessTitle:"Quatre Modules Principaux",
+    businessSub:"Au centre le conseil en commerce international, en priorité le sourcing en Chine — avec sélection de fournisseurs, audit d'usine, inspection, logistique et documents",
+    bm1Tag:"Activité phare",bm1Title:"Sourcing en Chine",bm1Desc:"Envoyez votre liste — nous trouvons les fournisseurs, comparons les prix, vérifions les usines et suivons jusqu'à la livraison",
+    bm1L1:"Sourcing selon votre liste : 1688 / Yiwu / bassins industriels du Guangdong",bm1L2:"Trois devis + échantillons + négociation de prix",bm1L3:"Suivi de production, inspection, emballage et expédition",
+    bm1Foot:"HONORAIRES : 4 %–6 % de la valeur de commande. Sans avance, sans gestion de fonds.",
+    bm2Title:"Conseil en Commerce International",bm2Desc:"Conseil de bout en bout — nous vous aidons à juger si l'affaire est réalisable et comment",
+    bm2L1:"Analyse de marché et de catégorie, modélisation du prix cible",bm2L2:"Vérification des fournisseurs, capacité et expérience export",bm2L3:"Clauses contractuelles, modes de paiement et risques",bm2Foot:"HONORAIRES : forfait par projet ou commande",
+    bm3Title:"Sélection, Audit d'Usine & Inspection",bm3Desc:"Nous retenons les 2–3 fournisseurs réellement fiables et surveillons la qualité",
+    bm3L1:"Visites d'usine, vérification des licences et qualifications",bm3L2:"Comparaison d'échantillons et contrôle de conformité",bm3L3:"Liaison avec les organismes d'inspection tiers",bm3Foot:"HONORAIRES : à la visite / au projet",
+    bm4Title:"Logistique & Documents",bm4Desc:"Des routes de transport et de dédouanement optimisées pour les marchés enclavés",
+    bm4L1:"Comparaison mer / air / terre et estimation des coûts",bm4L2:"Déclaration en douane, certificat d'origine, dédouanement",bm4L3:"Solutions de transit (Rwanda, Burundi, Asie centrale)",bm4Foot:"HONORAIRES : par expédition / par conteneur",
+    addonLabel:"Services Complémentaires",svc1Title:"Traduction Commerciale",svc1Desc:"Chinois, anglais, français, portugais, russe et swahili — de la demande à la négociation",svc2Title:"Douane & Documents",svc2Desc:"Déclaration, certificat d'origine et documents de dédouanement",svc3Title:"Inspection Tiers",svc3Desc:"Liaison SGS / BV, contrôle qualité avant expédition",svc4Title:"Conseil Paiement",svc4Desc:"T/T, L/C et conseils de règlement (sans gestion de fonds)",svc5Title:"Visites d'Usine & Contenu",svc5Desc:"Vidéos d'usine et de produits pour générer des prospects",
+    processLabel:"Processus",processTitle:"Boucle Fermée en 10 Étapes",processSub:"Acquisition par partenaires et par la plateforme en ligne, de la demande à l'étude de cas",
+    ps1T:"Demande",ps1D:"Formulaire / partenaires / WhatsApp",ps2T:"Pré-Sélection",ps2D:"Vérifier l'acheteur et sa capacité de paiement",ps3T:"Match Fournisseur",ps3D:"Sélectionner 2–3 fournisseurs et comparer",ps4T:"Proposition",ps4D:"Devis, délais, logistique",ps5T:"Négociation",ps5D:"Appui multilingue sur les termes clés",ps6T:"Accords",ps6D:"Contrat d'agence + contrat commercial",ps7T:"Suivi",ps7D:"Production, échantillons et inspection",ps8T:"Paiement",ps8D:"Règlement direct acheteur-vendeur — les fonds ne passent pas par nous",ps9T:"Honoraires",ps9D:"Selon les conditions convenues",ps10T:"Étude de Cas",ps10D:"Documentée et publiée",
+    bnd1:"✕ Sans avance de fonds",bnd2:"✕ Sans stock",bnd3:"✕ Sans gestion de fonds",
+    advLabel:"Avantages",advTitle:"Pourquoi Nous Choisir",advSub:"Réseau multi-pays + accès direct à la chaîne d'approvisionnement + isolation totale des fonds",
+    adv1Title:"Réseau Multi-Pays",adv1Desc:"Des partenaires locaux dans plusieurs pays, avec la langue, la demande réelle et les relations clients",adv2Title:"Chaîne d'Approvisionnement Directe",adv2Desc:"Bonne connaissance de 1688 et des bassins industriels, capacité d'audit d'usine",adv3Title:"Actif Léger, Zéro Risque",adv3Desc:"Isolation totale des fonds — ni marchandise ni argent, seulement des honoraires",adv4Title:"Service Multilingue",adv4Desc:"Chinois, anglais, français, portugais, russe et swahili — de la demande à la négociation",
+    casesLabel:"Cas Réussis",casesTitle:"Sourcing Réel, Confiance Durable",casesSub:"Chaque affaire conclue devient un cas documenté",
+    case1Tag:"Acheteur international · Biens courants",case1Title:"Sourcing de Biens Quotidiens à Yiwu",case1Desc:"Biens courants sourcés à Yiwu pour un acheteur international, livrés après comparaison de trois devis",
+    case2Tag:"Acheteur international · Machines",case2Title:"Sourcing de Petites Machines",case2Desc:"Usines du bassin industriel du Guangdong sélectionnées et vérifiées pour un acheteur international",
+    case3Tag:"Acheteur international · Matériaux et logistique",case3Title:"Matériaux de Construction & Logistique",case3Desc:"Matériaux de construction chinois sourcés pour un acheteur international, avec dédouanement et transit terrestre",
+    aboutLabel:"À Propos",aboutTitle:"Une équipe qui connaît en profondeur la chaîne d'approvisionnement chinoise",aboutSub:"Pas un intermédiaire qui transmet seulement l'information — nous maîtrisons les bassins industriels, les documents, les langues et l'exécution.",
+    stat1n:"12+",stat1l:"ans d'expérience terrain en commerce et sourcing",stat2n:"300+",stat2l:"usines partenaires et ressources de bassins industriels",stat3n:"20+",stat3l:"pays d'exportation",stat4n:"6",stat4l:"langues de travail (ZH/EN/FR/PT/RU/SW)",
+    serveLabel:"Types de clients servis",serveText:"Entreprises · Négociants et importateurs · Gouvernements et organismes publics · ONG et organisations internationales · Particuliers et petites entreprises",
+    photoCap:"Le Marché international de Yiwu — l'une de nos bases d'approvisionnement. Du stand jusqu'à votre port de destination, chaque étape est suivie.",
+    dep1T:"Profondeur de la chaîne d'approvisionnement",dep1D:"Des articles de Yiwu aux équipements du Guangdong — nous savons quel bassin industriel convient à quelle commande",
+    dep2T:"Profondeur en conformité commerciale",dep2D:"Déclaration en douane, certificat d'origine, fumigation, inspection, termes L/C — nous parcourons nous-mêmes toute la chaîne documentaire",
+    dep3T:"Profondeur de localisation",dep3D:"Équipe en six langues (ZH/EN/FR/PT/RU/SW) et partenaires locaux dans plusieurs pays, en contact direct avec les acheteurs finaux",
+    dep4T:"Profondeur du contrôle d'exécution",dep4D:"Échantillonnage, production, inspection et chargement : chaque étape surveillée, les défauts bloqués avant expédition",
+    contactLabel:"Contact",contactTitle:"Commencez Votre Parcours",contactSub:"Sans inscription — envoyez votre demande gratuitement, réponse sous 24 h",
+    formTitle:"Envoyer votre Demande",formHint:"Quatre étapes rapides — une proposition sous 24 h (seuls le nom et l'e-mail sont obligatoires)",
+    formName:"Personne de Contact",formNamePh:"Votre nom",formEmail:"Email",formCountry:"Pays de Destination",formCountryPh:"ex. Nigeria, Brésil, Kazakhstan, Vietnam",formCompany:"Société / Organisation",formCompanyPh:"Facultatif — nous aide à situer votre projet",formDetail:"Détails",formDetailPh:"Quantité, spécifications, prix cible, port de destination, fournisseur actuel…",formSubmit:"Envoyer",formCopy:"Copier le Texte",
+    formNote:"Nous utilisons les informations que vous soumettez uniquement pour répondre à cette demande et fournir nos services. Voir notre Politique de confidentialité.",
+    formAgreePrefix:"J'ai lu et j'accepte la",formAgreeLink:"Politique de confidentialité",formAgreeRequired:"Veuillez accepter la Politique de confidentialité avant que nous traitions votre demande.",
+    step1:"Votre profil et vos besoins",step2:"Budget et délais",step3:"Comment vous joindre",step4:"Précisions (facultatif)",
+    formPhone:"Numéro de téléphone",formPhoneHint:"Choisissez l'indicatif pays (avec drapeau) puis saisissez le numéro — le plus simple pour vous joindre",ccSearchPh:"Rechercher un pays ou un indicatif (ex. Burundi / +257)",
+    formFiles:"Joindre des fichiers (facultatif)",uzPick:"cliquez pour choisir",uzOr:"ou glissez-les ici",uzNote:"Excel / Word / PDF / images / archives · 4 Mo max par fichier · 3 fichiers max · ou envoyez-les par WhatsApp / WeChat",
+    formClientType:"Votre Profil",ct1:"Entreprise",ct2:"Négociant / Importateur",ct3:"Gouvernement / Public",ct4:"ONG / Organisation int.",ct5:"Particulier / Petite entreprise",ct6:"Autre",
+    formNeeds:"Vos Besoins (choix multiple)",formNeedsHint:"Pas dans la liste ? Précisez-le ci-dessous.",
+    nd1:"Sourcing en Chine",nd2:"Machines et équipements",nd3:"Matériaux de construction",nd4:"Électronique / 3C",nd5:"Habillement et textile",nd6:"Biens quotidiens et hygiène",nd7:"Produits alimentaires et agricoles",nd8:"Pièces auto et quincaillerie",nd9:"Sélection / audit d'usine",nd10:"Logistique et documents",
+    formBudget:"Budget (USD)",bg1:"Moins de 5 000",bg2:"5 000 – 20 000",bg3:"20 000 – 50 000",bg4:"50 000 – 100 000",bg5:"100 000 – 500 000",bg6:"Plus de 500 000",
+    formTimeline:"Délai souhaité",tl1:"Sous 30 jours",tl2:"1–3 mois",tl3:"3–6 mois",tl4:"Pas encore décidé",
+    formChannel:"Messagerie préférée",ch5:"Appel téléphonique",ch6:"E-mail uniquement",
+    formChannelId:"Identifiant",formChannelIdPh:"Votre identifiant ou numéro",
+    contactInfoTitle:"Nous Contacter",contactAddr:"Bureau",contactAddrVal:"Bureau B431, Immeuble Huada, Zhaoshang, Nanshan, Shenzhen, Chine (Qianhai)",
+    footerDesc:"Plateforme de sourcing transfrontalier centrée sur le conseil en commerce international et axée sur le sourcing en Chine. Sans stock, sans avance, sans gestion de fonds.",
+    footerService:"Services",footerS1:"Sourcing Chine",footerS2:"Conseil",footerS3:"Audit d'Usine",footerS4:"Logistique",
+    footerCompany:"Société",footerC1:"À Propos",footerC2:"Processus",footerC3:"Cas",footerC4:"Contact",footerPrivacy:"Confidentialité",footerSocial:"Réseaux Sociaux",
+    footerCopy:"© 2026 HuiCai Global Conseil en Commerce International. Tous droits réservés.",footerNote:"Sourcing Chine · Conseil Commercial · Réseau Multi-Pays"
+  },
+  pt: {
+    topbar:"Sem cadastro · Navegação livre · Pedido gratuito",
+    navTagline:"Sourcing China",navBusiness:"Serviços",navProcess:"Processo",navAdvantages:"Vantagens",navCases:"Casos",navAbout:"Sobre",navContact:"Contato",navCta:"Orçamento grátis",
+    heroBadge:"Agente de Sourcing na China · Consultoria Comercial · Rede Multi-País",
+    heroTitle:'Consultoria comercial no centro, <span class="gradient">compra na China</span> como foco',
+    heroSub:"Agente de sourcing na China e consultoria de comércio internacional para compradores de todo o mundo — sem estoque, sem adiantamento, sem gestão de fundos",
+    heroNote:"Sem cadastro · Navegação livre · Resposta em 24 h",heroCta1:"Enviar Pedido",heroCta2:"Ver nossos Serviços →",
+    businessLabel:"Módulos de Negócio",businessTitle:"Quatro Módulos Principais",
+    businessSub:"Centrado na consultoria de comércio internacional e focado na compra de produtos chineses — com seleção de fornecedores, auditoria de fábrica, inspeção, logística e documentação",
+    bm1Tag:"Serviço principal",bm1Title:"Compra e Sourcing na China",bm1Desc:"Envie sua lista — encontramos fornecedores, comparamos preços, verificamos fábricas e acompanhamos até a entrega",
+    bm1L1:"Sourcing conforme sua lista: 1688 / Yiwu / polos industriais de Guangdong",bm1L2:"Três cotações + amostras + negociação de preço",bm1L3:"Acompanhamento da produção, inspeção, embalagem e embarque",
+    bm1Foot:"TARIFA: 4%–6% do valor do pedido. Sem adiantamento, sem gestão de fundos.",
+    bm2Title:"Consultoria de Comércio Internacional",bm2Desc:"Consultoria de ponta a ponta — ajudamos a avaliar se o negócio é viável e como executá-lo",
+    bm2L1:"Análise de mercado e categoria, modelagem de preço-alvo",bm2L2:"Verificação de fornecedores, capacidade e experiência de exportação",bm2L3:"Cláusulas contratuais, meios de pagamento e riscos",bm2Foot:"TARIFA: por projeto ou por pedido",
+    bm3Title:"Seleção, Auditoria de Fábrica e Inspeção",bm3Desc:"Selecionamos os 2–3 fornecedores realmente confiáveis e cuidamos da qualidade",
+    bm3L1:"Visitas presenciais, checagem de licenças e qualificações",bm3L2:"Comparação de amostras e consistência da produção",bm3L3:"Articulação com inspetores terceirizados",bm3Foot:"TARIFA: por visita / por projeto",
+    bm4Title:"Logística e Documentação",bm4Desc:"Rotas de transporte e desembaraço otimizadas para mercados sem litoral",
+    bm4L1:"Comparação marítimo / aéreo / terrestre e estimativa de custos",bm4L2:"Declaração aduaneira, certificado de origem, desembaraço",bm4L3:"Soluções de trânsito (Ruanda, Burundi, Ásia Central)",bm4Foot:"TARIFA: por embarque / por contêiner",
+    addonLabel:"Serviços Complementares",svc1Title:"Tradução Comercial",svc1Desc:"Chinês, inglês, francês, português, russo e suaíli — da consulta à negociação",svc2Title:"Aduana e Documentos",svc2Desc:"Declaração, certificado de origem e documentos de desembaraço",svc3Title:"Inspeção Terceirizada",svc3Desc:"Ligação com SGS / BV, controle de qualidade antes do embarque",svc4Title:"Consultoria de Pagamento",svc4Desc:"Orientação sobre T/T e L/C (não intermediamos fundos)",svc5Title:"Visitas a Fábricas e Conteúdo",svc5Desc:"Vídeos de fábrica e de produto para gerar leads",
+    processLabel:"Processo",processTitle:"Ciclo Fechado em 10 Etapas",processSub:"Captação por parceiros e pela plataforma online, da demanda ao caso documentado",
+    ps1T:"Pedido",ps1D:"Formulário / parceiros / WhatsApp",ps2T:"Pré-Triagem",ps2D:"Verificar comprador e capacidade de pagamento",ps3T:"Match de Fornecedores",ps3D:"Selecionar 2–3 fornecedores e comparar",ps4T:"Proposta",ps4D:"Cotações, prazo e logística",ps5T:"Negociação",ps5D:"Apoio multilíngue nos termos-chave",ps6T:"Contratos",ps6D:"Contrato de agência + contrato comercial",ps7T:"Acompanhamento",ps7D:"Produção, amostras e inspeção",ps8T:"Pagamento",ps8D:"Liquidação direta comprador-vendedor — os fundos não passam por nós",ps9T:"Honorários",ps9D:"Conforme condições acordadas",ps10T:"Caso Documentado",ps10D:"Documentado e publicado",
+    bnd1:"✕ Sem adiantamento",bnd2:"✕ Sem estoque",bnd3:"✕ Sem gestão de fundos",
+    advLabel:"Vantagens",advTitle:"Por Que Nos Escolher",advSub:"Rede multi-país + acesso direto à cadeia de suprimentos + isolamento total de fundos",
+    adv1Title:"Rede Multi-País",adv1Desc:"Parceiros locais em vários países, com idioma, demanda real e relacionamento com clientes",adv2Title:"Cadeia de Suprimentos Direta",adv2Desc:"Conhecimento de 1688 e dos polos industriais, com capacidade de auditoria",adv3Title:"Ativo Leve, Risco Zero",adv3Desc:"Isolamento total de fundos — sem mercadoria e sem dinheiro, apenas honorários",adv4Title:"Serviço Multilíngue",adv4Desc:"Chinês, inglês, francês, português, russo e suaíli, da consulta à negociação",
+    casesLabel:"Casos de Sucesso",casesTitle:"Sourcing Real, Confiança Duradoura",casesSub:"Cada negócio concluído vira um caso documentado",
+    case1Tag:"Comprador internacional · Bens de consumo",case1Title:"Sourcing de Bens no Yiwu",case1Desc:"Bens de consumo comprados no Yiwu para um comprador internacional, entregues após três cotações",
+    case2Tag:"Comprador internacional · Máquinas",case2Title:"Sourcing de Pequenas Máquinas",case2Desc:"Fábricas do polo industrial de Guangdong selecionadas e verificadas para um comprador internacional",
+    case3Tag:"Comprador internacional · Materiais e logística",case3Title:"Materiais de Construção e Logística",case3Desc:"Materiais de construção chineses comprados para um comprador internacional, com desembaraço e trânsito terrestre",
+    aboutLabel:"Sobre Nós",aboutTitle:"Uma equipe com profundo conhecimento da cadeia de suprimentos chinesa",aboutSub:"Não somos um intermediário que apenas repassa informação — dominamos polos industriais, documentação, idiomas e execução.",
+    stat1n:"12+",stat1l:"anos de experiência em comércio e sourcing",stat2n:"300+",stat2l:"fábricas parceiras e recursos de polos industriais",stat3n:"20+",stat3l:"destinos de exportação",stat4n:"6",stat4l:"idiomas de trabalho (ZH/EN/FR/PT/RU/SW)",
+    serveLabel:"Tipos de clientes atendidos",serveText:"Empresas · Comerciantes e importadores · Governos e órgãos públicos · ONGs e organismos internacionais · Pessoas físicas e pequenos negócios",
+    photoCap:"Mercado Internacional de Yiwu — uma das nossas bases de fornecimento. Da banca até o porto de destino, cada etapa é acompanhada.",
+    dep1T:"Profundidade na cadeia de suprimentos",dep1D:"Do Yiwu ao equipamento industrial de Guangdong — sabemos qual polo industrial atende cada pedido",
+    dep2T:"Profundidade em conformidade",dep2D:"Desembaraço, certificado de origem, fumigação, inspeção e termos de L/C — percorremos toda a cadeia documental",
+    dep3T:"Profundidade em localização",dep3D:"Equipe em seis idiomas (ZH/EN/FR/PT/RU/SW) e parceiros locais em vários países, em contato direto com o comprador final",
+    dep4T:"Profundidade no controle de execução",dep4D:"Amostra, produção, inspeção e carregamento: cada etapa acompanhada, defeitos bloqueados antes do embarque",
+    contactLabel:"Contato",contactTitle:"Comece Sua Jornada",contactSub:"Sem cadastro — envie seu pedido gratuitamente, resposta em 24 h",
+    formTitle:"Envie seu Pedido",formHint:"Quatro passos rápidos — resposta com um plano em 24 h (apenas nome e e-mail são obrigatórios)",
+    formName:"Pessoa de Contato",formNamePh:"Seu nome",formEmail:"Email",formCountry:"País de Destino",formCountryPh:"ex. Nigéria, Brasil, Cazaquistão, Vietnã",formCompany:"Empresa / Organização",formCompanyPh:"Opcional — ajuda a entender seu contexto",formDetail:"Detalhes",formDetailPh:"Quantidade, especificações, preço-alvo, porto de destino, fornecedor atual…",formSubmit:"Enviar",formCopy:"Copiar Texto",
+    formNote:"Usamos as informações que você envia apenas para responder a esta consulta e prestar nossos serviços. Consulte a nossa Política de Privacidade.",
+    formAgreePrefix:"Li e concordo com a",formAgreeLink:"Política de Privacidade",formAgreeRequired:"Marque a caixa para aceitar a Política de Privacidade antes de processarmos o seu pedido.",
+    step1:"Seu perfil e suas necessidades",step2:"Orçamento e prazo",step3:"Como falar com você",step4:"Informações extras (opcional)",
+    formPhone:"Telefone",formPhoneHint:"Escolha o código do país (com bandeira) e digite o número — mais fácil para ligarmos ou falarmos no WhatsApp",ccSearchPh:"Buscar país ou código (ex. Burundi / +257)",
+    formFiles:"Anexar arquivos (opcional)",uzPick:"clique para escolher",uzOr:"ou arraste para cá",uzNote:"Excel / Word / PDF / imagens / arquivos compactados · até 4MB cada · máx. 3 arquivos · ou envie por WhatsApp / WeChat",
+    formClientType:"Seu Perfil",ct1:"Empresa",ct2:"Comerciante / Importador",ct3:"Governo / Órgão público",ct4:"ONG / Organismo internacional",ct5:"Pessoa física / Pequeno negócio",ct6:"Outro",
+    formNeeds:"O que você precisa (múltipla escolha)",formNeedsHint:"Não está na lista? Descreva abaixo.",
+    nd1:"Compra e sourcing na China",nd2:"Máquinas e equipamentos",nd3:"Materiais de construção",nd4:"Eletrônicos / 3C",nd5:"Vestuário e têxteis",nd6:"Bens de consumo e higiene",nd7:"Alimentos e produtos agrícolas",nd8:"Autopeças e ferragens",nd9:"Seleção / auditoria de fábrica",nd10:"Logística e documentos",
+    formBudget:"Orçamento (USD)",bg1:"Até 5.000",bg2:"5.000 – 20.000",bg3:"20.000 – 50.000",bg4:"50.000 – 100.000",bg5:"100.000 – 500.000",bg6:"Acima de 500.000",
+    formTimeline:"Prazo desejado",tl1:"Em até 30 dias",tl2:"1–3 meses",tl3:"3–6 meses",tl4:"Ainda não definido",
+    formChannel:"Mensageiro preferido",ch5:"Ligação telefônica",ch6:"Apenas e-mail",
+    formChannelId:"ID de contato",formChannelIdPh:"Seu usuário ou número",
+    contactInfoTitle:"Fale Conosco",contactAddr:"Escritório",contactAddrVal:"Sala B431, Edifício Huada, Zhaoshang, Nanshan, Shenzhen, China (Qianhai)",
+    footerDesc:"Plataforma de sourcing transfronteiriço centrada na consultoria de comércio internacional e focada na compra de produtos chineses. Sem estoque, sem adiantamento, sem gestão de fundos.",
+    footerService:"Serviços",footerS1:"Compra na China",footerS2:"Consultoria",footerS3:"Auditoria",footerS4:"Logística",
+    footerCompany:"Empresa",footerC1:"Sobre",footerC2:"Processo",footerC3:"Casos",footerC4:"Contato",footerPrivacy:"Privacidade",footerSocial:"Redes Sociais",
+    footerCopy:"© 2026 HuiCai Global Consultoria de Comércio Internacional. Todos os direitos reservados.",footerNote:"Sourcing China · Consultoria · Rede Multi-País"
+  },
+  ru: {
+    topbar:"Без регистрации · Свободный просмотр · Бесплатный запрос",
+    navTagline:"Закупки в Китае",navBusiness:"Услуги",navProcess:"Процесс",navAdvantages:"Преимущества",navCases:"Кейсы",navAbout:"О нас",navContact:"Связаться",navCta:"Запрос цены",
+    heroBadge:"Закупки в Китае · Консалтинг по торговле · Сеть партнёров в разных странах",
+    heroTitle:'Консалтинг по международной торговле в центре, <span class="gradient">закупки в Китае</span> — наш фокус',
+    heroSub:"Закупочный агент в Китае и консалтинг по международной торговле для покупателей по всему миру — без склада, без предоплат, без работы с денежными средствами",
+    heroNote:"Без регистрации · Свободный просмотр · Ответ в течение 24 часов",heroCta1:"Отправить запрос",heroCta2:"Наши услуги →",
+    businessLabel:"Направления",businessTitle:"Четыре ключевых направления",
+    businessSub:"В центре — консалтинг по международной торговле, главный фокус — закупки в Китае: подбор поставщиков, аудит фабрик, инспекция, логистика и документы",
+    bm1Tag:"Ключевое направление",bm1Title:"Закупки в Китае",bm1Desc:"Вы присылаете список — мы находим поставщиков, сравниваем цены, проверяем фабрики и ведём заказ до передачи товара",
+    bm1L1:"Поиск по вашему списку: 1688 / Иу / промышленные кластеры Гуандуна",bm1L2:"Три предложения + образцы + переговоры о цене",bm1L3:"Контроль производства, инспекция, упаковка и отгрузка",
+    bm1Foot:"Оплата: агентское вознаграждение 4–6% от суммы заказа. Без предоплат и без работы с деньгами клиента.",
+    bm2Title:"Консалтинг по международной торговле",bm2Desc:"Полное сопровождение от подбора товара до сделки — поможем понять, стоит ли этим заниматься и как именно",
+    bm2L1:"Анализ рынка и категории, расчёт целевой цены",bm2L2:"Проверка поставщика, мощностей и экспортного опыта",bm2L3:"Условия контракта, способы оплаты и риски",bm2Foot:"Оплата: за проект или за заказ",
+    bm3Title:"Подбор поставщиков, аудит фабрик и инспекция",bm3Desc:"Отбираем 2–3 действительно надёжных поставщиков и следим за качеством",
+    bm3L1:"Выезд на фабрику, проверка лицензий и документов",bm3L2:"Сравнение образцов и контроль серийного производства",bm3L3:"Работа с независимыми инспекциями и разбор отчётов",bm3Foot:"Оплата: за выезд / за проект",
+    bm4Title:"Трансграничная логистика и документы",bm4Desc:"Оптимальные маршруты доставки и таможенного оформления для стран без выхода к морю",
+    bm4L1:"Сравнение море / авиа / автодоставки и расчёт затрат",bm4L2:"Таможенная декларация, сертификат происхождения, документы",bm4L3:"Транзит для стран без выхода к морю (Руанда, Бурунди, Центральная Азия)",bm4Foot:"Оплата: за отправку / за контейнер",
+    addonLabel:"Дополнительные услуги",svc1Title:"Деловой перевод",svc1Desc:"Шесть языков: китайский, английский, французский, португальский, русский, суахили",
+    svc2Title:"Таможня и документы",svc2Desc:"Декларация, сертификат происхождения и документы «под ключ»",svc3Title:"Независимая инспекция",svc3Desc:"Работа с SGS / BV, контроль качества до отгрузки",
+    svc4Title:"Консультации по оплате",svc4Desc:"T/T, аккредитив и расчёты (мы не принимаем деньги клиентов)",svc5Title:"Визиты на фабрики и контент",svc5Desc:"Съёмка фабрик и видео о товаре для привлечения клиентов",
+    processLabel:"Процесс",processTitle:"10 шагов, два канала привлечения",processSub:"Офлайн-партнёры и онлайн-платформа работают параллельно — от заявки до кейса",
+    ps1T:"Заявка",ps1D:"Форма на сайте / партнёры / WhatsApp",ps2T:"Проверка заявки",ps2D:"Проверяем покупателя, платёжеспособность и реальность заказа",ps3T:"Подбор поставщиков",ps3D:"Отбираем 2–3 поставщика и сравниваем цены",ps4T:"Предложение",ps4D:"Цены, сроки и логистика",ps5T:"Переговоры",ps5D:"Многоязычная поддержка по ключевым условиям",ps6T:"Договоры",ps6D:"Агентский договор + внешнеторговый контракт",ps7T:"Исполнение",ps7D:"Контроль производства, образцов и инспекции",ps8T:"Оплата",ps8D:"Покупатель и продавец рассчитываются напрямую — деньги через нас не проходят",ps9T:"Наше вознаграждение",ps9D:"Агентское вознаграждение по согласованным условиям",ps10T:"Кейс",ps10D:"Публикуем завершённые сделки, формируя доверие",
+    bnd1:"✕ Без предоплат",bnd2:"✕ Без складских запасов",bnd3:"✕ Не принимаем деньги клиентов",
+    advLabel:"Преимущества",advTitle:"Почему мы",advSub:"Сеть партнёров в разных странах + прямой доступ к производству + полная изоляция денежных средств",
+    adv1Title:"Сеть локальных партнёров",adv1Desc:"Локальные партнёры в разных странах: знание языка, реального спроса и связей с клиентами",adv2Title:"Прямой доступ к производству",adv2Desc:"Знаем 1688 и промышленные кластеры, работаем с экспортными фабриками, умеем проверять производство",adv3Title:"Лёгкая модель, нулевой риск",adv3Desc:"Полная изоляция средств: не держим товар и не работаем с деньгами — только агентское вознаграждение",adv4Title:"Многоязычный сервис",adv4Desc:"Китайский, английский, французский, португальский, русский и суахили — от заявки до переговоров",
+    casesLabel:"Кейсы",casesTitle:"Реальные сделки, растущее доверие",casesSub:"Каждая завершённая сделка становится описанным кейсом",
+    case1Tag:"Зарубежный покупатель · Товары",case1Title:"Закупка товаров повседневного спроса в Иу",case1Desc:"Закупили товары повседневного спроса в Иу для зарубежного покупателя после сравнения трёх предложений",
+    case2Tag:"Зарубежный покупатель · Оборудование",case2Title:"Закупка малого оборудования",case2Desc:"Отобрали и проверили фабрики промышленного кластера Гуандуна для зарубежного покупателя",
+    case3Tag:"Зарубежный покупатель · Материалы и логистика",case3Title:"Стройматериалы и логистика",case3Desc:"Закупили китайские стройматериалы для зарубежного покупателя с таможенным оформлением и транзитом",
+    aboutLabel:"О нас",aboutTitle:"Команда, которая знает цепочку поставок в Китае изнутри",aboutSub:"Мы не посредник, который просто передаёт информацию: мы глубоко разбираемся в кластерах, документах, языках и исполнении заказов",
+    stat1n:"12+",stat1l:"лет практики в торговле и закупках",stat2n:"300+",stat2l:"фабрик-партнёров и ресурсов кластеров",stat3n:"20+",stat3l:"стран экспорта",stat4n:"6",stat4l:"рабочих языков (ZH/EN/FR/PT/RU/SW)",
+    serveLabel:"С кем мы работаем",serveText:"Компании · Трейдеры и импортёры · Государственные и общественные организации · НКО и международные организации · Частные лица и малый бизнес",
+    photoCap:"Международный торговый город Иу — одна из наших баз закупок. От прилавка здесь до вашего порта назначения — под контролем на каждом этапе.",
+    dep1T:"Глубина в цепочке поставок",dep1D:"От товаров Иу до машиностроения Гуандуна: знаем, какой кластер подходит для какого заказа",
+    dep2T:"Глубина в комплаенсе",dep2D:"Декларация, сертификат происхождения, фумигация, инспекция, условия аккредитива — проходим весь документооборот сами",
+    dep3T:"Глубина локализации",dep3D:"Команда на шести языках и локальные партнёры в разных странах — общаемся с конечным покупателем напрямую",
+    dep4T:"Контроль исполнения",dep4D:"Образцы, серийное производство, инспекция и погрузка — каждый этап под контролем, брак останавливаем до отгрузки",
+    contactLabel:"Контакты",contactTitle:"Начните закупки с нами",contactSub:"Без регистрации — отправьте запрос бесплатно, ответим в течение 24 часов",
+    formTitle:"Отправить запрос",formHint:"Четыре шага — вернёмся с предложением в течение 24 часов (обязательны только имя и e-mail)",
+    formName:"Контактное лицо",formNamePh:"Ваше имя",formEmail:"E-mail",formCountry:"Страна назначения",formCountryPh:"например: Нигерия, Бразилия, Казахстан, Вьетнам",formCompany:"Компания / организация",formCompanyPh:"Необязательно — поможет понять ваш профиль",formDetail:"Детали",formDetailPh:"Количество, характеристики, целевая цена, порт, есть ли поставщик…",formSubmit:"Отправить",formCopy:"Скопировать текст",
+    formNote:"Мы используем предоставленную вами информацию только для ответа на этот запрос и оказания услуг. См. Политику конфиденциальности.",
+    formAgreePrefix:"Я прочитал(а) и согласен(-на) с",formAgreeLink:"Политикой конфиденциальности",formAgreeRequired:"Пожалуйста, примите Политику конфиденциальности, прежде чем мы обработаем ваш запрос.",
+    step1:"Ваш профиль и потребности",step2:"Бюджет и сроки",step3:"Как с вами связаться",step4:"Дополнительно (необязательно)",
+    formPhone:"Телефон",formPhoneHint:"Выберите код страны с флагом и введите номер — так проще позвонить или написать в WhatsApp",ccSearchPh:"Поиск страны или кода (например, Бурунди / +257)",
+    formFiles:"Прикрепить файлы (необязательно)",uzPick:"нажмите, чтобы выбрать",uzOr:"или перетащите сюда",uzNote:"Excel / Word / PDF / изображения / архивы · до 4 МБ каждый · максимум 3 файла · или отправьте в WhatsApp / WeChat",
+    formClientType:"Ваш профиль",ct1:"Компания",ct2:"Трейдер / импортёр",ct3:"Государство / госорган",ct4:"НКО / междунар. организация",ct5:"Частное лицо / малый бизнес",ct6:"Другое",
+    formNeeds:"Что вам нужно (можно несколько)",formNeedsHint:"Нет в списке? Опишите ниже в комментарии.",
+    nd1:"Закупки в Китае",nd2:"Машины и оборудование",nd3:"Стройматериалы",nd4:"Электроника / 3C",nd5:"Одежда, обувь, текстиль",nd6:"Товары для дома и гигиена",nd7:"Продукты питания и сельхозпродукция",nd8:"Автозапчасти и инструмент",nd9:"Подбор поставщиков / аудит",nd10:"Логистика и документы",
+    formBudget:"Бюджет (USD)",bg1:"до 5 000",bg2:"5 000 – 20 000",bg3:"20 000 – 50 000",bg4:"50 000 – 100 000",bg5:"100 000 – 500 000",bg6:"более 500 000",
+    formTimeline:"Желаемый срок",tl1:"в течение 30 дней",tl2:"1–3 месяца",tl3:"3–6 месяцев",tl4:"пока не определён",
+    formChannel:"Предпочитаемый мессенджер",ch5:"Телефонный звонок",ch6:"Только e-mail",
+    formChannelId:"ID в мессенджере",formChannelIdPh:"Ваш аккаунт или номер",
+    contactInfoTitle:"Связаться с нами",contactAddr:"Офис",contactAddrVal:"Шэньчжэнь, район Наньшань, Чжаошан, Южная Гуандун-роуд 3, здание Huada B431 (Цяньхай)",
+    footerDesc:"Платформа трансграничных закупок с акцентом на консалтинг по международной торговле и закупки в Китае. Без складских запасов, предоплат и работы с деньгами клиентов.",footerService:"Услуги",footerS1:"Закупки в Китае",footerS2:"Консалтинг",footerS3:"Аудит фабрик",footerS4:"Логистика",footerCompany:"Компания",footerC1:"О нас",footerC2:"Процесс",footerC3:"Кейсы",footerC4:"Контакты",footerPrivacy:"Конфиденциальность",footerSocial:"Соцсети",footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. Все права защищены.",footerNote:"Закупки в Китае · Консалтинг по торговле · Сеть партнёров в разных странах"
+  },
+  sw: {
+    topbar:"Bila usajili · Tazama kwa uhuru · Ombi la bure",
+    navTagline:"Ununuzi China",navBusiness:"Huduma",navProcess:"Mchakato",navAdvantages:"Faida",navCases:"Mifano",navAbout:"Kuhusu sisi",navContact:"Wasiliana",navCta:"Ombi la bure",
+    heroBadge:"Ununuzi China · Ushauri wa biashara · Mtandao wa washirika nchi nyingi",
+    heroTitle:'Ushauri wa biashara ya kimataifa katikati, <span class="gradient">ununuzi China</span> kama lengo letu',
+    heroSub:"Wakala wa ununuzi China na ushauri wa biashara ya kimataifa kwa wanunuzi duniani kote — hatuhifadhi bidhaa, hatutoa malipo ya awali, hatushughulikii fedha",
+    heroNote:"Bila usajili · Tazama kwa uhuru · Jibu ndani ya saa 24",heroCta1:"Tuma ombi lako",heroCta2:"Huduma zetu →",
+    businessLabel:"Huduma",businessTitle:"Huduma nne kuu",
+    businessSub:"Ushauri wa biashara ya kimataifa ndio msingi, ununuzi China ndio lengo — pamoja na kuchagua wasambazaji, ukaguzi wa kiwanda, ukaguzi wa bidhaa, usafirishaji na nyaraka",
+    bm1Tag:"Huduma kuu",bm1Title:"Ununuzi China",bm1Desc:"Tuma orodha yako — tunapata wasambazaji, tunalinganisha bei, tunakagua viwanda na kufuatilia hadi bidhaa zifikie kwako",
+    bm1L1:"Ununuzi kwa orodha yako: 1688 / Yiwu / maeneo ya viwanda Guangdong",bm1L2:"Bei tatu + sampuli + mazungumzo ya bei",bm1L3:"Kufuatilia uzalishaji, ukaguzi, ufungashaji na usafirishaji",
+    bm1Foot:"Malipo: ada ya uwakala 4–6% ya thamani ya oda. Hakuna malipo ya awali, hatushughulikii fedha.",
+    bm2Title:"Ushauri wa biashara ya kimataifa",bm2Desc:"Ushauri kamili kutoka kuchagua bidhaa hadi kufunga biashara — tunakusaidia kuamua kama inafaa na vipi",
+    bm2L1:"Uchambuzi wa soko na aina ya bidhaa, makadirio ya bei lengo",bm2L2:"Kuthibitisha wasambazaji, uwezo wa kiwanda na uzoefu wa kuuza nje",bm2L3:"Masharti ya mkataba, njia za malipo na hatari",bm2Foot:"Malipo: kwa mradi au kwa oda",
+    bm3Title:"Kuchagua wasambazaji, ukaguzi wa kiwanda na bidhaa",bm3Desc:"Tunachagua viwanda 2–3 vya kuaminika kweli na kufuatilia ubora",
+    bm3L1:"Ziara ya kiwanda, ukaguzi wa leseni na vibali",bm3L2:"Kulinganisha sampuli na ukaguzi wa uzalishaji wa wingi",bm3L3:"Kushirikiana na makampuni huru ya ukaguzi na kufasiri ripoti",bm3Foot:"Malipo: kwa ziara / kwa mradi",
+    bm4Title:"Usafirishaji wa kimataifa na nyaraka",bm4Desc:"Njia nafuu za usafirishaji na forodha kwa nchi zisizo na bandari",
+    bm4L1:"Kulinganisha meli / ndege / barabara na makadirio ya gharama",bm4L2:"Tamko la forodha, cheti cha asili, nyaraka za uondoaji",bm4L3:"Suluhisho la usafirishaji kwa nchi kavu (Rwanda, Burundi, Asia ya Kati)",bm4Foot:"Malipo: kwa shehena / kwa kontena",
+    addonLabel:"Huduma za nyongeza",svc1Title:"Tafsiri ya kibiashara",svc1Desc:"Lugha sita: Kichina, Kiingereza, Kifaransa, Kireno, Kirusi, Kiswahili",
+    svc2Title:"Forodha na nyaraka",svc2Desc:"Tamko, cheti cha asili na nyaraka za uondoaji kwa mkupuo mmoja",svc3Title:"Ukaguzi huru wa bidhaa",svc3Desc:"Kushirikiana na SGS / BV, kuhakikisha ubora kabla ya kusafirisha",
+    svc4Title:"Ushauri wa njia za malipo",svc4Desc:"T/T, L/C na mapendekezo ya malipo (hatushughulikii fedha)",svc5Title:"Ziara za viwanda na maudhui",svc5Desc:"Picha za viwanda na video za bidhaa kuvutia wateja",
+    processLabel:"Mchakato",processTitle:"Hatua 10, njia mbili za kupata wateja",processSub:"Washirika wa nje na jukwaa la mtandaoni hufanya kazi pamoja — kutoka ombi hadi kifani",
+    ps1T:"Tuma ombi",ps1D:"Fomu ya tovuti / washirika / WhatsApp",ps2T:"Ukaguzi wa awali",ps2D:"Kuthibitisha mnunuzi, uwezo wa kulipa na ukweli wa oda",ps3T:"Kupata wasambazaji",ps3D:"Kuchagua wasambazaji 2–3 na kulinganisha bei",ps4T:"Pendekezo",ps4D:"Bei, muda na mpango wa usafirishaji",ps5T:"Mazungumzo",ps5D:"Msaada wa lugha nyingi kwa masharti muhimu",ps6T:"Mikataba",ps6D:"Mkataba wa uwakala + mkataba wa biashara",ps7T:"Utekelezaji",ps7D:"Kufuatilia uzalishaji, sampuli na ukaguzi",ps8T:"Malipo",ps8D:"Mnunuzi na muuzaji hulipana moja kwa moja — fedha hazipiti kwetu",ps9T:"Ada yetu",ps9D:"Ada ya uwakala kwa masharti tuliyokubaliana",ps10T:"Kifani",ps10D:"Kuchapisha biashara zilizofanikiwa, kujenga imani",
+    bnd1:"✕ Hakuna malipo ya awali",bnd2:"✕ Hakuna kuhifadhi bidhaa",bnd3:"✕ Hatushughulikii fedha",
+    advLabel:"Faida",advTitle:"Kwa nini tuchague sisi",advSub:"Mtandao wa washirika nchi nyingi + uhusiano wa moja kwa moja na viwanda + kutenganisha fedha kabisa",
+    adv1Title:"Mtandao wa washirika wa ndani",adv1Desc:"Washirika wa ndani katika nchi mbalimbali wenye lugha, mahitaji ya kweli na mahusiano ya wateja",adv2Title:"Uhusiano wa moja kwa moja na viwanda",adv2Desc:"Tunafahamu 1688 na maeneo ya viwanda, tuna uwezo wa kukagua viwanda",adv3Title:"Mfumo mwepesi, hatari sifuri",adv3Desc:"Kutenganisha fedha kabisa — hatuna bidhaa wala fedha, tunachukua ada ya uwakala tu",adv4Title:"Huduma za lugha nyingi",adv4Desc:"Kichina, Kiingereza, Kifaransa, Kireno, Kirusi na Kiswahili — kutoka ombi hadi mazungumzo",
+    casesLabel:"Mifano",casesTitle:"Biashara halisi, imani inayokua",casesSub:"Kila biashara iliyokamilika huandikwa kama kifani",
+    case1Tag:"Mnunuzi wa nje · Bidhaa za kila siku",case1Title:"Ununuzi wa bidhaa za jumla Yiwu",case1Desc:"Bidhaa za kila siku zilinunuliwa Yiwu kwa mnunuzi wa nje baada ya kulinganisha bei tatu",
+    case2Tag:"Mnunuzi wa nje · Mitambo",case2Title:"Ununuzi wa mitambo midogo",case2Desc:"Viwanda vya eneo la viwanda la Guangdong vilichaguliwa na kuthibitishwa kwa mnunuzi wa nje",
+    case3Tag:"Mnunuzi wa nje · Vifaa na usafirishaji",case3Title:"Vifaa vya ujenzi na usafirishaji",case3Desc:"Vifaa vya ujenzi vya China vilinunuliwa kwa mnunuzi wa nje, pamoja na forodha na usafirishaji wa ndani",
+    aboutLabel:"Kuhusu sisi",aboutTitle:"Timu yenye ujuzi wa kina wa ugavi wa China",aboutSub:"Sisi si madalali wanaopitisha taarifa tu — tunajua kwa kina maeneo ya viwanda, nyaraka, lugha na utekelezaji wa oda",
+    stat1n:"12+",stat1l:"miaka ya uzoefu wa biashara na ununuzi",stat2n:"300+",stat2l:"viwanda washirika na rasilimali za maeneo ya viwanda",stat3n:"20+",stat3l:"nchi za kuuza nje",stat4n:"6",stat4l:"lugha za kazi (ZH/EN/FR/PT/RU/SW)",
+    serveLabel:"Aina za wateja tunaohudumia",serveText:"Makampuni · Wafanyabiashara na waagizaji · Serikali na taasisi za umma · Mashirika yasiyo ya kiserikali na ya kimataifa · Watu binafsi na biashara ndogo",
+    photoCap:"Jiji la Biashara la Kimataifa la Yiwu — moja ya vyanzo vyetu. Kutoka duka hapa hadi bandari yako, kila hatua inafuatiliwa.",
+    dep1T:"Ujuzi wa kina wa ugavi",dep1D:"Kutoka bidhaa za Yiwu hadi mitambo ya Guangdong — tunajua eneo gani la viwanda linafaa kwa oda gani",
+    dep2T:"Ujuzi wa kina wa uzingatiaji wa sheria",dep2D:"Forodha, cheti cha asili, kufukiza, ukaguzi wa bidhaa, masharti ya L/C — tunapitia nyaraka zote wenyewe",
+    dep3T:"Ujuzi wa kina wa mazingira ya ndani",dep3D:"Timu ya lugha sita (ZH/EN/FR/PT/RU/SW) na washirika wa ndani katika nchi mbalimbali — tunawasiliana moja kwa moja na mnunuzi",
+    dep4T:"Udhibiti wa utekelezaji",dep4D:"Sampuli, uzalishaji, ukaguzi na upakiaji — kila hatua inafuatiliwa, kasoro huzuiwa kabla ya kusafirisha",
+    contactLabel:"Wasiliana nasi",contactTitle:"Anza safari yako ya ununuzi",contactSub:"Bila usajili — tuma ombi lako bure, tutajibu ndani ya saa 24",
+    formTitle:"Tuma ombi lako",formHint:"Hatua nne — tutakuletea mpango ndani ya saa 24 (jina na barua pepe pekee ni lazima)",
+    formName:"Mtu wa kuwasiliana",formNamePh:"Jina lako",formEmail:"Barua pepe",formCountry:"Nchi ya marudio",formCountryPh:"mfano: Nigeria, Brazil, Kazakhstan, Vietnam",formCompany:"Kampuni / taasisi",formCompanyPh:"Si lazima — inatusaidia kukuelewa",formDetail:"Maelezo",formDetailPh:"Idadi, vipimo, bei lengo, bandari, msambazaji uliye nao…",formSubmit:"Tuma",formCopy:"Nakili maandishi",
+    formNote:"Tunatumia taarifa unazotuma kwa kujibu ombi hili na kutoa huduma zetu pekee. Angalia Sera yetu ya Faragha.",
+    formAgreePrefix:"Nimesoma na nakubali",formAgreeLink:"Sera ya Faragha",formAgreeRequired:"Tafadhali kubali Sera ya Faragha kabla ya kushughulikia ombi lako.",
+    step1:"Wasifu wako na mahitaji",step2:"Bajeti na muda",step3:"Jinsi ya kuwasiliana nawe",step4:"Maelezo ya ziada (si lazima)",
+    formPhone:"Namba ya simu",formPhoneHint:"Chagua msimbo wa nchi (na bendera) kisha andika namba — rahisi kwetu kupiga simu au WhatsApp",ccSearchPh:"Tafuta nchi au msimbo (mfano Burundi / +257)",
+    formFiles:"Ambatisha faili (si lazima)",uzPick:"bofya kuchagua faili",uzOr:"au kuburuta hapa",uzNote:"Excel / Word / PDF / picha / faili zilizobanwa · hadi 4MB kila moja · faili 3 kwa juu · au zituma kwa WhatsApp / WeChat",
+    formClientType:"Wasifu wako",ct1:"Kampuni",ct2:"Mfanyabiashara / mwagizaji",ct3:"Serikali / taasisi ya umma",ct4:"NGO / shirika la kimataifa",ct5:"Mtu binafsi / biashara ndogo",ct6:"Nyingine",
+    formNeeds:"Unahitaji nini (unaweza kuchagua zaidi ya moja)",formNeedsHint:"Haipo kwenye orodha? Ieleze hapa chini.",
+    nd1:"Ununuzi China",nd2:"Mitambo na vifaa",nd3:"Vifaa vya ujenzi",nd4:"Elektroniki / 3C",nd5:"Nguo, viatu na vitambaa",nd6:"Bidhaa za nyumbani na usafi",nd7:"Chakula na mazao ya kilimo",nd8:"Vipuri vya magari na zana",nd9:"Kuchagua wasambazaji / ukaguzi",nd10:"Usafirishaji na nyaraka",
+    formBudget:"Bajeti (USD)",bg1:"Chini ya 5,000",bg2:"5,000 – 20,000",bg3:"20,000 – 50,000",bg4:"50,000 – 100,000",bg5:"100,000 – 500,000",bg6:"Zaidi ya 500,000",
+    formTimeline:"Muda unaotaka",tl1:"Ndani ya siku 30",tl2:"Miezi 1–3",tl3:"Miezi 3–6",tl4:"Bado hatujaamua",
+    formChannel:"Njia unayopendelea ya mawasiliano",ch5:"Simu",ch6:"Barua pepe pekee",
+    formChannelId:"Kitambulisho (ID)",formChannelIdPh:"Akaunti au namba yako",
+    contactInfoTitle:"Wasiliana nasi",contactAddr:"Ofisi",contactAddrVal:"Chumba B431, Jengo la Huada, Zhaoshang, Nanshan, Shenzhen, China (Qianhai)",
+    footerDesc:"Jukwaa la ununuzi wa kimataifa linalotilia mkazo ushauri wa biashara na ununuzi China. Hatuhifadhi bidhaa, hatutoa malipo ya awali na hatushughulikii fedha.",footerService:"Huduma",footerS1:"Ununuzi China",footerS2:"Ushauri",footerS3:"Ukaguzi wa kiwanda",footerS4:"Usafirishaji",footerCompany:"Kampuni",footerC1:"Kuhusu sisi",footerC2:"Mchakato",footerC3:"Mifano",footerC4:"Wasiliana",footerPrivacy:"Sera ya Faragha",footerSocial:"Mitandao ya kijamii",footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. Haki zote zimehifadhiwa.",footerNote:"Ununuzi China · Ushauri wa biashara · Mtandao wa washirika nchi nyingi"
+  }
+};
+
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.documentElement.dataset.lang = lang;
+  const dict = i18n[lang] || i18n.zh;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if(dict[key] !== undefined){
+      if(key.includes('heroTitle') || key.includes('bnd')){ el.innerHTML = dict[key]; return; }
+      el.textContent = dict[key];
+    }
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.dataset.i18nPh;
+    if(dict[key] !== undefined) el.placeholder = dict[key];
+  });
+  document.querySelectorAll('[data-lang-btn]').forEach(b => {
+    b.classList.toggle('active', b.dataset.langBtn === lang);
+  });
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if(el.tagName === 'DIV' && key && key.endsWith('Foot') && dict[key]){
+      el.innerHTML = dict[key].replace(/^([^：:]*[：:])/, '<b>$1</b>').replace('FEE:','<b>FEE:</b>').replace('HONORAIRES :','<b>HONORAIRES :</b>')
+        .replace('TARIFA:','<b>TARIFA:</b>');
+    }
+  });
+}
+document.querySelectorAll('[data-lang-btn]').forEach(b => {
+  b.addEventListener('click', () => setLang(b.dataset.langBtn));
+});
+
+/* ===== 隐私政策弹层 ===== */
+(function(){
+  const modal = document.getElementById('privacyModal');
+  if(!modal) return;
+  const panel = modal.querySelector('.pv-panel');
+  const scroller = modal.querySelector('.pv-scroll');
+
+  function openPrivacy(){
+    modal.classList.add('open');
+    document.body.classList.add('pv-lock');
+    if(scroller) scroller.scrollTop = 0;
+    const c = document.getElementById('privacyClose');
+    if(c) c.focus();
+  }
+  function closePrivacy(){
+    modal.classList.remove('open');
+    document.body.classList.remove('pv-lock');
+  }
+
+  // 勾选处与页脚的「隐私政策」链接，统一打开弹层
+  document.querySelectorAll('a[href="#privacy"]').forEach(a => {
+    a.addEventListener('click', e => { e.preventDefault(); openPrivacy(); });
+  });
+  const closeBtn = document.getElementById('privacyClose');
+  if(closeBtn) closeBtn.addEventListener('click', closePrivacy);
+  modal.addEventListener('click', e => { if(!panel.contains(e.target)) closePrivacy(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closePrivacy(); });
+
+  // 直接访问 …/#privacy 时自动展开
+  if(location.hash === '#privacy') openPrivacy();
+})();
+
+/* ===== 滚动显现 ===== */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="f8b45dcd-21fc-4842-9bd0-421df0877b20" data-app-host="app.netlify.com" data-account-tier="free"></script>

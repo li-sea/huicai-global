@@ -1,0 +1,10 @@
+{
+  "name": "huicai-global",
+  "version": "1.0.0",
+  "private": true,
+  "description": "汇采国际 HuiCai Global 官网 — 中国商品代买 · 国际贸易服务咨询",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
