@@ -6,7 +6,9 @@
  * 飞书卡片里带上下载链接，点开即可下载。
  *
  * 路由：POST /.netlify/functions/upload   （multipart/form-data，字段名 file）
- *      GET  /.netlify/functions/upload?id=xxx  → 下载文件
+ *
+ * 说明：线上实现只接受 POST；附件下载走 Netlify Blobs 的公开链接
+ *      （由 inquiry.mjs 在飞书卡片里给出），本函数不提供 GET 下载路由。
  *
  * 无需额外环境变量，Netlify Blobs 开箱即用。
  * ------------------------------------------------------------------
@@ -23,7 +25,7 @@ const OK_EXT = [
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
+  'Access-Control-Allow-Methods': 'POST, OPTIONS'
 };
 
 const STORE = 'inquiry-files';
@@ -42,32 +44,11 @@ export default async (req) => {
     return new Response(null, { status: 204, headers: CORS });
   }
 
-  const url = new URL(req.url);
-  const store = getStore(STORE);
-
-  /* ---------- 下载 ---------- */
-  if (req.method === 'GET') {
-    const id = url.searchParams.get('id');
-    if (!id) {
-      return Response.json({ ok: false, error: 'id-required' }, { status: 400, headers: CORS });
-    }
-    const hit = await store.getWithMetadata(id, { type: 'arrayBuffer' });
-    if (!hit) {
-      return Response.json({ ok: false, error: 'not-found' }, { status: 404, headers: CORS });
-    }
-    const name = hit.metadata?.name || 'download';
-    return new Response(hit.data, {
-      headers: {
-        ...CORS,
-        'Content-Type': hit.metadata?.type || 'application/octet-stream',
-        'Content-Disposition': `attachment; filename*=UTF-8''${encodeURIComponent(name)}`
-      }
-    });
-  }
-
   if (req.method !== 'POST') {
     return Response.json({ ok: false, error: 'Method not allowed' }, { status: 405, headers: CORS });
   }
+
+  const store = getStore(STORE);
 
   /* ---------- 上传 ---------- */
   try {

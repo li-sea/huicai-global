@@ -37,10 +37,6 @@ function sanitize(body = {}) {
   return out;
 }
 
-function isValid(data) {
-  return data.name.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
-}
-
 /** 飞书自定义机器人签名校验（开启签名时才需要） */
 function sign(secret, timestamp) {
   const stringToSign = `${timestamp}\n${secret}`;
@@ -114,12 +110,6 @@ export default async (req) => {
     }
 
     const d = sanitize(body);
-    if (!isValid(d)) {
-      return Response.json(
-        { ok: false, error: 'name and a valid email are required' },
-        { status: 400, headers: CORS }
-      );
-    }
 
     const meta = {
       ip: (req.headers.get('x-forwarded-for') || '').split(',')[0].trim()
