@@ -301,8 +301,21 @@ body.pv-lock{overflow:hidden}
 .footer-col a{display:block;font-size:13px;color:var(--ink-on-dark-2);text-decoration:none;padding:4px 0;transition:color .2s}
 .footer-col a:hover{color:var(--ink-on-dark)}
 .footer-logo-img{height:84px;width:84px;object-fit:contain;display:block;margin-bottom:14px}
-.footer-bottom{max-width:var(--max-wide);margin:36px auto 0;padding-top:22px;border-top:1px solid var(--border-dark);display:flex;justify-content:space-between;align-items:center;font-size:12px;gap:12px;flex-wrap:wrap}
+.footer-bottom{max-width:var(--max-wide);margin:36px auto 0;padding-top:22px;border-top:1px solid var(--border-dark);font-size:12px;text-align:center}
+.footer-copyline{display:flex;justify-content:center;align-items:center;gap:8px 22px;flex-wrap:wrap}
+.footer-legal{margin-top:10px;font-size:11.5px;line-height:1.8;color:#9a9aa1}
+.footer-legal .footer-sep{margin:0 7px;color:#5f5f66}
+.footer-legal a{color:#b7b7be;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.footer-legal a:hover{color:#fff}
+.footer-brandline{margin-top:5px;font-size:11px;line-height:1.6;color:#77777e;letter-spacing:.02em}
 .photo-credits{max-width:var(--max-wide);margin:34px auto 0;font-size:11.5px;color:#77777c;line-height:1.7}
+
+/* ===== Business licence lightbox ===== */
+.license-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.88);backdrop-filter:blur(5px)}
+.license-modal.open{display:flex}
+.license-modal img{max-width:min(94vw,1500px);max-height:86vh;width:auto;height:auto;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.5);background:#fff}
+.license-close{position:fixed;top:18px;right:22px;width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(255,255,255,.1);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.license-caption{position:fixed;left:0;right:0;bottom:18px;text-align:center;color:rgba(255,255,255,.75);font-size:12px;line-height:1.6;padding:0 20px}
 
 /* ===== 动画 ===== */
 .reveal{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -331,7 +344,10 @@ body.pv-lock{overflow:hidden}
   .nav-inner{flex-wrap:wrap;height:auto;padding:8px 16px;gap:6px 10px}
   .nav-lang{order:3;width:100%;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(0,0,0,.06);padding-top:4px}
   .footer-inner{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
+  .footer-copyline{flex-direction:column;gap:4px}
+  .footer-legal-break{display:none}
+  .footer-legal .footer-sep{display:none}
+  .footer-legal span{display:block}
   .process-step{max-width:100%}
   .nav-logo{font-size:16px;gap:7px}
   .nav-logo-img{height:28px;width:28px}
@@ -981,8 +997,17 @@ body.pv-lock{overflow:hidden}
     </div>
   </div>
   <div class="footer-bottom">
-    <span data-i18n="footerCopy">© 2026 汇采国际贸易服务咨询有限公司. 保留所有权利.</span>
-    <span data-i18n="footerNote">中国商品代买 · 国际贸易服务咨询 · 多国合伙人网络</span>
+    <div class="footer-copyline">
+      <span data-i18n="footerCopy">© 2026 深圳市海途文化科技有限公司 · 品牌「汇采国际」 保留所有权利</span>
+      <span data-i18n="footerNote">中国商品代买 · 国际贸易服务咨询 · 多国合作伙伴网络</span>
+    </div>
+    <p class="footer-legal">
+      <span data-i18n="footerLegalEntity">运营主体：深圳市海途文化科技有限公司</span><span class="footer-sep">｜</span>
+      <span data-i18n="footerUSCC">统一社会信用代码：91440300MAKGGDMJ6N</span><br class="footer-legal-break">
+      <span data-i18n="footerAddress">地址：深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431</span><span class="footer-sep">｜</span>
+      <a href="images/business-license-haitou.jpg" id="licenseOpen" data-i18n="footerLicense">营业执照（点击查看）</a>
+    </p>
+    <p class="footer-brandline" data-i18n="footerBrandLine">海途旗下国际业务品牌</p>
   </div>
   <p class="photo-credits">
     Photos: Wikimedia Commons &amp; Stocksnap — Martin Damboldt (CC0 1.0, port at night), Trougnouf (CC BY 4.0, Antwerp terminal),
@@ -990,6 +1015,12 @@ body.pv-lock{overflow:hidden}
     Startup Stock Photos (CC0 1.0, meeting room). 全部授权明细见 photo-credits.md
   </p>
 </footer>
+
+<div class="license-modal" id="licenseModal" role="dialog" aria-modal="true" aria-label="营业执照 Business Licence">
+  <button type="button" class="license-close" id="licenseClose" aria-label="关闭 Close">✕</button>
+  <img src="images/business-license-haitou.jpg" alt="深圳市海途文化科技有限公司营业执照（副本）" loading="lazy" decoding="async">
+  <p class="license-caption">深圳市海途文化科技有限公司 · 营业执照（副本）· 仅用于客户资质核验<br>Shenzhen Haitou Culture Technology Co., Ltd. · Business Licence (Copy) · For client verification only</p>
+</div>
 
 <script>
 /* =======================================================================
@@ -1498,7 +1529,8 @@ const i18n = {
     footerDesc:"以国际贸易服务咨询为中心、以中国商品代买为重点的跨境采购服务平台。不囤货、不垫资、不代收货款，只做采购代理与贸易咨询。",
     footerService:"业务模块",footerS1:"中国商品代买",footerS2:"国际贸易咨询",footerS3:"验厂验货",footerS4:"物流与单证",
     footerCompany:"公司",footerC1:"关于我们",footerC2:"服务流程",footerC3:"成交案例",footerC4:"联系方式",footerPrivacy:"隐私政策",footerSocial:"社交媒体",
-    footerCopy:"© 2026 汇采国际贸易服务咨询有限公司. 保留所有权利.",footerNote:"中国商品代买 · 国际贸易服务咨询 · 多国合伙人网络"
+    footerCopy:"© 2026 深圳市海途文化科技有限公司 · 品牌「汇采国际」 保留所有权利",footerNote:"中国商品代买 · 国际贸易服务咨询 · 多国合作伙伴网络",
+    footerLegalEntity:"运营主体：深圳市海途文化科技有限公司",footerUSCC:"统一社会信用代码：91440300MAKGGDMJ6N",footerAddress:"地址：深圳市南山区招商街道沿山社区工业三路华达工业大厦 B431",footerLicense:"营业执照（点击查看）",footerBrandLine:"海途旗下国际业务品牌"
   },
   en: {
     topbar:"No registration · Browse freely · Free sourcing inquiry",
@@ -1555,7 +1587,8 @@ const i18n = {
     footerDesc:"A cross-border sourcing platform centred on international trade consulting and focused on China sourcing. No inventory, no advance payment, no fund handling.",
     footerService:"Services",footerS1:"China Sourcing",footerS2:"Trade Consulting",footerS3:"Factory Audit",footerS4:"Logistics & Docs",
     footerCompany:"Company",footerC1:"About Us",footerC2:"Process",footerC3:"Cases",footerC4:"Contact",footerPrivacy:"Privacy Policy",footerSocial:"Social Media",
-    footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. All rights reserved.",footerNote:"China Sourcing · Trade Consulting · Multi-Country Network"
+    footerCopy:"© 2026 Shenzhen Haitou Culture Technology Co., Ltd. · Brand \"HuiCai Global\". All rights reserved.",footerNote:"China Sourcing · International Trade Consulting · Multi-Country Partner Network",
+    footerLegalEntity:"Legal entity: Shenzhen Haitou Culture Technology Co., Ltd.",footerUSCC:"USCC: 91440300MAKGGDMJ6N",footerAddress:"Address: Room B431, Huada Industrial Building, Yanshan Community, Zhaoshang Street, Nanshan District, Shenzhen, China",footerLicense:"Business Licence (view)",footerBrandLine:"An international business brand of Haitou"
   },
   fr: {
     topbar:"Sans inscription · Navigation libre · Demande gratuite",
@@ -1612,7 +1645,8 @@ const i18n = {
     footerDesc:"Plateforme de sourcing transfrontalier centrée sur le conseil en commerce international et axée sur le sourcing en Chine. Sans stock, sans avance, sans gestion de fonds.",
     footerService:"Services",footerS1:"Sourcing Chine",footerS2:"Conseil",footerS3:"Audit d'Usine",footerS4:"Logistique",
     footerCompany:"Société",footerC1:"À Propos",footerC2:"Processus",footerC3:"Cas",footerC4:"Contact",footerPrivacy:"Confidentialité",footerSocial:"Réseaux Sociaux",
-    footerCopy:"© 2026 HuiCai Global Conseil en Commerce International. Tous droits réservés.",footerNote:"Sourcing Chine · Conseil Commercial · Réseau Multi-Pays"
+    footerCopy:"© 2026 Shenzhen Haitou Culture Technology Co., Ltd. · Marque « HuiCai Global ». Tous droits réservés.",footerNote:"Sourcing Chine · Conseil en commerce international · Réseau de partenaires multi-pays",
+    footerLegalEntity:"Entité juridique : Shenzhen Haitou Culture Technology Co., Ltd.",footerUSCC:"Code unifié de crédit social (USCC) : 91440300MAKGGDMJ6N",footerAddress:"Adresse : Bureau B431, Immeuble Huada, Communauté Yanshan, Rue Zhaoshang, District de Nanshan, Shenzhen, Chine",footerLicense:"Licence d'exploitation (voir)",footerBrandLine:"Marque internationale du groupe Haitou"
   },
   pt: {
     topbar:"Sem cadastro · Navegação livre · Pedido gratuito",
@@ -1669,7 +1703,8 @@ const i18n = {
     footerDesc:"Plataforma de sourcing transfronteiriço centrada na consultoria de comércio internacional e focada na compra de produtos chineses. Sem estoque, sem adiantamento, sem gestão de fundos.",
     footerService:"Serviços",footerS1:"Compra na China",footerS2:"Consultoria",footerS3:"Auditoria",footerS4:"Logística",
     footerCompany:"Empresa",footerC1:"Sobre",footerC2:"Processo",footerC3:"Casos",footerC4:"Contato",footerPrivacy:"Privacidade",footerSocial:"Redes Sociais",
-    footerCopy:"© 2026 HuiCai Global Consultoria de Comércio Internacional. Todos os direitos reservados.",footerNote:"Sourcing China · Consultoria · Rede Multi-País"
+    footerCopy:"© 2026 Shenzhen Haitou Culture Technology Co., Ltd. · Marca “HuiCai Global”. Todos os direitos reservados.",footerNote:"Sourcing China · Consultoria em comércio internacional · Rede de parceiros multi-países",
+    footerLegalEntity:"Entidade legal: Shenzhen Haitou Culture Technology Co., Ltd.",footerUSCC:"Código Unificado de Crédito Social (USCC): 91440300MAKGGDMJ6N",footerAddress:"Endereço: Sala B431, Edifício Huada, Comunidade Yanshan, Rua Zhaoshang, Distrito de Nanshan, Shenzhen, China",footerLicense:"Licença comercial (ver)",footerBrandLine:"Marca internacional do grupo Haitou"
   },
   ru: {
     topbar:"Без регистрации · Свободный просмотр · Бесплатный запрос",
@@ -1725,7 +1760,7 @@ const i18n = {
     formChannel:"Предпочитаемый мессенджер",ch5:"Телефонный звонок",ch6:"Только e-mail",
     formChannelId:"ID в мессенджере",formChannelIdPh:"Ваш аккаунт или номер",
     contactInfoTitle:"Связаться с нами",contactAddr:"Офис",contactAddrVal:"Шэньчжэнь, район Наньшань, Чжаошан, Южная Гуандун-роуд 3, здание Huada B431 (Цяньхай)",
-    footerDesc:"Платформа трансграничных закупок с акцентом на консалтинг по международной торговле и закупки в Китае. Без складских запасов, предоплат и работы с деньгами клиентов.",footerService:"Услуги",footerS1:"Закупки в Китае",footerS2:"Консалтинг",footerS3:"Аудит фабрик",footerS4:"Логистика",footerCompany:"Компания",footerC1:"О нас",footerC2:"Процесс",footerC3:"Кейсы",footerC4:"Контакты",footerPrivacy:"Конфиденциальность",footerSocial:"Соцсети",footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. Все права защищены.",footerNote:"Закупки в Китае · Консалтинг по торговле · Сеть партнёров в разных странах"
+    footerDesc:"Платформа трансграничных закупок с акцентом на консалтинг по международной торговле и закупки в Китае. Без складских запасов, предоплат и работы с деньгами клиентов.",footerService:"Услуги",footerS1:"Закупки в Китае",footerS2:"Консалтинг",footerS3:"Аудит фабрик",footerS4:"Логистика",footerCompany:"Компания",footerC1:"О нас",footerC2:"Процесс",footerC3:"Кейсы",footerC4:"Контакты",footerPrivacy:"Конфиденциальность",footerSocial:"Соцсети",footerCopy:"© 2026 Shenzhen Haitou Culture Technology Co., Ltd. · Бренд «HuiCai Global». Все права защищены.",footerNote:"Закупки в Китае · Консалтинг по международной торговле · Международная партнёрская сеть",footerLegalEntity:"Юридическое лицо: Shenzhen Haitou Culture Technology Co., Ltd.",footerUSCC:"Единый код социального кредита (USCC): 91440300MAKGGDMJ6N",footerAddress:"Адрес: комната B431, здание Huada, район Наньшань, Шэньчжэнь, Китай",footerLicense:"Лицензия (посмотреть)",footerBrandLine:"Международный бренд группы Haitou"
   },
   sw: {
     topbar:"Bila usajili · Tazama kwa uhuru · Ombi la bure",
@@ -1781,7 +1816,7 @@ const i18n = {
     formChannel:"Njia unayopendelea ya mawasiliano",ch5:"Simu",ch6:"Barua pepe pekee",
     formChannelId:"Kitambulisho (ID)",formChannelIdPh:"Akaunti au namba yako",
     contactInfoTitle:"Wasiliana nasi",contactAddr:"Ofisi",contactAddrVal:"Chumba B431, Jengo la Huada, Zhaoshang, Nanshan, Shenzhen, China (Qianhai)",
-    footerDesc:"Jukwaa la ununuzi wa kimataifa linalotilia mkazo ushauri wa biashara na ununuzi China. Hatuhifadhi bidhaa, hatutoa malipo ya awali na hatushughulikii fedha.",footerService:"Huduma",footerS1:"Ununuzi China",footerS2:"Ushauri",footerS3:"Ukaguzi wa kiwanda",footerS4:"Usafirishaji",footerCompany:"Kampuni",footerC1:"Kuhusu sisi",footerC2:"Mchakato",footerC3:"Mifano",footerC4:"Wasiliana",footerPrivacy:"Sera ya Faragha",footerSocial:"Mitandao ya kijamii",footerCopy:"© 2026 HuiCai Global Trade Consulting Co., Ltd. Haki zote zimehifadhiwa.",footerNote:"Ununuzi China · Ushauri wa biashara · Mtandao wa washirika nchi nyingi"
+    footerDesc:"Jukwaa la ununuzi wa kimataifa linalotilia mkazo ushauri wa biashara na ununuzi China. Hatuhifadhi bidhaa, hatutoa malipo ya awali na hatushughulikii fedha.",footerService:"Huduma",footerS1:"Ununuzi China",footerS2:"Ushauri",footerS3:"Ukaguzi wa kiwanda",footerS4:"Usafirishaji",footerCompany:"Kampuni",footerC1:"Kuhusu sisi",footerC2:"Mchakato",footerC3:"Mifano",footerC4:"Wasiliana",footerPrivacy:"Sera ya Faragha",footerSocial:"Mitandao ya kijamii",footerCopy:"© 2026 Shenzhen Haitou Culture Technology Co., Ltd. · Chapa “HuiCai Global”. Haki zote zimehifadhiwa.",footerNote:"Ununuzi China · Ushauri wa biashara ya kimataifa · Mtandao wa washirika wa nchi nyingi",footerLegalEntity:"Kampuni rasmi: Shenzhen Haitou Culture Technology Co., Ltd.",footerUSCC:"Nambari ya USCC: 91440300MAKGGDMJ6N",footerAddress:"Anwani: Chumba B431, Jengo la Huada, Yanshan, Zhaoshang, Nanshan, Shenzhen, China",footerLicense:"Leseni ya biashara (tazama)",footerBrandLine:"Chapa ya kimataifa ya kundi la Haitou"
   }
 };
 
@@ -1871,6 +1906,32 @@ document.querySelectorAll('[data-lang-btn]').forEach(b => {
 /* ===== 默认语言：每次打开都以英文为首页语言（不记忆、不残留旧语言） ===== */
 (function initLang(){
   setLang('en');
+})();
+
+/* ===== 营业执照大图 ===== */
+(function(){
+  const modal = document.getElementById('licenseModal');
+  const openBtn = document.getElementById('licenseOpen');
+  const closeBtn = document.getElementById('licenseClose');
+  if(!modal || !openBtn) return;
+
+  function openLicense(){
+    modal.classList.add('open');
+    document.body.classList.add('pv-lock');
+    if(closeBtn) closeBtn.focus();
+  }
+  function closeLicense(){
+    modal.classList.remove('open');
+    document.body.classList.remove('pv-lock');
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', e => { e.preventDefault(); openLicense(); });
+  if(closeBtn) closeBtn.addEventListener('click', closeLicense);
+  modal.addEventListener('click', e => { if(e.target === modal) closeLicense(); });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && modal.classList.contains('open')) closeLicense();
+  });
 })();
 
 /* ===== 隐私政策弹层 ===== */
