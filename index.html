@@ -44,8 +44,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1
 .nav-inner{max-width:var(--max-wide);margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:100%;gap:20px}
 .nav-logo{font-size:19px;font-weight:600;letter-spacing:-.02em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px;white-space:nowrap}
 .nav-logo-img{height:34px;width:34px;flex-shrink:0;object-fit:contain;display:block}
-.nav-logo-txt{display:flex;align-items:baseline;gap:8px}
+.nav-logo-brand{display:flex;flex-direction:column;justify-content:center;gap:2px}
+.nav-logo-txt{display:flex;align-items:baseline;gap:8px;line-height:1.15}
 .nav-logo span{font-size:13px;color:var(--ink-3);font-weight:400}
+.nav-logo span.nav-coop{font-size:8.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#96773d;white-space:nowrap;line-height:1.1}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
 .nav-links a{font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;opacity:.86;transition:opacity .2s,color .2s;position:relative;padding-bottom:4px}
 .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s var(--ease)}
@@ -297,6 +299,7 @@ body.pv-lock{overflow:hidden}
 .footer-inner{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
 .footer-brand h4{font-size:16.5px;font-weight:600;color:var(--ink-on-dark);margin-bottom:12px}
 .footer-brand p{font-size:13px;line-height:1.65;max-width:310px}
+.footer-brand p.footer-coop{margin:-6px 0 12px;font-size:10px;line-height:1.5;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#c0a062;max-width:none}
 .footer-col h5{font-size:13px;font-weight:600;color:var(--ink-on-dark);margin-bottom:12px}
 .footer-col a{display:block;font-size:13px;color:var(--ink-on-dark-2);text-decoration:none;padding:4px 0;transition:color .2s}
 .footer-col a:hover{color:var(--ink-on-dark)}
@@ -352,6 +355,7 @@ body.pv-lock{overflow:hidden}
   .nav-logo{font-size:16px;gap:7px}
   .nav-logo-img{height:28px;width:28px}
   .nav-logo-txt > span{display:none}
+  .nav-logo span.nav-coop{display:none}
   .footer-logo-img{height:72px;width:72px}
   .qr-card img{width:104px;height:104px}
   .hero-cta .btn{width:100%;justify-content:center}
@@ -375,7 +379,7 @@ body.pv-lock{overflow:hidden}
 <!-- ===== Navigation ===== -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo"><img src="images/vayn-logo-128.png" alt="VAYN GROUP" class="nav-logo-img" width="34" height="34"><span class="nav-logo-txt">汇采国际 <span data-i18n="navTagline">中国商品代买</span></span></a>
+    <a href="#hero" class="nav-logo"><img src="images/vayn-logo-128.png" alt="VAYN GROUP" class="nav-logo-img" width="34" height="34"><span class="nav-logo-brand"><span class="nav-logo-txt">汇采国际 <span data-i18n="navTagline">中国商品代买</span></span><span class="nav-coop">VAYN GROUP &amp; HUICAI GLOBAL Cooperation</span></span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#business" data-i18n="navBusiness">业务模块</a></li>
       <li><a href="#process" data-i18n="navProcess">服务流程</a></li>
@@ -969,6 +973,7 @@ body.pv-lock{overflow:hidden}
     <div class="footer-brand">
       <img src="images/vayn-logo-256.png" alt="VAYN GROUP — Import · Export Solutions" class="footer-logo-img" width="84" height="84">
       <h4>汇采国际 HuiCai Global</h4>
+      <p class="footer-coop">VAYN GROUP &amp; HUICAI GLOBAL Cooperation</p>
       <p data-i18n="footerDesc">以国际贸易服务咨询为中心、以中国商品代买为重点的跨境采购服务平台。不囤货、不垫资、不代收货款，只做采购代理与贸易咨询。</p>
     </div>
     <div class="footer-col">
