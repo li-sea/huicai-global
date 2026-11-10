@@ -286,6 +286,17 @@ body.pv-lock{overflow:hidden}
 .qr-card img{width:112px;height:112px;display:block;border-radius:6px}
 .qr-card .qr-name{font-size:12.5px;font-weight:600;color:#1d1d1f;line-height:1.35;margin-top:7px}
 .qr-card .qr-role{font-size:10.5px;color:#6e6e73;line-height:1.35;margin-top:2px}
+.service-block{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px;margin-bottom:14px}
+.service-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+.service-badge{font-size:10.5px;font-weight:700;letter-spacing:.04em;color:#fff;background:rgba(0,113,227,.9);border-radius:7px;padding:4px 7px;line-height:1;flex-shrink:0}
+.service-title{font-size:15.5px;font-weight:600;color:var(--ink-on-dark);line-height:1.3}
+.service-lines{display:grid;gap:6px;margin:2px 0 10px}
+.service-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:13.5px;color:var(--ink-on-dark)}
+.service-line .k{font-size:11.5px;color:var(--ink-on-dark-2);min-width:62px;flex-shrink:0}
+.service-line a{color:var(--ink-on-dark);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);transition:border-color .2s}
+.service-line a:hover{border-bottom-color:#fff}
+.service-line .sub{font-size:11.5px;color:var(--ink-on-dark-2)}
+.service-block .qr-pair{margin:8px 0 0}
 .qr-hint{font-size:12px;color:var(--ink-on-dark-2);margin-top:10px;line-height:1.5}
 .wechat-qr{background:#fff;border-radius:16px;padding:12px;display:inline-block;margin:6px 0 2px;line-height:0;box-shadow:var(--shadow)}
 .wechat-qr img{width:134px;height:134px;display:block;border-radius:6px}
@@ -822,44 +833,58 @@ body.pv-lock{overflow:hidden}
       </form>
       <div class="contact-info reveal reveal-delay-1">
         <h3 data-i18n="contactInfoTitle">联系方式</h3>
+        <div class="service-block">
+          <div class="service-head">
+            <span class="service-badge">CN</span>
+            <div class="service-title" data-i18n="svcZhTitle">中文服务</div>
+          </div>
+          <div class="service-lines">
+            <div class="service-line"><span class="k" data-i18n="svcCellCn">中国电话</span><a href="tel:+8615801265676">+86 158 0126 5676</a></div>
+            <div class="service-line"><span class="k" data-i18n="svcCellHk">香港电话</span><a href="tel:+85253160587">+852 5316 0587</a></div>
+            <div class="service-line"><span class="k">WhatsApp</span><a href="https://wa.me/85253160587" target="_blank" rel="noopener">+852 5316 0587</a><span class="sub">@sea8552</span></div>
+          </div>
+          <div class="qr-pair">
+            <div class="qr-card">
+              <a href="images/wechat-qr-zh.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/wechat-qr-zh.png" alt="WeChat QR — 中文服务" width="112" height="112"></a>
+              <div class="qr-name">WeChat</div>
+              <div class="qr-role" data-i18n="svcScanWechat">微信扫码</div>
+            </div>
+            <div class="qr-card">
+              <a href="images/whatsapp-qr-sea.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/whatsapp-qr-sea.png" alt="WhatsApp QR — 中文服务" width="112" height="112"></a>
+              <div class="qr-name">WhatsApp</div>
+              <div class="qr-role" data-i18n="svcScanWa">WhatsApp 扫码</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-block">
+          <div class="service-head">
+            <span class="service-badge">EN · FR · SW</span>
+            <div class="service-title" data-i18n="svcIntlTitle">多语言服务</div>
+          </div>
+          <div class="service-lines">
+            <div class="service-line"><span class="k" data-i18n="svcCellCn">中国电话</span><a href="tel:+8613189013244">+86 131 8901 3244</a></div>
+            <div class="service-line"><span class="k">WhatsApp</span><a href="https://wa.me/8618312910245" target="_blank" rel="noopener">+86 183 1291 0245</a></div>
+            <div class="service-line"><span class="k" data-i18n="svcPartnerEmail">国际合作邮箱</span><a href="mailto:thevayngroup@gmail.com">thevayngroup@gmail.com</a></div>
+          </div>
+          <div class="qr-pair">
+            <div class="qr-card">
+              <a href="images/wechat-qr-intl.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/wechat-qr-intl.png" alt="WeChat QR — English / Français / Kiswahili" width="112" height="112"></a>
+              <div class="qr-name">WeChat</div>
+              <div class="qr-role" data-i18n="svcScanWechat">微信扫码</div>
+            </div>
+            <div class="qr-card">
+              <a href="images/whatsapp-qr-vayn.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/whatsapp-qr-vayn.png" alt="WhatsApp QR — VAYN GROUP" width="112" height="112"></a>
+              <div class="qr-name">WhatsApp</div>
+              <div class="qr-role" data-i18n="svcScanWa">WhatsApp 扫码</div>
+            </div>
+          </div>
+        </div>
+        <div class="qr-hint" data-i18n="svcHint">扫码添加，或点二维码放大</div>
+
         <div class="contact-item">
           <div class="icon" style="background:rgba(255,255,255,.1)">📧</div>
-          <div><div class="label">Email</div><div class="value"><a href="mailto:lsea9081@gmail.com">lsea9081@gmail.com</a></div></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon" style="background:rgba(255,255,255,.1)">💬</div>
-          <div><div class="label">WhatsApp</div><div class="value"><a href="https://wa.me/85253160587" target="_blank" rel="noopener">+852 5316 0587</a> <span class="sub">· @sea8552</span></div></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon" style="background:rgba(255,255,255,.1)">📞</div>
-          <div><div class="label">电话 / Phone</div><div class="value"><a href="tel:+85253160587">+852 5316 0587</a> <span class="sub">香港 HK</span> · <a href="tel:+8615801265676">+86 158 0126 5676</a> <span class="sub">中国 CN</span></div></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon" style="background:rgba(255,255,255,.1)">📱</div>
-          <div>
-            <div class="label">WeChat / 微信</div>
-            <div class="wechat-qr"><a href="images/wechat-qr.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/wechat-qr.png" alt="微信二维码 WeChat QR code"></a></div>
-            <div class="wechat-qr-tip">扫码添加微信，或点二维码放大 / Scan to add us on WeChat</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon" style="background:rgba(255,255,255,.1)">💬</div>
-          <div>
-            <div class="label" data-i18n="waQrLabel">WhatsApp 扫码加好友</div>
-            <div class="qr-pair">
-              <div class="qr-card">
-                <a href="images/whatsapp-qr-sea.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/whatsapp-qr-sea.png" alt="WhatsApp QR — sea" width="112" height="112"></a>
-                <div class="qr-name">sea</div>
-                <div class="qr-role" data-i18n="waQrRole1">业务咨询</div>
-              </div>
-              <div class="qr-card">
-                <a href="images/whatsapp-qr-vayn.png" target="_blank" rel="noopener" title="点开放大 Click to enlarge"><img src="images/whatsapp-qr-vayn.png" alt="WhatsApp QR — Vayn Group" width="112" height="112"></a>
-                <div class="qr-name">Vayn Group</div>
-                <div class="qr-role" data-i18n="waQrRole2">公司业务账号</div>
-              </div>
-            </div>
-            <div class="qr-hint" data-i18n="waQrTip">用手机 WhatsApp 扫码添加；也可点二维码放大</div>
-          </div>
+          <div><div class="label" data-i18n="svcGeneralEmail">通用邮箱</div><div class="value"><a href="mailto:lsea9081@gmail.com">lsea9081@gmail.com</a></div></div>
         </div>
         <div class="contact-item" style="border-bottom:none">
           <div class="icon" style="background:rgba(255,255,255,.1)">📍</div>
@@ -1905,6 +1930,21 @@ document.querySelectorAll('[data-lang-btn]').forEach(b => {
   };
   Object.keys(waOverride).forEach(function(k){
     if(i18n[k]) Object.assign(i18n[k], waOverride[k]);
+  });
+})();
+
+/* ===== 联系方式服务组文案（六语） ===== */
+(function(){
+  const svcOverride = {
+    zh:{svcZhTitle:"中文服务",svcIntlTitle:"多语言服务",svcCellCn:"中国电话",svcCellHk:"香港电话",svcScanWechat:"微信扫码",svcScanWa:"WhatsApp 扫码",svcGeneralEmail:"通用邮箱",svcPartnerEmail:"国际合作邮箱",svcHint:"扫码添加，或点二维码放大"},
+    en:{svcZhTitle:"Chinese Service",svcIntlTitle:"English · Français · Kiswahili",svcCellCn:"China",svcCellHk:"Hong Kong",svcScanWechat:"WeChat QR",svcScanWa:"WhatsApp QR",svcGeneralEmail:"General email",svcPartnerEmail:"International email",svcHint:"Scan to add, or tap a QR code to enlarge"},
+    fr:{svcZhTitle:"Service en chinois",svcIntlTitle:"English · Français · Kiswahili",svcCellCn:"Chine",svcCellHk:"Hong Kong",svcScanWechat:"QR WeChat",svcScanWa:"QR WhatsApp",svcGeneralEmail:"E-mail général",svcPartnerEmail:"E-mail international",svcHint:"Scannez pour ajouter, ou cliquez sur un QR code pour l'agrandir"},
+    pt:{svcZhTitle:"Atendimento em chinês",svcIntlTitle:"English · Français · Kiswahili",svcCellCn:"China",svcCellHk:"Hong Kong",svcScanWechat:"QR WeChat",svcScanWa:"QR WhatsApp",svcGeneralEmail:"E-mail geral",svcPartnerEmail:"E-mail internacional",svcHint:"Escaneie para adicionar ou toque em um QR code para ampliar"},
+    ru:{svcZhTitle:"Обслуживание на китайском",svcIntlTitle:"English · Français · Kiswahili",svcCellCn:"Китай",svcCellHk:"Гонконг",svcScanWechat:"QR WeChat",svcScanWa:"QR WhatsApp",svcGeneralEmail:"Общая почта",svcPartnerEmail:"Международная почта",svcHint:"Отсканируйте, чтобы добавить, или нажмите на QR-код, чтобы увеличить"},
+    sw:{svcZhTitle:"Huduma ya Kichina",svcIntlTitle:"English · Français · Kiswahili",svcCellCn:"China",svcCellHk:"Hong Kong",svcScanWechat:"QR ya WeChat",svcScanWa:"QR ya WhatsApp",svcGeneralEmail:"Barua pepe ya jumla",svcPartnerEmail:"Barua pepe ya kimataifa",svcHint:"Skani ili kuongeza, au gusa QR code ili kuikuza"}
+  };
+  Object.keys(svcOverride).forEach(function(k){
+    if(i18n[k]) Object.assign(i18n[k], svcOverride[k]);
   });
 })();
 
